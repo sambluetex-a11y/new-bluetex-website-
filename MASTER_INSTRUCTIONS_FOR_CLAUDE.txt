@@ -1,0 +1,179 @@
+PROJECT:
+Create a BlueTex Insulation website HTML mockup and design guide.
+
+PURPOSE:
+This is not final Shopify theme code yet.
+This is a visual and structural guide for the new Shopify theme build.
+
+READ THESE FOLDERS FIRST:
+- reference_files/
+- website_scrape/
+- brand_assets/
+
+USE THESE SOURCES THIS WAY:
+
+1. BlueTex website scrape
+Use for real BlueTex page copy, product truth, product names, existing site structure, application language, FAQ language, and customer-facing wording.
+
+2. BlueTex branding/reference files
+Use for colors, tone, logo guidance, BlueTex voice, visual direction, and brand consistency.
+
+3. TermBar Growth Plan
+Use as the main strategic direction.
+The new site should heavily focus on the TermBar system, especially:
+- Homepage
+- Summary page
+- What it is
+- Several before/after sections
+- TermBar look vs. EasyClip look
+- TermBar is the most popular method
+- EasyClip and other install methods are secondary
+- Order test kit
+- Short how-to-install section
+- Link to full install guide
+- Is it strong?
+- Can you paint it?
+- Quote path
+- Simple quote / budget quote explanation
+- Application overview
+- Install guide
+- Request quote
+- Order $100 test kit
+- Case studies / gallery
+- Other install methods
+
+4. ProTapes reference
+Use ONLY as a structure/layout inspiration.
+Do not copy ProTapes wording.
+Do not copy ProTapes branding.
+Do not copy ProTapes product names.
+Study how they organize:
+- navigation
+- products
+- industries
+- services/capabilities
+- popular product blocks
+- brochure/resource sections
+- support/contact sections
+- quote CTAs
+
+BLUE TEX WEBSITE PRIORITIES:
+The new site should push these main things:
+1. Wall Cover & Repair System
+2. Roof Cover & Repair System
+3. Metal Building Retrofit Applications
+4. Roll-up Door Applications
+
+Everything else is secondary.
+
+BLUE TEX POSITIONING:
+BlueTex is for metal building owners who want to cover, repair, or retrofit old/damaged insulation and improve the finished interior look of their building.
+
+The site should make it very easy to understand:
+- what the system is
+- where it installs
+- what parts are used
+- what the finished result looks like
+- how to measure
+- how to request a quote
+- how to order the sample/test kit
+
+VOICE:
+Use short, direct copy.
+Sound like a practical metal building insulation expert.
+Avoid generic AI marketing language.
+Avoid long em dashes.
+Avoid “shop now.”
+Use quote-focused CTAs.
+
+PRIMARY CTA LANGUAGE:
+- Request a Quote
+- Send Photos for a Quote
+- Get a Material List
+- Order the $100 Test Kit
+- View Install Guide
+- View Application Overview
+
+DESIGN STYLE:
+Industrial, practical, clean, and trustworthy.
+Do not make it look fake glossy.
+Use metal building imagery and before/after proof.
+Use BlueTex colors:
+- Navy: #0b2f6b
+- Orange: #ee7f12
+- White
+- Light gray
+- Dark gray/black body text
+
+MAIN MOCKUP SECTIONS TO CREATE:
+
+1. Homepage Mockup
+Include:
+- Hero section
+- Main priority cards:
+  - Wall Cover & Repair
+  - Roof Cover & Repair
+  - Metal Building Retrofit
+  - Roll-Up Door Applications
+- TermBar system explanation near the top
+- Before/after proof section
+- How the system works
+- Sample/test kit section
+- Application overview section
+- Resources/install guides section
+- Quote CTA band
+- Secondary products/resources area
+
+2. Navigation Mockup
+Create a proposed navigation:
+- Cover & Repair Systems
+- Applications
+- Products
+- Resources
+- About
+- Request a Quote
+
+3. Cover & Repair Systems Page Mockup
+Include:
+- Wall Cover & Repair System
+- Roof Cover & Repair System
+- TermBar System
+- EasyClip / other methods as secondary
+- Sample box/test kit
+- Quote CTA
+
+4. Applications Page Mockup
+Include:
+- Metal building retrofit
+- Roll-up doors
+- Old insulation cover-up
+- Damaged insulation repair
+- Interior finish improvement
+- Condensation/radiant heat support where appropriate
+
+5. Product/Resource Page Mockup
+Include:
+- BlueTex 2mm Pro 50 inch
+- TermBars
+- Seam tape
+- Sample/test kit
+- Measuring guide
+- Install guide
+- Quote checklist
+
+SHOPIFY BUILD THINKING:
+Write the HTML in sections that can later become Shopify theme sections.
+Use comments like:
+<!-- Shopify Section: Hero -->
+<!-- Shopify Section: Priority Cards -->
+<!-- Shopify Section: TermBar System -->
+<!-- Shopify Section: Quote CTA -->
+
+OUTPUT FILES:
+Create:
+1. output/bluetex_website_mockup.html
+2. output/bluetex_site_structure_notes.txt
+
+The HTML should be polished enough to open in a browser and use as a design guide.
+Use embedded CSS.
+Make it mobile responsive.

@@ -1,0 +1,138 @@
+.mar-top{margin-top:50px}
+.mar-bot{margin-bottom:50px}
+
+.site-header{width:1140px;margin-left: calc((100% - 1140px) / 2);margin-top:61px;}
+
+
+
+
+.main-navigation{margin-top:34px;position:relative;padding-bottom:15px;border-bottom:solid 1px #CBCBCB;}
+.main-navigation ul{background-color:#fff;}
+.main-navigation ul li{margin-bottom:0;padding-bottom:5px;}
+
+.main-navigation li a {font: normal normal 700 24px/25px Montserrat;text-transform:uppercase;padding:15px 5px 12px 5px; margin: 0 20px 0 20px;color:#0027B7;border-bottom:4px solid #fff;}
+.main-navigation li ul li a{margin:0; padding:15px 0;}
+html[lang="nl"] .main-navigation li ul li.menu-item a { 
+    font: normal normal 700 16px/22px Montserrat;
+    } 
+/* .main-navigation ul li a:hover{border-bottom-color:#0027B7;} */
+
+.main-navigation ul li.where-to-buy a{font: normal normal 700 18px/22px Montserrat;background: #0027B7 0% 0% no-repeat;color:#fff;border-radius:30px;padding:16px 32px;margin: 0 50px 0 0;transition: all .3s ease-out 0s;border-bottom:none;margin-bottom:4px;}
+.main-navigation ul li.where-to-buy a:hover{background-color:#0028FF;color:#fff;transition: all .3s ease-out 0s;}
+
+.main-navigation li{position:initial;}
+.main-navigation ul li:hover > ul li a{font: normal normal 600 19px/23px Montserrat;color:#000;border:none;}
+.main-navigation ul li:hover > ul {left:0;position:absolute;top:auto;width:1140px;margin-top:5px;}
+
+.main-navigation ul li:hover > ul li a span{display:none;}
+.main-navigation ul li:hover > ul li:first-child a span{display:block;}
+.main-navigation ul li:hover > ul li a span{text-transform: none;font: normal normal normal 17px/23px 'Open Sans';}
+
+
+.main-navigation ul li.wide-list:hover > ul{display:block;padding-top:30px;}
+
+
+.main-navigation ul li.wide-list:hover > ul li a{padding:0;margin:0 0 17px 0;}
+.main-navigation ul li.wide-list:hover > ul li a:hover{color: #5C5C5C;text-decoration: underline;}
+.main-navigation ul li.wide-list:hover > ul li {display:inline-block;width:297px;float:left;}
+li.industries ul li:last-child{display: none;}
+.main-navigation ul li.wide-list:hover > ul li.placeholder{margin:-25px 8px 50px 80px ;width:344px;height:334px;}
+.main-navigation ul li.wide-list:hover > ul li.placeholder a{padding:243px 26px 15px 26px;}
+.main-navigation ul li.wide-list:hover > ul li.placeholder a:hover{background-color:#EDEDED;color:#000;text-decoration: none;}
+.main-navigation ul li.services:hover > ul li.placeholder a {background: #fff url(img/converting-services-virtual-tour_292x202px.jpg) no-repeat center 28px; -webkit-transition: background-image .5s;}
+.main-navigation ul li.abouts:hover > ul li.placeholder a {background: #fff url(img/converting-services-virtual-tour_292x202px.jpg) no-repeat center 28px; -webkit-transition: background-image .5s;}
+
+.main-navigation ul li:hover > ul li.industry {width:264px;padding:28px 26px 15px 26px;margin-bottom:14px;background-color:#fff;margin-top:15px;}
+.main-navigation ul li:hover > ul li.industry:first-child{margin-left:41px;}
+.main-navigation ul li:hover > ul li.industry:last-child{margin-right:41px;}
+.main-navigation ul li:hover > ul li.industry a{padding-top:175px;}
+.main-navigation ul li:hover > ul li.industry:hover{background-color:#CBCBCB59;}
+
+.main-navigation li.industry.gi{background: url(img/industrial-tapes-and-adhesives_212x146px.jpg) no-repeat center 28px}
+.main-navigation li.industry.ae{background: url(img/adhesive-tapes-for-arts-and-entertainment_212x146px.jpg) no-repeat center 28px}
+.main-navigation li.industry.ga{background: url(img/adhesive-tapes-for-graphic-arts_212x146px.jpg) no-repeat center 28px}
+.main-navigation li.industry.bc{background: url(img/adhesive-tapes-for-building-and-construction_212x146px.jpg) no-repeat center 28px}
+
+.about.aboutus.two{display:none !Important;}
+
+#content-overlay{height:calc(100% - 288px);}
+#full_page_overlay{height:100%;}
+
+#footer_other_logos picture img{
+  height:60px;
+  margin-right:12px
+}
+#footer_other_logos picture:last-of-type img{
+  margin-right:0px
+}
+
+.shop-by-industry{margin-left:20px;}
+
+/* Product Page Styles */
+ul.product-comma-list li{display:inline-block;}
+ul.product-comma-list.in-content li a {color: inherit;text-decoration:none;border-bottom:none;}
+ul.product-comma-list.in-content li a:hover {text-decoration:underline;}
+ul.product-comma-list li::after{content: ", "; white-space: pre;}
+ul.product-comma-list li:last-child::after{content: ""}
+
+.product-video-carousel{max-height:590px;}
+#product_photo_gallery_single video{height:650px;}
+
+p.reveal-more {height:160px;overflow-y:hidden;position:relative;}
+p.reveal-more.has-more:after{
+  content: '';
+  display:block;width:100%;color:#115dac;
+  height:35px;background:#000;vertical-align:bottom;
+  line-height:20px;
+  text-transform:uppercase;
+  position:absolute;top:125px;
+  background:transparent;
+  cursor:pointer;
+  background-image: linear-gradient(transparent, White);opacity:.95;
+  z-index:9;
+  }
+  p.reveal-more.has-more:before{
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    content: '';
+    display: inline-block;
+    height: 12px;
+    left: 5px;
+    position: absolute;
+    top: 145px;
+    transform: rotate(-45deg);
+    vertical-align: middle;
+    width: 12px;
+    cursor:pointer;
+    z-index:10;
+  }
+p.reveal-more.show-more{max-height: 1000px !Important;height: auto !Important;overflow:visible !Important;}
+
+
+/* Create a positioning context */ 
+#search-wrapper { 
+    position: relative; 
+    padding-right: 175px; 
+} 
+
+/* Absolutely position GTranslate to the right of the search bar */ 
+
+.gtranslate_wrapper { 
+    position: absolute; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); /* vertically center it */ 
+    white-space: nowrap; 
+    z-index: 10; 
+} 
+
+/* Absolutely position the dropdown menu so it doesn't push anything */ 
+
+.gtranslate_wrapper .gt_option { 
+    position: absolute; 
+    top: 100%; 
+    right: 0;  /* aligns dropdown with selector */ 
+    background: #fff; 
+    border: 1px solid #ccc; 
+    z-index: 9999; 
+} 

@@ -1,0 +1,295 @@
+BLUETEX SHOPIFY HOMEPAGE — STRUCTURE NOTES
+Companion document to: bluetex_website_mockup.html
+Purpose: Design + structure guide for the new Shopify theme build (not final theme code).
+
+LAYOUT INTENT
+-------------
+Industrial, squared-off, TermBar-forward homepage modeled on the
+ProTapes homepage skeleton. Rebuilt with BlueTex content, real BlueTex
+imagery, and the Shopify Concept theme color direction.
+"Inspired by ProTapes structure, not copied content."
+
+Design rules enforced in this version:
+  - Squared-off: border-radius limited to 2–6px almost everywhere.
+    The only 6px radii are on images and the hero carousel frame.
+  - No pill CTAs. All buttons are rectangular with 4px corners.
+  - No soft SaaS cards. White rectangular content blocks, navy
+    bars, orange accent lines, clean dividers.
+  - White page body with #f4f4f4 alt-section bands.
+  - 1140px fixed container (ProTapes width).
+  - #e6e6e6 "label bar" section headings with a 4px navy left bar.
+  - Real BlueTex logo image in the header and footer.
+  - Real BlueTex TermBar photos throughout.
+
+Color system
+  Navy              #12205c   (primary)
+  Navy hover        #1a2d80
+  Navy deep         #0c1742   (footer, hero visual base)
+  Orange            #ee7f12   (accent, CTA highlight, proof accents)
+  Orange hover      #c9660a
+  Ink               #1b1b1b
+  Muted             #5c5c5c
+  Hairline          #cbcbcb
+  Line soft         #e4e4e7
+  Body bg           #ffffff
+  Alt band          #f4f4f4
+  Label bar bg      #e6e6e6
+
+Typography
+  Family: Inter 400/500/600/700/800/900
+  Headings: uppercase, 800–900 weight, letter-spacing .2–1.6px
+  Body: 15px / 1.55
+
+
+============================================================
+PAGE STRUCTURE — TOP TO BOTTOM (REVISED)
+============================================================
+
+  1.  Announcement Bar           [Shopify Section: Announcement Bar]
+        Navy bar, shipping line + $100 Test Kit link.
+
+  2.  Header                     [Shopify Section: Header]
+        - Real logo image:
+            ../brand_assets/logos/bluetex-logo-med.png
+        - Large 2px-bordered centered search + attached navy SEARCH
+          button (ProTapes pattern, square corners throughout).
+        - Utility right: phone pill, account, cart, mobile toggle.
+        - Uppercase nav row underneath with orange hover-underline.
+          COVER & REPAIR SYSTEMS · APPLICATIONS · PRODUCTS ·
+          RESOURCES · ABOUT US · REQUEST A QUOTE (orange)
+
+  3.  Hero Carousel Banner       [Shopify Section: Hero Carousel Banner]
+        3-slide auto-advancing banner, 6px radius, real TermBar photos:
+          Slide 1: "Fix Old Metal Building Insulation Without Tearing
+                    It Out" · visual: final-roof-wall-look.jpg
+                    CTAs: Request a Quote · Order the $100 Test Kit
+          Slide 2: "The TermBar System Gives BlueTex Its Finished
+                    Look" · visual: installing-termbars.jpg
+                    CTAs: View Install Guide · View Application Overview
+          Slide 3: "Try the System Before You Commit to a Full
+                    Retrofit" · visual: complete-wall-finish.jpg
+                    CTAs: Order the $100 Test Kit · What's Inside?
+
+  4.  Category Button Row        [Shopify Section: Category Button Row]
+        4 squared navy blocks, orange bottom accent, tight spacing:
+          WALL COVER & REPAIR · ROOF COVER & REPAIR ·
+          METAL BUILDING RETROFIT · ROLL-UP DOORS
+        No icons — text only per latest spec.
+
+  5.  Before/After Slider        [Shopify Section: Before After Slider]
+        - Heading: "From Old Insulation to Clean Finished Interior"
+        - Sub: "See how BlueTex changes the inside of a metal building
+                without tearing out the old insulation."
+        - Interactive drag slider. CORRECTED ORIENTATION:
+            LEFT  = AFTER (orange label), image:
+                    Gemini_Generated_Image_f76gk8f76gk8f76g.webp
+                    (clean finished white BlueTex wall)
+            RIGHT = BEFORE (navy label), image:
+                    BT_blog_case_study_cover_system_after.webp
+                    (old dirty/yellowed insulation with partial install)
+          The visual assignment is driven by the actual image content,
+          not the filenames. The after-case-study filename is retained
+          but visually represents the BEFORE half of the slider.
+        - Implementation: base layer = BEFORE image; top layer = AFTER
+          image, clipped from the left via clip-path. Drag handle
+          (46×46, 4px radius) with navy 3px border. Works with
+          mouse, touch, and a hidden range input for accessibility.
+
+  6.  TermBar System             [Shopify Section: TermBar System]
+        MOVED TO TOP of the page. Sits directly after the before/after
+        slider so TermBar is explained in the first few scrolls.
+        Layout:
+          - Header row: "★ Most Popular Install Method" badge,
+            H2 "The TermBar System Is the Main BlueTex Install Method",
+            subheading, and two CTAs on the right (Install Guide,
+            Application Overview).
+          - Main image grid:
+              · Left big image: termbars-install-photo.jpg
+                (tagged "Installed TermBar Detail")
+              · Right 2×2 grid: installing-termbars.jpg,
+                final-roof-wall-look.jpg, complete-wall-finish.jpg,
+                before-sagging-insulation.jpg (tagged "Before").
+          - Four compact navy-top-border cards:
+              01 What It Is   — aluminum bars fasten BlueTex to the frame
+              02 Why It Works — clean panel look, stays tight
+              03 Why It's Popular — customers prefer the finished look
+              04 Other Options — EasyClip and other methods are secondary
+                 (this card uses the orange top border to visually
+                 distinguish it as a secondary path)
+          - CTAs: Order the $100 Test Kit · Request a Quote
+
+  7.  Common TermBar Questions   [Shopify Section: TermBar FAQ]
+        Label-bar heading. 3 compact cards with orange left border:
+          Q1: Is It Strong?
+              "Yes. TermBars mechanically fasten the material to the
+               building frame..."
+          Q2: Can You Paint It?
+              Uses painted-termbars.jpg as proof image above the answer.
+          Q3: Do I Have to Tear Out the Old Insulation?
+              "Usually no. BlueTex is commonly installed over existing
+               insulation..."
+
+  8.  Intro Content Block        [Shopify Section: Intro]
+        "BlueTex Cover & Repair Systems" + short description paragraph.
+
+  9.  Browse by System           [Shopify Section: Browse by System]
+        Label-bar heading + 4 system cards with real images:
+          Wall Cover & Repair      → complete-wall-finish.jpg
+          Roof Cover & Repair      → final-roof-wall-look.jpg
+          Metal Building Retrofit  → termbars-install-photo.jpg
+          Roll-Up Door Applications → placeholder (no door photo yet)
+
+ 10.  Case Studies / Install     [Shopify Section: Case Study Gallery]
+        Label-bar heading + 3 case cards with captions:
+          Before · Sagging Insulation   → before-sagging-insulation.jpg
+          After · Finished Roof & Wall  → final-roof-wall-look.jpg
+          Complete Wall Finish          → complete-wall-finish.jpg
+        CTA: View Full Gallery
+
+ 11.  Browse by Product Type     [Shopify Section: Browse by Product Type]
+        Label-bar heading + horizontal scroll-snap carousel with arrows.
+        8 cells:
+          BlueTex™ Pro 2mm 50″ Wide
+          Aluminum TermBars (uses termbars-install-photo.jpg)
+          3″ White Vapor Barrier Seam Tape
+          BlueTex™ Cover/Repair System Sample Box  ← exact name
+          EasyClip
+          Roll-Up Door Kits
+          Measuring Guide
+          Install Guide
+
+ 12.  Helper Selector            [Shopify Section: Helper Selector]
+        Label-bar heading "Need Help Choosing the Right System?"
+        Two-column content card with 3 chip selector rows:
+          What are you working on?
+          What condition is your insulation in?
+          What do you need next?
+        Orange CTA: Get Help With My Project
+
+ 13.  Quote CTA                  [Shopify Section: Quote CTA]
+        Navy rectangle, 6px orange left bar, 4px corners:
+          "Send Photos and Dimensions for a Quote"
+          CTAs: Request a Quote · Send Photos for a Quote
+
+ 14.  Resources / Support        [Shopify Section: Resources]
+        Label-bar heading + 4 cards:
+          Measuring Guide · Install Guide · Application Overview ·
+          $100 Test Kit
+
+ 15.  Footer                     [Shopify Section: Footer]
+        Real logo (white, via CSS invert). Brand blurb, contact,
+        Systems, Resources, Company, Get Started columns.
+
+
+============================================================
+TERMBAR GROWTH PLAN COVERAGE CHECK
+============================================================
+
+The homepage now answers every item in the TermBar Growth Plan, in order:
+
+  ✓ What it is — TermBar section has a "What It Is" card
+  ✓ Why it is popular — "Why It's Popular" card + Most Popular badge
+  ✓ Finished TermBar look — big photo + hero slides + wall finish photo
+  ✓ TermBar look vs. EasyClip look — "Other Options" card references
+    EasyClip as secondary (reinforced by hero/card copy)
+  ✓ Order test kit — CTA in hero, TermBar section, and Resources
+  ✓ Short how to install — TermBar cards 01–04 + CTA to full Install
+    Guide
+  ✓ Is it strong — FAQ card 1
+  ✓ Can you paint it — FAQ card 2 with painted-termbars.jpg proof
+  ✓ Quote path — Quote CTA band + nav + helper selector
+  ✓ Simple or complete quote — Quote band copy
+  ✓ Application Overview — CTA buttons in TermBar section + Resources
+  ✓ Install Guide — CTA buttons + Resources card
+  ✓ Request Quote — header nav CTA, hero, TermBar, band, footer
+  ✓ Order $100 Test Kit — header bar, hero, TermBar CTAs, Resources
+  ✓ Case Studies / Gallery — dedicated section with 3 case cards
+  ✓ Other Install Methods secondary — one of four TermBar cards,
+    Browse-by-Product carousel includes EasyClip
+
+
+============================================================
+IMAGE INVENTORY (RELATIVE PATHS FROM output/)
+============================================================
+
+Logo:
+  ../brand_assets/logos/bluetex-logo-med.png     (header + footer)
+
+TermBar / install photos:
+  ../brand_assets/termbars/termbars-install-photo.jpg
+      (TermBar detail · hero, TermBar main, Browse by System card,
+       Browse by Product Type cell)
+  ../brand_assets/termbars/before-sagging-insulation.jpg
+      (TermBar image grid · Case Studies card)
+  ../brand_assets/termbars/painted-termbars.jpg
+      (FAQ card: "Can You Paint It?")
+  ../brand_assets/termbars/installing-termbars.jpg
+      (hero slide 2 · TermBar image grid)
+  ../brand_assets/termbars/final-roof-wall-look.jpg
+      (hero slide 1 · TermBar image grid · Roof Cover card · Case Studies)
+  ../brand_assets/termbars/complete-wall-finish.jpg
+      (hero slide 3 · TermBar image grid · Wall Cover card · Case Studies)
+
+Before / After slider:
+  ../brand_assets/before_after/Gemini_Generated_Image_f76gk8f76gk8f76g.webp
+      AFTER — LEFT side of slider (clean finished BlueTex wall)
+  ../brand_assets/before_after/BT_blog_case_study_cover_system_after.webp
+      BEFORE — RIGHT side of slider (old dirty insulation + partial install)
+
+
+============================================================
+COPY & CTA RULES
+============================================================
+
+Approved CTAs
+  Request a Quote
+  Send Photos for a Quote
+  Get a Material List
+  Order the $100 Test Kit
+  View Install Guide
+  View Application Overview
+  Get Help With My Project
+
+Avoid
+  Shop Now · Buy Now · Learn More · long em dashes · hype language
+
+Product names (must stay exact, with ™)
+  BlueTex™ Pro 2mm 50" Wide Foil/White + Foam
+  BlueTex™ Pro 2mm Super Wide 62"
+  BlueTex™ Supreme 6mm 50" Wide
+  BlueTex™ Supreme 6mm 62" Wide
+  BlueTex™ Cover/Repair System Sample Box   ← EXACTLY this
+  EasyClip™ Purlin Insulation Clip Hangers
+  Aluminum TermBars
+  3" White Vapor Barrier Seam Tape
+
+
+============================================================
+SHOPIFY SECTION MAPPING
+============================================================
+
+Every section in the mockup starts with "<!-- Shopify Section: ... -->".
+Suggested .liquid files:
+
+  section-announcement-bar.liquid
+  section-header.liquid
+  section-hero-carousel-banner.liquid       slides: image, eyebrow, heading, sub, 2 CTAs
+  section-category-button-row.liquid        blocks: label, link (up to 4–6)
+  section-before-after-slider.liquid        before_image, after_image, headings, labels,
+                                              label_side_left="AFTER", label_side_right="BEFORE"
+  section-termbar-system.liquid             header, main image grid (big + 4 tiles),
+                                              4 explainer cards, CTAs
+  section-termbar-faq.liquid                label-bar, 3 Q&A cards (middle card supports image)
+  section-intro-content-block.liquid
+  section-browse-by-system.liquid           label-bar + 4 image cards
+  section-case-study-gallery.liquid         label-bar + cards w/ image + caption
+  section-browse-by-product-type.liquid     label-bar + carousel
+  section-helper-selector.liquid            label-bar + 3 chip selector rows + CTA
+  section-quote-cta.liquid
+  section-resources-grid.liquid
+  section-footer.liquid
+
+
+============================================================
+END OF STRUCTURE NOTES
+============================================================

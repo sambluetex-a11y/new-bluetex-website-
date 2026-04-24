@@ -1,0 +1,162 @@
+.mar-top{margin-top:30px}
+.mar-bot{margin-bottom:30px}
+.mob-center {text-align:center;}
+.mob-hide {display:none;}
+
+@media screen and (max-width: 576px) {
+.border-bottom-mobile{border-bottom:solid 1px #CBCBCB;border-right:0 !Important;}
+}
+
+/* This is to make extra space on teh sides in mobile */
+.mobile-padding{padding:0 30px;}
+.mobile-mar-bot{margin-bottom:30px;}
+
+.site-header{padding:20px 20px 0px 20px;border-bottom: 1px solid #CBCBCB;}
+.logo-home-link{z-index:9999999;position:relative;}
+a.logo-home-link img{max-width:150px;}
+
+
+
+/* Mobile Nav Styles */
+.menu-main-navigation-container{margin-top:110px;}
+.menu-main-navigation-container{margin-top:0px;}
+.nav-menu{height:calc(100vh - 110px);overflow-y: auto;}
+
+/* .sub-menu{height:calc(100vh - 152px);overflow-y: auto;} */
+body.overlay-toggled{height:100%;overflow: hidden;}
+
+.main-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.menu-toggle{margin:-80px 10px 0 0;}
+.main-navigation {position: absolute; z-index:999999;width: calc(100% - 0px);top:120px;right:0;max-width:650px;margin-top:20px;}
+.main-navigation ul ul { background-color: #fff;display:block;min-height:auto;height:calc(100vh);overflow-y: auto;}
+.main-navigation ul ul a { display:block; }
+.menu-item-has-children > a { background: #fff URL('img/rightarrow_darkgrey_icon_16x29.png') no-repeat right 21px;}
+.main-navigation ul li:first-child{padding:0 5% 0 5%;}
+.main-navigation ul li { top:auto; width:100%;background-color:#fff;position:relative;padding:15px 5% 0 5%;}
+.main-navigation li a { font: normal normal 600 24px/72px Montserrat;letter-spacing: 0.48px;color: #0027B7;text-transform: uppercase;opacity: 1;border-bottom:1px solid #5C5C5C;display:block;}
+
+.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul { left: 0; }
+.main-navigation ul li.focus {position:absolute;top:0px;z-index:9999;}
+.main-navigation.toggled ul li ul{display: none ;}
+.main-navigation.toggled ul li.focus ul{display: block;height:100vh;height:calc(100vh - 155px);overflow-y: auto;}
+.main-navigation ul li.focus ul li:last-child{ margin-bottom: 200px;}
+
+.main-navigation ul li.focus a { text-align: center;	background: #fff URL('img/leftarrow_darkgrey_icon_16x29.png') no-repeat left 21px;}
+.main-navigation ul li.focus ul li a { background:#fff; text-align: left; }
+.nav-menu{background-color:#fff;padding-bottom:100px;}
+.nav-menu .sub-menu li { padding:0 5%; }
+.nav-menu .sub-menu li a { font: normal normal 600 24px/30px Montserrat;letter-spacing: 0.48px;color: #4B4B4B;background-color: #fff;text-transform: uppercase;opacity: 1;padding:21px 0;}
+li.services ul li:first-child, li.abouts ul li:first-child{display: none;}
+.nav-menu .sub-menu li a:hover { text-decoration: underline; }
+.nav-menu .sub-menu :last-child a { color:#0027B7; }
+.main-navigation.toggled ul {max-width:650px;right:0; }
+.menu-toggle {position:absolute;top:-30px;right:0;display: block;float:right;clear:both;width:90px;border: none;cursor: pointer;background: Transparent;padding: 0;}
+.menu-toggle:focus { border: none;outline:none; }
+.nav-menu span.menu-item-description{display:none;}
+
+@media screen and (max-width: 365px) {
+ul.core-nav li a{display:block;line-height:62px;font-size:15px;padding:0;margin:0;text-transform:uppercase;}
+}
+
+
+.footer-heading{margin-top:15px;text-align:center;}
+.footer-heading:first-child:{margin-top:0;}
+.footer-list li {text-align:center;}
+ ul.product-comma-list.in-content li {margin:0;padding:4px 0;}
+ul#policy_links li{display:block;margin-bottom:10px;}
+ul#policy_links li a{margin-right:0;padding:0;}
+ul#policy_links li a:after{display:none;}
+
+
+
+#content-overlay{min-height:100%;position: fixed;}
+
+
+/* Product Page Styles */
+@media screen and (min-width: 991px) {
+.single-products .cta.secondary{margin-left:20px;}
+}
+
+
+#gallery_content{overflow-y:scroll;}
+#gallery_content{margin: 2vh 0;height:96vh;}
+.related-markets-flickity .flickity-prev-next-button.previous {display:none;}
+.related-markets-flickity .flickity-prev-next-button.next {display:none;}
+
+/* Product Catalog Home Styles */
+.hero-title{position:absolute;left:45%;top:5%;font: normal normal 800 40px/50px Montserrat;letter-spacing: 0px;color: #FFFFFF;}
+.hero-p{position:absolute;left:45%;top:30%;width:55%;font: normal normal 600 16px/20px Montserrat;letter-spacing: 0px;color: #FFFFFF;}
+a.hero-action{position:absolute;left:45%;top:60%;}
+a.hero-action, a.hero-text-action{font: normal normal bold 16px/19px Montserrat;border:solid 3px transparent;border-radius: 30px;padding:13px 14px;}
+
+.product-home-text-carousel .flickity-page-dots{bottom:-15px;}
+.popular-products-flickity .flickity-prev-next-button.next {right:-30px;}
+.popular-products-flickity .flickity-prev-next-button.previous {left:-30px;}
+
+.pt-cv-thumbnail{display:block;margin: auto;}
+
+.checkbox-wrapper.has-more:before, .checkbox-wrapper.show-more:before{
+				background-image: linear-gradient(#F4F4F4, #F4F4F4);opacity:.95;}
+.cvp-label-heading{position: relative;}
+
+
+@media screen and (max-width: 767px) {
+.bg-gray-mob-only{background-color:#F4F4F4;padding: 15px 0;}
+.cvp-live-filter{display:none !Important;}
+.cvp-label-heading.show-all-filters:before{
+  content: 'Show Filters';
+  position:absolute;
+  right: 30px;
+  color:#0027B7;text-transform:capitalize;letter-spacing: 0; font-weight: normal;
+}
+.cvp-label-heading:before {
+	content: 'Collapse Filters';
+	position:absolute;
+	right: 30px;
+	color:#0027B7;text-transform:capitalize;letter-spacing: 0; font-weight: normal;
+}
+/* .cvp-label-heading:after {
+	border-style: solid;
+	border-width: 5px 5px 0 0;
+	content: 'Hide Filters';
+	display: inline-block;
+
+	right: 50px;
+	position: absolute;
+	top: 24px;
+	height: 20px;
+	transform: rotate(-45deg);
+	vertical-align: middle;
+	width: 20px;
+	cursor: pointer;
+	z-index:999;
+} */
+
+/* .cvp-label-heading.show-all-filters:after {
+  content: '+';
+  transform: rotate(0);
+  font-size: 50px;
+  border: none;
+	top: 17px;
+} */
+}
+
+#search-wrapper { 
+  margin-bottom:50px; 
+} 
+
+.gtranslate_wrapper { 
+        margin-left: auto !important; 
+        width: fit-content !important; 
+        display: block !important; 
+        margin-right:75px; 
+        margin-top:10px; 
+    } 

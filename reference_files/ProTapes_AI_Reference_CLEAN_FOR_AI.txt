@@ -1,0 +1,32 @@
+BLUE TEX WEBSITE REFERENCE FILE — PROTAPES STRUCTURE STUDY
+
+Purpose:
+Use this file as a structural reference only.
+
+Do not copy ProTapes wording.
+Do not copy ProTapes branding.
+Do not copy product names.
+Study the site flow, page hierarchy, section organization, CTA strategy, product/category grouping, industry/application structure, and trust-building sections.
+
+BlueTex priorities:
+1. Wall Cover & Repair System
+2. Roof Cover & Repair System
+3. Metal Building Retrofit Applications
+4. Roll-up Door Applications
+
+Everything else is secondary.
+
+Key idea:
+ProTapes organizes a wide product/service catalog through clear buckets:
+- Products
+- Industries
+- Services / capabilities
+- Popular products
+- Brochures / downloadable resources
+- Trust and support sections
+- Quote/contact CTAs
+
+For BlueTex, adapt this structure into a simple metal-building-focused website.
+
+==================================================
+

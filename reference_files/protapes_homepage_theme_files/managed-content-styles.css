@@ -1,0 +1,10 @@
+figcaption{text-align:center;}
+.tape-types-flickity {width:100%;}
+.tape-types-flickity .carousel-cell {display:inline-block;text-align:center;margin:0;vertical-align:top;width:33%;}
+.tape-types-flickity .carousel-cell:first-child{margin-left:0;}
+@media only screen and (min-width: 576px) {.tape-types-flickity .carousel-cell {}}
+@media only screen and (min-width: 768px) {.tape-types-flickity .carousel-cell {width:25%}}
+@media only screen and (min-width: 992px) {.tape-types-flickity .carousel-cell {width:20%}}
+@media only screen and (min-width: 1200px) {.tape-types-flickity .carousel-cell {width:20%}}
+.tape-types-flickity .flickity-prev-next-button.next {right:0px;top:40%}
+.tape-types-flickity .flickity-prev-next-button.previous {left:0px;top:40%}

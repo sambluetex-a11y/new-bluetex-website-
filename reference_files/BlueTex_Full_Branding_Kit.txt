@@ -1,0 +1,203 @@
+BLUETEX FULL BRANDING KIT (FROM CSS OVERVIEW)
+
+==================================================
+PRIMARY BRAND COLORS
+==================================================
+Primary Blue:
+#0011a7  (MAIN BRAND COLOR)
+
+Secondary Blue:
+#3f62c5
+#002f6c (derived from rgba variant)
+
+==================================================
+NEUTRAL COLOR SYSTEM
+==================================================
+Light Backgrounds:
+#ffffff
+#fafafa
+#eeeeee
+
+Light Grays:
+#e6e6e7
+#d6d4da
+#b0afb3
+
+Mid Grays:
+#adadae
+#878688
+#828186
+
+Dark Grays:
+#65636a
+#535254
+#3b3a3d
+
+Primary Text:
+#1b1b1b
+#050505
+#000000
+
+Opacity Variants (use sparingly):
+#0000002e
+#000000b3
+#002f6c4d
+
+==================================================
+TYPOGRAPHY SYSTEM
+==================================================
+
+Primary Font:
+Lato, sans-serif
+
+Fallback:
+sans-serif
+
+Secondary Font (rare use):
+GTStandard-M, sans-serif
+
+--------------------------------------------------
+FONT SIZES (REAL USAGE DATA)
+--------------------------------------------------
+
+Primary body:
+16px (MOST USED)
+
+Supporting sizes:
+12px
+14px
+15px
+11px
+
+Headings / emphasis:
+20px
+22px
+24px
+28px
+
+--------------------------------------------------
+FONT WEIGHTS
+--------------------------------------------------
+400 (regular) — dominant
+600 (semi-bold)
+700 (bold)
+
+--------------------------------------------------
+LINE HEIGHTS
+--------------------------------------------------
+Primary:
+25.6px (body)
+
+Common:
+22.4px
+20.8px
+19.2px
+
+Large text:
+30.8px+
+33.6px+
+
+==================================================
+DESIGN SYSTEM INTERPRETATION
+==================================================
+
+PRIMARY BRAND LOOK:
+- Clean
+- Industrial
+- Functional
+- Contractor-focused
+- No fluff
+
+COLOR STRATEGY:
+- Blue used for actions + highlights
+- Heavy grayscale foundation
+- White backgrounds dominate
+
+TYPOGRAPHY STYLE:
+- Simple
+- Highly readable
+- Utility-first (not decorative)
+
+==================================================
+BUTTON + CTA SYSTEM (INFERRED)
+==================================================
+
+Primary CTA:
+Background: #0011a7
+Text: #ffffff
+
+Secondary CTA:
+Background: #eeeeee or #fafafa
+Text: #1b1b1b
+
+Text Links:
+Color: #0011a7
+
+==================================================
+BORDER + UI ELEMENTS
+==================================================
+
+Borders:
+#eeeeee
+#e6e6e7
+#828186
+
+Dividers:
+Light gray only
+
+No heavy borders unless needed
+
+==================================================
+CONTRAST + ACCESSIBILITY NOTES
+==================================================
+
+Issues detected: 5
+
+Recommendation:
+- Avoid light gray text on white
+- Use #1b1b1b or darker for readability
+- Blue on white is safe and strong
+
+==================================================
+MEDIA QUERY STRUCTURE (RESPONSIVE)
+==================================================
+
+Primary breakpoints:
+
+768px (tablet)
+600px (mobile small)
+800px (tablet wide)
+1200px (desktop)
+
+Additional minor breakpoints exist but should be simplified
+
+==================================================
+SIMPLIFIED DESIGN RULES (IMPORTANT)
+==================================================
+
+DO:
+- Use #0011a7 for all primary actions
+- Keep layouts clean and minimal
+- Use Lato consistently
+- Stick to grayscale + blue
+
+DO NOT:
+- Introduce new colors
+- Overuse transparency
+- Use decorative fonts
+- Overcomplicate layouts
+
+==================================================
+HOW TO USE THIS
+==================================================
+
+Use this file for:
+- Website pages
+- Shopify design
+- PDFs (quote guide)
+- Emails
+- Codex / AI prompts
+
+==================================================
+END OF FILE
+==================================================
