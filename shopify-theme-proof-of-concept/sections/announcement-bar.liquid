@@ -1,0 +1,45 @@
+{% comment %}
+  BlueTex Announcement Bar
+  Mirrors the navy strip at the very top of the mockup.
+  Editable in Theme Customize: text + optional link.
+{% endcomment %}
+
+{%- if section.settings.text != blank -%}
+  <div class="announce">
+    {{ section.settings.text }}
+    {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}
+      &nbsp;·&nbsp;<a href="{{ section.settings.link_url }}">{{ section.settings.link_label }} →</a>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Message",
+      "default": "Free shipping on orders $100+ in the contiguous USA"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Order the $100 Test Kit"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ],
+  "default": {
+    "settings": {
+      "text": "Free shipping on orders $100+ in the contiguous USA",
+      "link_label": "Order the $100 Test Kit"
+    }
+  }
+}
+{% endschema %}

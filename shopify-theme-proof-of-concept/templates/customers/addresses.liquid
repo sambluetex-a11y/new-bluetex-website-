@@ -1,0 +1,21 @@
+<section style="padding:60px 0;background:#fff;">
+  <div class="container">
+    <h1 style="color:var(--navy);font-size:28px;margin-bottom:18px;">Your Addresses</h1>
+    <p><a href="{{ routes.account_url }}">← Back to account</a></p>
+
+    {%- paginate customer.addresses by 6 -%}
+      {%- for address in customer.addresses -%}
+        <div style="border:1px solid var(--line-soft);padding:18px;margin:14px 0;border-radius:2px;">
+          <strong>{{ address.first_name }} {{ address.last_name }}</strong>
+          <div style="color:var(--muted);font-size:14px;margin-top:6px;">{{ address | format_address }}</div>
+        </div>
+      {%- else -%}
+        <p>No saved addresses.</p>
+      {%- endfor -%}
+
+      {%- if paginate.pages > 1 -%}
+        <div style="margin-top:18px;">{{ paginate | default_pagination }}</div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>

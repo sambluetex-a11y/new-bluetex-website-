@@ -1,0 +1,28 @@
+<section style="padding:48px 0;background:#fff;">
+  <div class="container">
+    <h1 style="color:var(--navy);font-size:32px;margin-bottom:18px;">Search</h1>
+    <form action="{{ routes.search_url }}" method="get" class="searchbar" style="max-width:600px;margin:0 0 28px;">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search systems, products, install guides…" aria-label="Search">
+      <button type="submit" class="searchbar-btn">Search</button>
+    </form>
+
+    {%- if search.performed -%}
+      <p style="color:var(--muted);margin-bottom:18px;">{{ search.results_count }} results for "{{ search.terms | escape }}"</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;">
+        {%- for item in search.results -%}
+          <a href="{{ item.url }}" class="prod-cell" style="text-decoration:none;">
+            <div class="prod-img">
+              {%- if item.featured_image != blank or item.image != blank -%}
+                {%- assign img = item.featured_image | default: item.image -%}
+                {{ img | image_url: width: 480 | image_tag: alt: item.title, loading: 'lazy' }}
+              {%- else -%}
+                [ {{ item.title | truncate: 18 }} ]
+              {%- endif -%}
+            </div>
+            <div class="prod-name">{{ item.title }}</div>
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>

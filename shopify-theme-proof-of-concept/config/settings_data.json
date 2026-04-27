@@ -1,0 +1,18 @@
+{
+  "current": {
+    "phone": "1-800-595-8772",
+    "phone_link": "18005958772",
+    "address": "9560 Swafford Rd, Justin, TX 76247",
+    "color_navy": "#12205c",
+    "color_orange": "#ee7f12"
+  },
+  "presets": {
+    "BlueTex Default": {
+      "phone": "1-800-595-8772",
+      "phone_link": "18005958772",
+      "address": "9560 Swafford Rd, Justin, TX 76247",
+      "color_navy": "#12205c",
+      "color_orange": "#ee7f12"
+    }
+  }
+}

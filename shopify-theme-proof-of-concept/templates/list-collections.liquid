@@ -1,0 +1,21 @@
+<section style="padding:48px 0;background:#fff;">
+  <div class="container">
+    <h1 style="color:var(--navy);font-size:32px;margin-bottom:24px;">Collections</h1>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
+      {%- for collection in collections -%}
+        {%- unless collection.handle == 'frontpage' -%}
+          <a href="{{ collection.url }}" class="prod-cell" style="text-decoration:none;">
+            <div class="prod-img">
+              {%- if collection.image != blank -%}
+                {{ collection.image | image_url: width: 600 | image_tag: alt: collection.title }}
+              {%- else -%}
+                [ {{ collection.title }} ]
+              {%- endif -%}
+            </div>
+            <div class="prod-name">{{ collection.title }}</div>
+          </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

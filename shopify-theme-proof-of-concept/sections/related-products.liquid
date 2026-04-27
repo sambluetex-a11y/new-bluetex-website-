@@ -1,0 +1,91 @@
+{% comment %}
+  BlueTex Related Products carousel
+  Horizontally scrollable strip of products. Source the products via a
+  collection setting so it stays merchandiser-controlled.
+{% endcomment %}
+
+<section class="browse-prod">
+  <div class="container">
+    <div class="label-bar">
+      {{ section.settings.heading }}
+      {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}
+        <a href="{{ section.settings.link_url }}">{{ section.settings.link_label }} →</a>
+      {%- endif -%}
+    </div>
+
+    <div class="carousel-wrap" data-carousel>
+      <button class="carousel-arrow prev" data-carousel-prev aria-label="Scroll left">‹</button>
+      <div class="carousel-track" data-carousel-track>
+        {%- assign source_collection = collections[section.settings.collection] -%}
+        {%- if source_collection.products.size > 0 -%}
+          {%- for prod in source_collection.products limit: 12 -%}
+            <a href="{{ prod.url }}" class="prod-cell">
+              <div class="prod-img">
+                {%- if prod.featured_image != blank -%}
+                  {{ prod.featured_image | image_url: width: 480 | image_tag: alt: prod.title, loading: 'lazy' }}
+                {%- else -%}
+                  [ {{ prod.title | truncate: 18 }} ]
+                {%- endif -%}
+              </div>
+              <div class="prod-name">{{ prod.title }}</div>
+            </a>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for block in section.blocks -%}
+            <a href="{{ block.settings.url }}" class="prod-cell" {{ block.shopify_attributes }}>
+              <div class="prod-img">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 480 | image_tag: alt: block.settings.name, loading: 'lazy' }}
+                {%- else -%}
+                  [ {{ block.settings.name }} ]
+                {%- endif -%}
+              </div>
+              <div class="prod-name">{{ block.settings.name }}</div>
+            </a>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+      <button class="carousel-arrow next" data-carousel-next aria-label="Scroll right">›</button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Related products",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Pairs With These System Parts" },
+    { "type": "text", "id": "link_label", "label": "Side link label", "default": "View All Products" },
+    { "type": "url", "id": "link_url", "label": "Side link URL" },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Source collection",
+      "info": "If empty, the manual blocks below are used instead."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "manual_product",
+      "name": "Manual product card",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Product name" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "url", "id": "url", "label": "URL" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Related products",
+      "blocks": [
+        { "type": "manual_product", "settings": { "name": "BlueTex Pro 2mm 50″ Wide" } },
+        { "type": "manual_product", "settings": { "name": "Aluminum TermBars (48″)" } },
+        { "type": "manual_product", "settings": { "name": "3″ White Vapor Barrier Seam Tape" } },
+        { "type": "manual_product", "settings": { "name": "EasyClips for Red Iron Roofline" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

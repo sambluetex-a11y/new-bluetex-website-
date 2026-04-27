@@ -1,0 +1,64 @@
+{% comment %}
+  BlueTex Header
+  Logo + searchbar + utility (phone/account/cart) + nav row.
+  Nav links use a "menu" linklist setting so they can be edited in
+  Online Store → Navigation.
+{% endcomment %}
+
+<header class="header">
+  <div class="header-inner">
+    <a href="{{ routes.root_url }}" class="logo" aria-label="{{ shop.name }} home">
+      {%- if settings.logo != blank -%}
+        {{ settings.logo | image_url: width: 320 | image_tag: alt: shop.name, height: 54 }}
+      {%- else -%}
+        <span style="font-weight:900;color:var(--navy);font-size:20px;letter-spacing:1px;">{{ shop.name | upcase }}</span>
+      {%- endif -%}
+    </a>
+
+    <form class="searchbar" role="search" action="{{ routes.search_url }}" method="get">
+      <input type="search" name="q" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+      <button type="submit" class="searchbar-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        {{ 'general.search.submit' | t }}
+      </button>
+    </form>
+
+    <div class="header-utility">
+      {%- if settings.phone != blank -%}
+        <a href="tel:{{ settings.phone_link }}" class="phone-pill">📞 {{ settings.phone }}</a>
+      {%- endif -%}
+      <a href="{{ routes.account_url }}" class="icon-btn" aria-label="{{ 'general.accessibility.account' | t }}">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      </a>
+      <a href="{{ routes.cart_url }}" class="icon-btn" aria-label="{{ 'general.accessibility.cart' | t }}">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L22 7H6"/><circle cx="9" cy="21" r="1.5"/><circle cx="18" cy="21" r="1.5"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="navrow">
+    <nav class="nav" aria-label="Primary">
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}"
+           {% if link.handle contains 'quote' or link.handle contains 'request' %}class="is-cta"{% endif %}>
+          {{ link.title }}
+        </a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Primary navigation",
+      "default": "main-menu",
+      "info": "Edit links in Online Store → Navigation. CTA styling is auto-applied to a link with handle containing 'quote' or 'request'."
+    }
+  ]
+}
+{% endschema %}

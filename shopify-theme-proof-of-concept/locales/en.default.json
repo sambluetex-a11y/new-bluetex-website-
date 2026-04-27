@@ -1,0 +1,21 @@
+{
+  "general": {
+    "search": {
+      "placeholder": "Search systems, products, install guides…",
+      "submit": "Search"
+    },
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "menu": "Menu",
+      "account": "Account",
+      "cart": "Cart"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Order Now",
+      "sold_out": "Sold out",
+      "quantity": "Quantity"
+    }
+  }
+}

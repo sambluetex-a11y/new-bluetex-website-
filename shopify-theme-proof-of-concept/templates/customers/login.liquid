@@ -1,0 +1,23 @@
+<section style="padding:60px 0;background:#fff;">
+  <div class="container" style="max-width:480px;">
+    <h1 style="color:var(--navy);font-size:28px;margin-bottom:18px;">Sign In</h1>
+
+    {%- form 'customer_login' -%}
+      {%- if form.errors -%}
+        <div style="color:#c0392b;margin-bottom:14px;font-size:13px;">{{ form.errors | default_errors }}</div>
+      {%- endif -%}
+      <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--ink);margin-bottom:6px;">Email</label>
+      <input type="email" name="customer[email]" required style="width:100%;padding:10px 12px;border:2px solid var(--line);margin-bottom:14px;border-radius:2px;">
+
+      <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--ink);margin-bottom:6px;">Password</label>
+      <input type="password" name="customer[password]" required style="width:100%;padding:10px 12px;border:2px solid var(--line);margin-bottom:14px;border-radius:2px;">
+
+      <button type="submit" class="btn btn--orange btn--lg btn--block">Sign In</button>
+    {%- endform -%}
+
+    <div style="margin-top:18px;font-size:13px;">
+      <a href="{{ routes.account_register_url }}">Create an account</a> ·
+      <a href="{{ routes.account_recover_url }}">Forgot password?</a>
+    </div>
+  </div>
+</section>

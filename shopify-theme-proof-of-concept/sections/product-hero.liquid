@@ -1,0 +1,161 @@
+{% comment %}
+  BlueTex Product Hero (PDP buy box)
+  Renders product gallery on the left and the buy box on the right.
+  Pulls product images, title, price, and form from Shopify, while
+  letting the merchant edit the eyebrow, marketing subtitle,
+  bullet list, badge, redemption note, trust strip, and CTA labels
+  through Theme Customize.
+
+  Bullets and trust items are blocks so the merchant can edit count.
+{% endcomment %}
+
+<section class="pdp-wrap">
+  <div class="pdp-grid">
+
+    {%- comment -%} Gallery {%- endcomment -%}
+    <div class="pdp-gallery" data-gallery>
+      <div class="gal-main">
+        {%- if section.settings.badge_label != blank -%}
+          <span class="gal-badge">{{ section.settings.badge_label }}</span>
+        {%- endif -%}
+        {%- if product.featured_image != blank -%}
+          <img data-gallery-main
+               src="{{ product.featured_image | image_url: width: 1000 }}"
+               alt="{{ product.featured_image.alt | default: product.title | escape }}">
+        {%- endif -%}
+      </div>
+      {%- if product.media.size > 1 -%}
+        <div class="gal-thumbs" data-gallery-thumbs>
+          {%- for media in product.media limit: 5 -%}
+            <button type="button"
+                    class="gal-thumb {% if forloop.first %}is-active{% endif %}"
+                    data-gallery-thumb
+                    data-src="{{ media.preview_image | image_url: width: 1000 }}">
+              <img src="{{ media.preview_image | image_url: width: 240 }}" alt="">
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Buy box {%- endcomment -%}
+    <div class="pdp-buy">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="buy-eyebrow">★ {{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      <h1 class="pdp-title">{{ product.title }}</h1>
+
+      {%- if section.settings.subtitle != blank -%}
+        <p class="pdp-sub">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+
+      <div class="pdp-price-row">
+        <div class="pdp-price">{{ product.price | money }}</div>
+        {%- if section.settings.price_note != blank -%}
+          <div class="pdp-price-note">{{ section.settings.price_note }}</div>
+        {%- endif -%}
+      </div>
+
+      {%- assign bullet_blocks = section.blocks | where: 'type', 'bullet' -%}
+      {%- if bullet_blocks.size > 0 -%}
+        <ul class="pdp-bullets">
+          {%- for block in bullet_blocks -%}
+            <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- form 'product', product -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <input type="hidden" name="id" value="{{ current_variant.id }}">
+
+        <div class="qty-row">
+          <span class="qty-label">{{ 'products.product.quantity' | t }}</span>
+          <div class="qty" data-qty>
+            <button type="button" data-qty-dec aria-label="Decrease">−</button>
+            <input type="text" name="quantity" value="1" inputmode="numeric" aria-label="{{ 'products.product.quantity' | t }}">
+            <button type="button" data-qty-inc aria-label="Increase">+</button>
+          </div>
+        </div>
+
+        <div class="pdp-cta-stack">
+          <button type="submit"
+                  class="btn btn--orange btn--lg btn--block"
+                  {% unless current_variant.available %}disabled{% endunless %}>
+            {%- if current_variant.available -%}
+              {{ section.settings.add_to_cart_label | default: 'products.product.add_to_cart' | t }}
+              {%- if section.settings.show_price_in_cta -%} — {{ current_variant.price | money_without_trailing_zeros }}{%- endif -%}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- endif -%}
+          </button>
+          {%- if section.settings.secondary_cta_label != blank -%}
+            <a href="{{ section.settings.secondary_cta_url }}" class="btn btn--navy btn--block">{{ section.settings.secondary_cta_label }}</a>
+          {%- endif -%}
+        </div>
+      {%- endform -%}
+
+      {%- assign trust_blocks = section.blocks | where: 'type', 'trust' -%}
+      {%- if trust_blocks.size > 0 -%}
+        <div class="pdp-trust">
+          {%- for block in trust_blocks -%}
+            <div class="trust" {{ block.shopify_attributes }}>
+              <div class="trust-ico">{{ block.settings.icon | default: '★' }}</div>
+              <div>
+                <strong>{{ block.settings.heading }}</strong>
+                <span>{{ block.settings.body }}</span>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.help_text != blank -%}
+        <div class="pdp-help">
+          {{ section.settings.help_text }}
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product hero",
+  "settings": [
+    { "type": "text", "id": "badge_label", "label": "Gallery badge", "default": "$100 Test Kit" },
+    { "type": "text", "id": "eyebrow", "label": "Buy-box eyebrow", "default": "Try Before You Commit" },
+    { "type": "textarea", "id": "subtitle", "label": "Marketing subtitle", "default": "Full-size pieces of every part of the system so you can test the install on one section of your metal building before ordering full rolls." },
+    { "type": "text", "id": "price_note", "label": "Price note", "default": "Fully redeemable on a $500+ order" },
+    { "type": "text", "id": "add_to_cart_label", "label": "Add-to-cart button label", "default": "Order the Sample Box" },
+    { "type": "checkbox", "id": "show_price_in_cta", "label": "Show price on the cart button", "default": true },
+    { "type": "text", "id": "secondary_cta_label", "label": "Secondary CTA label", "default": "Send Photos for a Full-Building Quote" },
+    { "type": "url", "id": "secondary_cta_url", "label": "Secondary CTA URL" },
+    { "type": "richtext", "id": "help_text", "label": "Help text under CTAs", "default": "<p>Not sure if this is the right kit? <a href=\"#\">Send us photos and dimensions →</a></p>" }
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Bullet point",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "20 ft of BlueTex 2mm Pro 50″" }
+      ]
+    },
+    {
+      "type": "trust",
+      "name": "Trust item",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icon character", "default": "$" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Risk-Free Trial" },
+        { "type": "text", "id": "body", "label": "Body", "default": "$100 credited back on any order of $500 or more." }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Product hero" }
+  ]
+}
+{% endschema %}

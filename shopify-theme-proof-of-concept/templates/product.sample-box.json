@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "product-hero": {
+      "type": "product-hero",
+      "settings": {
+        "badge_label": "$100 Test Kit",
+        "eyebrow": "Try Before You Commit",
+        "subtitle": "Full-size pieces of every part of the system so you can test the install on one section of your metal building before ordering full rolls.",
+        "price_note": "Fully redeemable on a $500+ order",
+        "add_to_cart_label": "Order the Sample Box",
+        "show_price_in_cta": true,
+        "secondary_cta_label": "Send Photos for a Full-Building Quote"
+      },
+      "blocks": {
+        "b1": { "type": "bullet", "settings": { "text": "20 ft of BlueTex 2mm Pro 50″ — the same product used on full-building cover and repair installs" } },
+        "b2": { "type": "bullet", "settings": { "text": "4 aluminum TermBars (48″) and the 1″ #10 hex screws to fasten them" } },
+        "b3": { "type": "bullet", "settings": { "text": "30 ft of 3″ white vapor barrier seam tape for sealing the panels" } },
+        "b4": { "type": "bullet", "settings": { "text": "Sample EasyClips for testing roofline attachment on red iron buildings" } },
+        "b5": { "type": "bullet", "settings": { "text": "Show owners, tenants, or management exactly how the finished panel looks" } },
+        "t1": { "type": "trust", "settings": { "icon": "$", "heading": "Risk-Free Trial", "body": "$100 credited back on any order of $500 or more." } },
+        "t2": { "type": "trust", "settings": { "icon": "↓", "heading": "Free Shipping", "body": "Ships free in the contiguous USA." } },
+        "t3": { "type": "trust", "settings": { "icon": "★", "heading": "Full-Size Materials", "body": "Real product, not swatches. Test it on the building." } },
+        "t4": { "type": "trust", "settings": { "icon": "☎", "heading": "Real Person on the Phone", "body": "We help you size up the order." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "t1", "t2", "t3", "t4"]
+    },
+    "whats-in-the-box": {
+      "type": "whats-in-the-box",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "qty_label": "Qty 1 · 20 ft", "heading": "BlueTex 2mm Pro 50″", "body": "A 20-foot length of our 50″-wide 2mm Pro material — the same roll material used on full-building Cover & Repair installs." } },
+        "i2": { "type": "item", "settings": { "qty_label": "Qty 4 · 48″ each", "heading": "Aluminum TermBars", "body": "Four 48″ aluminum TermBars for fastening BlueTex tight to the purlins and girts on a metal building.", "accent": true } },
+        "i3": { "type": "item", "settings": { "qty_label": "Qty 15", "heading": "1″ #10 Hex Screws", "body": "5/16″ hex-head self-drillers used to attach the TermBars to the building framing." } },
+        "i4": { "type": "item", "settings": { "qty_label": "Qty 1 · 30 ft", "heading": "3″ White Vapor Barrier Seam Tape", "body": "White seam tape for sealing the joints between BlueTex panels and maintaining the vapor barrier.", "accent": true } },
+        "i5": { "type": "item", "settings": { "qty_label": "Qty 6 · Sample Set", "heading": "EasyClips", "body": "Sample set of EasyClips for attaching BlueTex to the roofline on a red iron style building." } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5"]
+    },
+    "redeemable": {
+      "type": "redeemable-band"
+    },
+    "faq": {
+      "type": "faq-grid",
+      "settings": { "heading": "Common Questions", "link_label": "View Full FAQ" },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Is the $100 really refundable?", "answer": "<p>It's redeemable, not refunded in cash. Place a follow-on order of $500 or more and we credit the $100 against the new order. One credit per $500 of purchase.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Why 50″ wide and not something wider?", "answer": "<p>50″ is the width we recommend for metal building cover and repair work — it lines up cleanly with standard purlin and girt spacing and keeps the install fast.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "Do I have to tear out the old insulation first?", "answer": "<p>Usually no. BlueTex is most often installed over the existing insulation.</p>" } },
+        "f4": { "type": "faq", "settings": { "question": "Will this work on a red iron building?", "answer": "<p>Yes. The kit includes a sample set of EasyClips specifically for attaching BlueTex to the roofline on a red iron style building, plus TermBars for the wall sections.</p>" } },
+        "f5": { "type": "faq", "settings": { "question": "How big a section can I cover with one kit?", "answer": "<p>One bay. The kit covers roughly 20 ft of 50″-wide material — enough to install one full TermBar run between two purlins or girts.</p>" } },
+        "f6": { "type": "faq", "settings": { "question": "What's the next step after I test the kit?", "answer": "<p>Send us photos of your building and the basic dimensions. We'll put together a material list and a quote. Use the $100 from the kit toward that order.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"]
+    },
+    "quote-cta": {
+      "type": "quote-cta",
+      "settings": {
+        "heading": "Ready for a Full-Building Material List?",
+        "body": "Send photos and rough dimensions of the building. We put together a material list and quote faster when we can see what you're working with — and your $100 sample-box credit goes toward the order."
+      }
+    },
+    "related": {
+      "type": "related-products"
+    }
+  },
+  "order": [
+    "product-hero",
+    "whats-in-the-box",
+    "redeemable",
+    "faq",
+    "quote-cta",
+    "related"
+  ]
+}

@@ -1,0 +1,99 @@
+{% comment %}
+  BlueTex Hero Carousel
+  Each slide is a block — merchants add/remove/reorder slides in
+  Theme Customize. Image, eyebrow, heading, lead, two CTAs, badge.
+{% endcomment %}
+
+<section class="hero-wrap">
+  <div class="hero">
+    <div class="hero-carousel"
+         data-hero-carousel
+         data-autoplay-ms="{{ section.settings.autoplay_ms | default: 7000 }}">
+      <div class="hero-slides" data-hero-slides>
+        {%- for block in section.blocks -%}
+          <div class="hero-slide" {{ block.shopify_attributes }}>
+            <div class="hero-text">
+              {%- if block.settings.eyebrow != blank -%}
+                <span class="eyebrow">{{ block.settings.eyebrow }}</span>
+              {%- endif -%}
+              <h1>{{ block.settings.heading }}</h1>
+              {%- if block.settings.lead != blank -%}
+                <p class="hero-lead">{{ block.settings.lead }}</p>
+              {%- endif -%}
+              <div class="btn-row">
+                {%- if block.settings.cta1_label != blank -%}
+                  <a href="{{ block.settings.cta1_url }}" class="btn btn--orange btn--lg">{{ block.settings.cta1_label }}</a>
+                {%- endif -%}
+                {%- if block.settings.cta2_label != blank -%}
+                  <a href="{{ block.settings.cta2_url }}" class="btn btn--navy btn--lg">{{ block.settings.cta2_label }}</a>
+                {%- endif -%}
+              </div>
+              {%- if block.settings.strip != blank -%}
+                <div class="hero-strip">
+                  {%- assign chips = block.settings.strip | split: '|' -%}
+                  {%- for chip in chips -%}
+                    <span>{{ chip | strip }}</span>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            </div>
+            <div class="hero-visual">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1400 | image_tag: alt: block.settings.heading, loading: 'lazy' }}
+              {%- endif -%}
+              {%- if block.settings.image_label != blank -%}
+                <span class="hero-vlabel">{{ block.settings.image_label }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <button class="hero-arrow prev" data-hero-prev aria-label="Previous slide">‹</button>
+      <button class="hero-arrow next" data-hero-next aria-label="Next slide">›</button>
+      <div class="hero-dots" data-hero-dots></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero carousel",
+  "settings": [
+    {
+      "type": "number",
+      "id": "autoplay_ms",
+      "label": "Autoplay interval (ms, 0 = off)",
+      "default": 7000
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Cover · Repair · Retrofit" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Fix Old Metal Building Insulation Without Tearing It Out" },
+        { "type": "textarea", "id": "lead", "label": "Lead paragraph", "default": "Cover torn, stained, or sagging insulation with a clean BlueTex finish using the TermBar system." },
+        { "type": "text", "id": "cta1_label", "label": "Primary CTA label", "default": "Request a Quote" },
+        { "type": "url", "id": "cta1_url", "label": "Primary CTA URL" },
+        { "type": "text", "id": "cta2_label", "label": "Secondary CTA label", "default": "Order the $100 Test Kit" },
+        { "type": "url", "id": "cta2_url", "label": "Secondary CTA URL" },
+        { "type": "text", "id": "strip", "label": "Trust strip (pipe-separated)", "default": "Blocks 97% radiant heat | Vapor barrier | 10× more durable than vinyl" },
+        { "type": "image_picker", "id": "image", "label": "Slide image" },
+        { "type": "text", "id": "image_label", "label": "Image caption" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Hero carousel",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide", "settings": { "eyebrow": "Most Popular Install", "heading": "The TermBar System Gives BlueTex Its Finished Look" } },
+        { "type": "slide", "settings": { "eyebrow": "Start Small", "heading": "Try the System Before You Commit to a Full Retrofit" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

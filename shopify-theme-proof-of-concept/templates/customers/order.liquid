@@ -1,0 +1,33 @@
+<section style="padding:60px 0;background:#fff;">
+  <div class="container">
+    <h1 style="color:var(--navy);font-size:28px;margin-bottom:8px;">Order {{ order.name }}</h1>
+    <p style="color:var(--muted);margin-bottom:24px;">Placed {{ order.created_at | date: '%B %-d, %Y' }}</p>
+
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--line);text-transform:uppercase;font-size:11px;letter-spacing:1px;color:var(--muted);text-align:left;">
+          <th style="padding:10px 0;">Item</th>
+          <th style="padding:10px 0;">Qty</th>
+          <th style="padding:10px 0;text-align:right;">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for line in order.line_items -%}
+          <tr style="border-bottom:1px solid var(--line-soft);">
+            <td style="padding:12px 0;">{{ line.title }}</td>
+            <td style="padding:12px 0;">{{ line.quantity }}</td>
+            <td style="padding:12px 0;text-align:right;">{{ line.line_price | money }}</td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+      <tfoot>
+        <tr><td colspan="2" style="padding:14px 0;text-transform:uppercase;font-weight:700;">Subtotal</td><td style="padding:14px 0;text-align:right;">{{ order.subtotal_price | money }}</td></tr>
+        <tr><td colspan="2" style="padding:6px 0;">Shipping</td><td style="padding:6px 0;text-align:right;">{{ order.shipping_price | money }}</td></tr>
+        <tr><td colspan="2" style="padding:6px 0;">Tax</td><td style="padding:6px 0;text-align:right;">{{ order.tax_price | money }}</td></tr>
+        <tr><td colspan="2" style="padding:14px 0;font-weight:900;font-size:16px;">Total</td><td style="padding:14px 0;text-align:right;font-weight:900;font-size:16px;">{{ order.total_price | money }}</td></tr>
+      </tfoot>
+    </table>
+
+    <p style="margin-top:24px;"><a href="{{ routes.account_url }}">← Back to account</a></p>
+  </div>
+</section>

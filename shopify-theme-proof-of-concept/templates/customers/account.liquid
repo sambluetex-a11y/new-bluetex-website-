@@ -1,0 +1,32 @@
+<section style="padding:60px 0;background:#fff;">
+  <div class="container">
+    <h1 style="color:var(--navy);font-size:28px;margin-bottom:6px;">Hello, {{ customer.first_name | default: customer.email }}</h1>
+    <p style="color:var(--muted);margin-bottom:24px;"><a href="{{ routes.account_logout_url }}">Sign out</a> · <a href="{{ routes.account_addresses_url }}">Manage addresses</a></p>
+
+    <h2 style="color:var(--navy);font-size:20px;margin-bottom:14px;">Order History</h2>
+    {%- if customer.orders.size > 0 -%}
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--line);text-transform:uppercase;font-size:11px;letter-spacing:1px;color:var(--muted);text-align:left;">
+            <th style="padding:10px 0;">Order</th>
+            <th style="padding:10px 0;">Date</th>
+            <th style="padding:10px 0;">Total</th>
+            <th style="padding:10px 0;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for order in customer.orders -%}
+            <tr style="border-bottom:1px solid var(--line-soft);">
+              <td style="padding:12px 0;"><a href="{{ order.customer_url }}" style="color:var(--navy);font-weight:700;">{{ order.name }}</a></td>
+              <td style="padding:12px 0;">{{ order.created_at | date: '%b %-d, %Y' }}</td>
+              <td style="padding:12px 0;">{{ order.total_price | money }}</td>
+              <td style="padding:12px 0;">{{ order.fulfillment_status_label }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    {%- else -%}
+      <p>No orders yet.</p>
+    {%- endif -%}
+  </div>
+</section>

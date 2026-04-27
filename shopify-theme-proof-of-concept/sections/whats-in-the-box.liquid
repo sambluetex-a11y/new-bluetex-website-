@@ -1,0 +1,75 @@
+{% comment %}
+  BlueTex What's Inside the Sample Box
+  Label-bar heading + 5-up grid of item cards (each item is a block).
+  Plus an editable summary footnote.
+{% endcomment %}
+
+<section class="box-wrap">
+  <div class="container">
+    <div class="label-bar">
+      {{ section.settings.heading }}
+      {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}
+        <a href="{{ section.settings.link_url }}">{{ section.settings.link_label }} →</a>
+      {%- endif -%}
+    </div>
+
+    <div class="box-grid">
+      {%- for block in section.blocks -%}
+        <div class="box-card{% if block.settings.accent %} accent{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.qty_label != blank -%}
+            <span class="box-qty">{{ block.settings.qty_label }}</span>
+          {%- endif -%}
+          <h4>{{ block.settings.heading }}</h4>
+          <p>{{ block.settings.body }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.summary_heading != blank or section.settings.summary_body != blank -%}
+      <div class="box-summary">
+        {%- if section.settings.summary_heading != blank -%}
+          <strong>{{ section.settings.summary_heading }}</strong>
+        {%- endif -%}
+        {{ section.settings.summary_body }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "What's in the box",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What's Inside the Sample Box" },
+    { "type": "text", "id": "link_label", "label": "Side link label", "default": "View Full Spec Sheet" },
+    { "type": "url", "id": "link_url", "label": "Side link URL" },
+    { "type": "text", "id": "summary_heading", "label": "Summary heading", "default": "Why a sample box, not a swatch" },
+    { "type": "richtext", "id": "summary_body", "label": "Summary body", "default": "<p>Everything in this kit is full-size. Bring it to the building and test the actual TermBar install, the actual seam tape, and the actual finished look on one section before placing a full-building order.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "qty_label", "label": "Quantity label", "default": "Qty 1" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Item name" },
+        { "type": "textarea", "id": "body", "label": "Body" },
+        { "type": "checkbox", "id": "accent", "label": "Use orange accent border", "default": false }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "What's in the box",
+      "blocks": [
+        { "type": "item", "settings": { "qty_label": "Qty 1 · 20 ft", "heading": "BlueTex 2mm Pro 50″", "body": "A 20-foot length of our 50″-wide 2mm Pro material — the same roll material used on full-building Cover & Repair installs." } },
+        { "type": "item", "settings": { "qty_label": "Qty 4 · 48″ each", "heading": "Aluminum TermBars", "body": "Four 48″ aluminum TermBars for fastening BlueTex tight to the purlins and girts.", "accent": true } },
+        { "type": "item", "settings": { "qty_label": "Qty 15", "heading": "1″ #10 Hex Screws", "body": "5/16″ hex-head self-drillers used to attach the TermBars to the building framing." } },
+        { "type": "item", "settings": { "qty_label": "Qty 1 · 30 ft", "heading": "3″ White Vapor Barrier Seam Tape", "body": "White seam tape for sealing the joints between BlueTex panels.", "accent": true } },
+        { "type": "item", "settings": { "qty_label": "Qty 6 · Sample Set", "heading": "EasyClips", "body": "Sample set of EasyClips for attaching BlueTex to the roofline on a red iron style building." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,29 @@
+<section style="padding:48px 0;background:#fff;">
+  <div class="container">
+    <h1 style="color:var(--navy);font-size:32px;margin-bottom:8px;">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <p style="color:var(--muted);max-width:780px;margin-bottom:28px;">{{ collection.description }}</p>
+    {%- endif -%}
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;">
+      {%- for product in collection.products -%}
+        <a href="{{ product.url }}" class="prod-cell" style="text-decoration:none;">
+          <div class="prod-img">
+            {%- if product.featured_image != blank -%}
+              {{ product.featured_image | image_url: width: 480 | image_tag: alt: product.title, loading: 'lazy' }}
+            {%- else -%}
+              [ {{ product.title | truncate: 18 }} ]
+            {%- endif -%}
+          </div>
+          <div class="prod-name">{{ product.title }}</div>
+        </a>
+      {%- else -%}
+        <p>No products yet.</p>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <div style="margin-top:24px;text-align:center;">{{ paginate | default_pagination }}</div>
+    {%- endif -%}
+  </div>
+</section>

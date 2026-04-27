@@ -1,0 +1,90 @@
+{% comment %}
+  BlueTex TermBar System
+  Heading + 4 step cards (each a block) + center CTA row.
+{% endcomment %}
+
+<section class="termbar-wrap">
+  <div class="termbar-head">
+    <div class="termbar-head-left">
+      {%- if section.settings.badge != blank -%}
+        <span class="popular-badge">★ {{ section.settings.badge }}</span>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+    <div class="termbar-head-right">
+      {%- if section.settings.head_cta1_label != blank -%}
+        <a href="{{ section.settings.head_cta1_url }}" class="btn btn--navy">{{ section.settings.head_cta1_label }}</a>
+      {%- endif -%}
+      {%- if section.settings.head_cta2_label != blank -%}
+        <a href="{{ section.settings.head_cta2_url }}" class="btn btn--outline">{{ section.settings.head_cta2_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="termbar-cards">
+    {%- for block in section.blocks -%}
+      <div class="tb-card{% if block.settings.accent %} accent{% endif %}" {{ block.shopify_attributes }}>
+        {%- if block.settings.step_label != blank -%}
+          <span class="step">{{ block.settings.step_label }}</span>
+        {%- endif -%}
+        <h4>{{ block.settings.heading }}</h4>
+        <p>{{ block.settings.body }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="termbar-ctas">
+    {%- if section.settings.cta1_label != blank -%}
+      <a href="{{ section.settings.cta1_url }}" class="btn btn--orange btn--lg">{{ section.settings.cta1_label }}</a>
+    {%- endif -%}
+    {%- if section.settings.cta2_label != blank -%}
+      <a href="{{ section.settings.cta2_url }}" class="btn btn--navy btn--lg">{{ section.settings.cta2_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TermBar system",
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Badge", "default": "Most Popular Install Method" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The TermBar System Is the Main BlueTex Install Method" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "TermBars fasten BlueTex to the purlins and girts so the finished surface stays tight, flat, and clean." },
+    { "type": "text", "id": "head_cta1_label", "label": "Head CTA 1 label", "default": "View Install Guide" },
+    { "type": "url", "id": "head_cta1_url", "label": "Head CTA 1 URL" },
+    { "type": "text", "id": "head_cta2_label", "label": "Head CTA 2 label", "default": "View Application Overview" },
+    { "type": "url", "id": "head_cta2_url", "label": "Head CTA 2 URL" },
+    { "type": "text", "id": "cta1_label", "label": "Bottom CTA 1 label", "default": "Order the $100 Test Kit" },
+    { "type": "url", "id": "cta1_url", "label": "Bottom CTA 1 URL" },
+    { "type": "text", "id": "cta2_label", "label": "Bottom CTA 2 label", "default": "Request a Quote" },
+    { "type": "url", "id": "cta2_url", "label": "Bottom CTA 2 URL" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step card",
+      "settings": [
+        { "type": "text", "id": "step_label", "label": "Step label", "default": "01 · What It Is" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "What It Is" },
+        { "type": "textarea", "id": "body", "label": "Body", "default": "TermBars are aluminum bars that fasten the BlueTex material to the building frame." },
+        { "type": "checkbox", "id": "accent", "label": "Use orange accent border", "default": false }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "TermBar system",
+      "blocks": [
+        { "type": "step", "settings": { "step_label": "01 · What It Is", "heading": "What It Is", "body": "TermBars are aluminum bars that fasten the BlueTex material to the building frame." } },
+        { "type": "step", "settings": { "step_label": "02 · Why It Works", "heading": "Why It Works", "body": "It creates a clean panel look and keeps the material tight against the purlins and girts." } },
+        { "type": "step", "settings": { "step_label": "03 · Why It's Popular", "heading": "Why It's Popular", "body": "Most customers prefer the finished look and strong mechanical attachment.", "accent": true } },
+        { "type": "step", "settings": { "step_label": "04 · Other Options", "heading": "Other Options", "body": "EasyClip and other methods are secondary, used when the building calls for them." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

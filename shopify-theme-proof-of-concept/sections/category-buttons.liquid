@@ -1,0 +1,43 @@
+{% comment %}
+  BlueTex Category Buttons
+  Four navy buttons under the hero. Each is a block.
+{% endcomment %}
+
+<section class="catrow-wrap">
+  <div class="catrow">
+    {%- for block in section.blocks -%}
+      <a href="{{ block.settings.url }}" class="catbtn" {{ block.shopify_attributes }}>
+        <span>{{ block.settings.label }}</span>
+        <span class="arrow">›</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category buttons",
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "url", "id": "url", "label": "URL" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Category buttons",
+      "blocks": [
+        { "type": "button", "settings": { "label": "Wall Cover & Repair" } },
+        { "type": "button", "settings": { "label": "Roof Cover & Repair" } },
+        { "type": "button", "settings": { "label": "Metal Building Retrofit" } },
+        { "type": "button", "settings": { "label": "Roll-Up Doors" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

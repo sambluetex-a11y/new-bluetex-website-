@@ -1,0 +1,60 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "BlueTex Proof of Concept",
+    "theme_version": "0.1.0",
+    "theme_author": "BlueTex Insulation",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_white",
+        "label": "Logo image (white, for footer)"
+      },
+      {
+        "type": "text",
+        "id": "phone",
+        "label": "Phone number (display)",
+        "default": "1-800-595-8772"
+      },
+      {
+        "type": "text",
+        "id": "phone_link",
+        "label": "Phone number (tel: link)",
+        "default": "18005958772"
+      },
+      {
+        "type": "text",
+        "id": "address",
+        "label": "Address",
+        "default": "9560 Swafford Rd, Justin, TX 76247"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_navy",
+        "label": "Navy",
+        "default": "#12205c"
+      },
+      {
+        "type": "color",
+        "id": "color_orange",
+        "label": "Orange",
+        "default": "#ee7f12"
+      }
+    ]
+  }
+]

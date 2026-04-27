@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-carousel",
+      "blocks": {
+        "slide-1": {
+          "type": "slide",
+          "settings": {
+            "eyebrow": "Cover · Repair · Retrofit",
+            "heading": "Fix Old Metal Building Insulation Without Tearing It Out",
+            "lead": "Cover torn, stained, or sagging insulation with a clean BlueTex finish using the TermBar system. Built for metal buildings, pole barns, shops, and hangars.",
+            "cta1_label": "Request a Quote",
+            "cta2_label": "Order the $100 Test Kit",
+            "strip": "Blocks 97% radiant heat | Vapor barrier | 10× more durable than vinyl",
+            "image_label": "Finished interior · TermBar install"
+          }
+        },
+        "slide-2": {
+          "type": "slide",
+          "settings": {
+            "eyebrow": "Most Popular Install",
+            "heading": "The TermBar System Gives BlueTex Its Finished Look",
+            "lead": "Aluminum TermBars fasten BlueTex tight to the purlins and girts of the building. The result is a flat, drum-tight, finished panel look you can paint if you want.",
+            "cta1_label": "View Install Guide",
+            "cta2_label": "View Application Overview",
+            "strip": "",
+            "image_label": "TermBar install · in progress"
+          }
+        },
+        "slide-3": {
+          "type": "slide",
+          "settings": {
+            "eyebrow": "Start Small",
+            "heading": "Try the System Before You Commit to a Full Retrofit",
+            "lead": "The $100 BlueTex Cover/Repair System Sample Box has a full-size BlueTex piece, a TermBar section, seam tape, and fasteners — everything to test the system on one section of your building.",
+            "cta1_label": "Order the $100 Test Kit",
+            "cta2_label": "What's Inside?",
+            "strip": "",
+            "image_label": "Completed wall · clean finish"
+          }
+        }
+      },
+      "block_order": ["slide-1", "slide-2", "slide-3"]
+    },
+    "categories": {
+      "type": "category-buttons",
+      "blocks": {
+        "b1": { "type": "button", "settings": { "label": "Wall Cover & Repair" } },
+        "b2": { "type": "button", "settings": { "label": "Roof Cover & Repair" } },
+        "b3": { "type": "button", "settings": { "label": "Metal Building Retrofit" } },
+        "b4": { "type": "button", "settings": { "label": "Roll-Up Doors" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"]
+    },
+    "termbar": {
+      "type": "termbar-system",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "step_label": "01 · What It Is", "heading": "What It Is", "body": "TermBars are aluminum bars that fasten the BlueTex material to the building frame." } },
+        "s2": { "type": "step", "settings": { "step_label": "02 · Why It Works", "heading": "Why It Works", "body": "It creates a clean panel look and keeps the material tight against the purlins and girts." } },
+        "s3": { "type": "step", "settings": { "step_label": "03 · Why It's Popular", "heading": "Why It's Popular", "body": "Most customers prefer the finished look and strong mechanical attachment.", "accent": true } },
+        "s4": { "type": "step", "settings": { "step_label": "04 · Other Options", "heading": "Other Options", "body": "EasyClip and other methods are secondary, used when the building calls for them." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "faq": {
+      "type": "faq-grid",
+      "settings": { "heading": "Common TermBar Questions", "link_label": "View Full FAQ" },
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Is It Strong?", "answer": "<p>Yes. TermBars mechanically fasten the material to the building frame. The finished wall is tighter and more durable than the original metal building insulation it covers.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "Can You Paint It?", "answer": "<p>Yes. BlueTex and the TermBars both hold paint. Most customers leave it bright white for light reflection, but you can roll or spray any latex paint for a custom color.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "Do I Have to Tear Out the Old Insulation?", "answer": "<p>Usually no. BlueTex is commonly installed over existing insulation. The TermBar presses the old material in place and the new BlueTex creates the finished interior.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    },
+    "quote-cta": {
+      "type": "quote-cta"
+    }
+  },
+  "order": ["hero", "categories", "termbar", "faq", "quote-cta"]
+}

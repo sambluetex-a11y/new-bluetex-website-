@@ -1,0 +1,29 @@
+<article style="padding:48px 0;background:#fff;">
+  <div class="container" style="max-width:780px;">
+    <a href="{{ blog.url }}" style="font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;font-weight:700;">← {{ blog.title }}</a>
+    <h1 style="color:var(--navy);font-size:32px;margin:14px 0 6px;">{{ article.title }}</h1>
+    <div style="color:var(--muted);font-size:13px;margin-bottom:24px;">{{ article.published_at | date: '%B %-d, %Y' }} · {{ article.author }}</div>
+
+    {%- if article.image != blank -%}
+      <div style="margin-bottom:24px;border-radius:6px;overflow:hidden;border:1px solid var(--line);">
+        {{ article.image | image_url: width: 1400 | image_tag: alt: article.title }}
+      </div>
+    {%- endif -%}
+
+    <div style="font-size:16px;line-height:1.7;color:var(--text);text-transform:none;">
+      {{ article.content }}
+    </div>
+
+    {%- if blog.comments_enabled? -%}
+      <div style="margin-top:32px;border-top:1px solid var(--line);padding-top:24px;">
+        <h2 style="color:var(--navy);font-size:20px;">Comments</h2>
+        {%- for comment in article.comments -%}
+          <div style="border:1px solid var(--line-soft);padding:14px;margin-bottom:10px;border-radius:2px;">
+            <strong>{{ comment.author }}</strong> · <span style="color:var(--muted);font-size:12px;">{{ comment.created_at | date: '%B %-d, %Y' }}</span>
+            <p style="margin:6px 0 0;text-transform:none;">{{ comment.content }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</article>
