@@ -1,0 +1,57 @@
+{{ 'bluetex-collection.css' | asset_url | stylesheet_tag }}
+
+<section id="BlueTexCollectionGuidance-{{ section.id }}" class="btxc btxc__band btxc__band--grey">
+  <div class="btxc__container">
+    <div class="btxc__label">
+      <span>{{ section.settings.heading }}</span>
+      {%- if section.settings.link_label != blank -%}<a href="{{ section.settings.link }}">{{ section.settings.link_label }}</a>{%- endif -%}
+    </div>
+    {%- if section.settings.text != blank -%}<p class="btxc__intro">{{ section.settings.text }}</p>{%- endif -%}
+    <div class="btxc-guidance__grid">
+      {%- for block in section.blocks -%}
+        <article class="btxc-guidance__card" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+          {%- if block.settings.link_label != blank -%}<a href="{{ block.settings.link }}">{{ block.settings.link_label }}</a>{%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BlueTex Guidance",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Product Category Guidance" },
+    { "type": "textarea", "id": "text", "label": "Intro text", "default": "Start with the product group that matches the job. If you are covering a full metal building, photos and dimensions are usually the fastest path to an accurate list." },
+    { "type": "text", "id": "link_label", "label": "Header link label" },
+    { "type": "url", "id": "link", "label": "Header link" }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "BlueTex Roll Insulation" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Main BlueTex rolls for metal building cover and repair. Use 50 inch material for most finished interior runs unless the product itself calls for a wider roll." },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "View Products" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BlueTex Guidance",
+      "blocks": [
+        { "type": "category", "settings": { "title": "BlueTex Roll Insulation", "text": "Main BlueTex rolls for metal building cover and repair. Use 50 inch material for most finished interior runs unless the product itself calls for a wider roll.", "link_label": "View Products" } },
+        { "type": "category", "settings": { "title": "Door Kits", "text": "Pre-planned kits for residential panel doors and commercial roll-up doors. Measure first, then choose the kit that matches the door style.", "link_label": "View Door Kits" } },
+        { "type": "category", "settings": { "title": "Tape & Adhesives", "text": "White vapor barrier seam tape is the main seaming tape for BlueTex products. Wider repair tapes help patch larger tears.", "link_label": "View Tape" } },
+        { "type": "category", "settings": { "title": "System Parts", "text": "TermBars, EasyClips, fasteners, and spacers help the system install cleanly against metal building framing.", "link_label": "View Parts" } },
+        { "type": "category", "settings": { "title": "Radiant Barrier / Thermal Wrap", "text": "Foil and wrap products for jobs where radiant heat control, airspace, or conditioned-building vapor control matter.", "link_label": "View Barriers" } },
+        { "type": "category", "settings": { "title": "Sample Box", "text": "Test full-size BlueTex materials, TermBars, tape, screws, and EasyClips on one section before a larger order.", "link_label": "View Sample Box" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

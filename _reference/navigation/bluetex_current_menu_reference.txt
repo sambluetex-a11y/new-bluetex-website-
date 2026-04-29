@@ -1,0 +1,381 @@
+BLUETEX CURRENT WEBSITE MENU / NAVIGATION REFERENCE
+Source: https://bluetexinsulation.com
+================================================================================
+
+NOTE:
+This is a scraped link list from the current site HTML. It is meant as a reference
+for understanding current menu structure, clutter, overlap, and naming problems.
+
+================================================================================
+
+1. Shop All Products
+   https://bluetexinsulation.com/collections/all
+
+2. Help Me Choose the Right Product
+   https://bluetexinsulation.com/pages/help-me-choose-the-right-building-insulation
+
+3. 2mm PRO
+   https://bluetexinsulation.com/collections/radiant-barrier-foam-moisture-control
+
+4. 62" BlueTex™ Pro 2mm - Foil/White Super Wide
+   https://bluetexinsulation.com/products/bluetex-pro-2mm-super-wide-62-inch
+
+5. 50" BlueTex™ Pro 2mm - Foil/White
+   https://bluetexinsulation.com/products/bluetex-pro-2mm-50-wide-foil-white-foam-insulation
+
+6. 6mm Supreme
+   https://bluetexinsulation.com/collections/radiant-barrier-foam-moisture-control
+
+7. 62" BlueTex™ Supreme 6mm - Foil/White
+   https://bluetexinsulation.com/products/bluetex%E2%84%A2-supreme-6mm-62-wide-foil-white-foam-insulation-300-sq-ft
+
+8. 50" BlueTex™ Supreme 6mm Foil/White
+   https://bluetexinsulation.com/products/bluetex-6mm-supreme-50-wide
+
+9. Garage Door Insulation
+   https://bluetexinsulation.com/blogs/installations/commercial-roll-up-garage-door-installation
+
+10. Roll Up Garage Door Kits - 50" PRO
+   https://bluetexinsulation.com/products/bluetex-2mm-pro-roll-up-garage-door-kit
+
+11. Residential Panel/Sectional Garage Door Kits
+   https://bluetexinsulation.com/products/bluetex-22-wide-pro-residential-garage-door-kit
+
+12. Fasteners
+   https://bluetexinsulation.com/collections/fasteners
+
+13. Screws & Locking Insulation Washers
+   https://bluetexinsulation.com/products/screw-washer-set-100-pieces
+
+14. EasyClip™ Purlin Insulation Hangers
+   https://bluetexinsulation.com/products/easyclip-purlin-insulation-clip-hangers
+
+15. 48" Aluminum Term Bars
+   https://bluetexinsulation.com/products/48-wide-steel-term-bars-for-bluetex-cover-system
+
+16. White Tape
+   https://bluetexinsulation.com/pages/bluetex-vapor-barrier-white-tapes
+
+17. 3" White Vapor Barrier Seam Tape
+   https://bluetexinsulation.com/products/white-tape
+
+18. 4" White Vapor Barrier Multi-Use Tape
+   https://bluetexinsulation.com/products/4-white-tape
+
+19. 6" White Vapor Barrier Repair Tape
+   https://bluetexinsulation.com/products/6-white-tape
+
+20. 1.5" Double-Sided Tape
+   https://bluetexinsulation.com/products/double-sided-tape
+
+21. Foil Tape
+   https://bluetexinsulation.com/products/foil-tape
+
+22. 2" Foil Seam Tape
+   https://bluetexinsulation.com/products/2-foil-seam-tape
+
+23. 3" Foil Seam Tape
+   https://bluetexinsulation.com/products/foil-tape
+
+24. 6" Foil Repair Tape
+   https://bluetexinsulation.com/products/6-inch-foil-tape
+
+25. 48" HDPE Spacer Strips
+   https://bluetexinsulation.com/products/4foot-hdpe-furring-strip-spacers
+
+26. Radiant Barrier Foil/White
+   https://bluetexinsulation.com/products/single-sided-radiant-barrier-foil
+
+27. Radiant Barrier Foil/Foil
+   https://bluetexinsulation.com/products/double-sided-radiant-barrier-foil
+
+28. Thermal Wrap for Fully Conditioned Buildings
+   https://bluetexinsulation.com/products/thermal-wrap-for-fully-conditioned-buildings
+
+29. Red Tape
+   https://bluetexinsulation.com/products/3-red-vapor-barrier-stucco-construction-tape
+
+30. 3" Red Vapor Barrier Construction Tape
+   https://bluetexinsulation.com/products/3-red-vapor-barrier-stucco-construction-tape
+
+31. 4" Red Vapor Barrier Construction Tape
+   https://bluetexinsulation.com/products/4-red-vapor-barrier-construction-tape
+
+32. Install Guide
+   https://bluetexinsulation.com/pages/new-construction-how-to-install
+
+33. New Construction
+   https://bluetexinsulation.com/pages/new-construction-how-to-install-choose-your-building-type
+
+34. Tubular Metal-Framed Buildings
+   https://bluetexinsulation.com/pages/new-construction-metal-framed-buildings-installation
+
+35. Wood-Framed Buildings
+   https://bluetexinsulation.com/pages/new-construction-wood-framed-buildings-installation
+
+36. Red Iron Buildings (PEMB)
+   https://bluetexinsulation.com/pages/red-iron-building-insulation-install-new-construction
+
+37. Existing/Retrofit
+   https://bluetexinsulation.com/pages/existing-retrofit-construction-how-to-install-choose-your-buidling
+
+38. Metal-Framed Buildings - Vertical Install *PREFERRED*
+   https://bluetexinsulation.com/pages/existing-construction-metal-framed-buildings-installation
+
+39. Metal-Framed Buildings - Horizontal Install
+   https://bluetexinsulation.com/pages/metal-building-insulation-alternate-method-to-retrofit-insulation-in-existing-metal-framed-buildings
+
+40. Wood-Framed/Pole Barn Type Buildings
+   https://bluetexinsulation.com/pages/existing-construction-wood-framed-buildings-installation
+
+41. Red Iron Style Buildings with EasyClips™ - Roofline
+   https://bluetexinsulation.com/pages/red-iron-building-insulation-how-to-retrofit-roof-in-existing-red-iron-buildings
+
+42. Red Iron Style Buildings - Walls
+   https://bluetexinsulation.com/pages/red-iron-building-insulation-how-to-retrofit-walls-in-existing-red-iron-buildings
+
+43. Direct to Metal (Frameless/Quonset)
+   https://bluetexinsulation.com/pages/shish-kabob-method-installing-bluetex-directly-to-metal
+
+44. Using in a Shed for Heat Blocking Only
+   https://bluetexinsulation.com/blogs/installations/barn-and-shed-installation-blocking-heat-only
+
+45. Fully Conditioned Building - Hot/Mixed Climate
+   https://bluetexinsulation.com/pages/insulating-conditioned-buildings-hot-mixed-climates-installation
+
+46. Fully Conditioned Building - Cold Climate
+   https://bluetexinsulation.com/pages/insulating-conditioned-buildings-cold-climate-installation
+
+47. Covering/Repairing Old Insulation
+   https://bluetexinsulation.com/pages/red-iron-building-insulation-how-to-retrofit-roof-in-existing-red-iron-buildings
+
+48. Covering Old Wall Insulation - Girts Visible
+   https://bluetexinsulation.com/pages/covering-old-wall-insulation-in-metal-buildings
+
+49. Covering Old Wall Insulation - Girts Hidden
+   https://bluetexinsulation.com/pages/repairing-covering-old-torn-wall-insulation-over-girts-in-metal-buildings
+
+50. EasyClip™ Roof System - Covers/ Hides Purlins
+   https://bluetexinsulation.com/pages/red-iron-building-insulation-how-to-retrofit-roof-in-existing-red-iron-buildings
+
+51. Roof Cover System - Purlins Visible
+   https://bluetexinsulation.com/pages/repair-old-torn-ceiling-insulation-in-red-iron-metal-buildings
+
+52. Commercial Roll Up Door
+   https://bluetexinsulation.com/blogs/installations/commercial-roll-up-garage-door-installation
+
+53. Residential Panel Garage Door
+   https://bluetexinsulation.com/blogs/installations/residential-garage-door-installation
+
+54. Photos/Video
+   https://bluetexinsulation.com/pages/bluetex-install-photos
+
+55. Install Photos
+   https://bluetexinsulation.com/pages/bluetex-install-photos
+
+56. Video Library
+   https://bluetexinsulation.com/pages/bluetex-video-library
+
+57. How to Measure Your Building
+   https://bluetexinsulation.com/pages/how-to-measure-your-building-for-bluetex-metal-building-insulation
+
+58. Case Studies
+   https://bluetexinsulation.com/blogs/case-studies
+
+59. Supplies
+   https://bluetexinsulation.com/pages/resource-page-installation-supplies
+
+60. R-Value
+   https://bluetexinsulation.com/pages/r-value-of-bluetex-insulation
+
+61. How to Measure a Garage Door for Insulation
+   https://bluetexinsulation.com/blogs/articles/how-to-measure-your-roll-up-garage-door-for-insulation
+
+62. Can I Cover Over or Paint the BlueTex™?
+   https://bluetexinsulation.com/blogs/articles/finishing-covering-metal-building-interior-with-bluetex-insulation
+
+63. Bubble Foil vs. BlueTex™
+   https://bluetexinsulation.com/pages/bubble-foil-fails
+
+64. Moisture Causes - Part 1
+   https://bluetexinsulation.com/pages/moisture-in-metal-buildings-causes
+
+65. Moisture Prevention - Part 2
+   https://bluetexinsulation.com/pages/moisture-in-metal-buildings-prevention
+
+66. Conditioned vs. Non-Conditioned Bldgs
+   https://bluetexinsulation.com/pages/insulating-non-conditioned-buildings-vs-conditioned-buildings
+
+67. Contractor/Installer Pricing
+   https://bluetexinsulation.com/pages/bluetex-metal-building-contractors-and-insulation-installers
+
+68. Lifetime Warranty
+   https://bluetexinsulation.com/pages/bluetex-warranty
+
+69. Request Free Samples
+   https://bluetexinsulation.com/pages/request-a-sample
+
+70. Order a Sample Box for Large Cover Installs
+   https://bluetexinsulation.com/products/bluetex-cover-repair-system-sample-box
+
+71. Free Sample Packet
+   https://bluetexinsulation.com/pages/request-a-sample
+
+72. Read Guide Now
+   https://bluetexinsulation.com/pages/moisture-in-metal-buildings-causes
+
+73. Browse All Products
+   https://bluetexinsulation.com/collections/all
+
+74. BlueTex™ 2mm Pro Roll Up Garage Door Kit
+   https://bluetexinsulation.com/collections/metal-building-insulation-products/products/bluetex-2mm-pro-roll-up-garage-door-kit
+
+75. BlueTex™ Pro 2mm Super Wide 62" Foil/White + Foam insulation
+   https://bluetexinsulation.com/collections/metal-building-insulation-products/products/bluetex-pro-2mm-super-wide-62-inch
+
+76. BlueTex™ Supreme 6mm 62" Wide Foil/White + Foam insulation - 300 sq ft
+   https://bluetexinsulation.com/collections/metal-building-insulation-products/products/bluetex%E2%84%A2-supreme-6mm-62-wide-foil-white-foam-insulation-300-sq-ft
+
+77. BlueTex™ Pro 2mm 50" Wide Foil/White + Foam insulation
+   https://bluetexinsulation.com/collections/metal-building-insulation-products/products/bluetex-pro-2mm-50-wide-foil-white-foam-insulation
+
+78. BlueTex™ Supreme 6mm 50" Wide Foil/White + Foam insulation - 300 sq ft
+   https://bluetexinsulation.com/collections/metal-building-insulation-products/products/bluetex-6mm-supreme-50-wide
+
+79. EasyClip™ Purlin Insulation Clip Hangers
+   https://bluetexinsulation.com/collections/metal-building-insulation-products/products/easyclip-purlin-insulation-clip-hangers
+
+80. See the Install Guide
+   https://bluetexinsulation.com/pages/covering-old-wall-insulation-in-metal-buildings
+
+81. metal building insulation products
+   https://bluetexinsulation.com/collections/metal-building-insulation-products
+
+82. free sample kit
+   https://bluetexinsulation.com/pages/request-a-sample
+
+83. See Warranty Info
+   https://bluetexinsulation.com/pages/bluetex-warranty
+
+84. See How Its Done
+   https://bluetexinsulation.com/pages/red-iron-building-insulation-how-to-retrofit-roof-in-existing-red-iron-buildings
+
+85. On Sale
+   https://bluetexinsulation.com/collections/tape-and-fasteners/products/white-tape
+
+86. 3" White Vapor Barrier Seam Tape
+   https://bluetexinsulation.com/collections/tape-and-fasteners/products/white-tape
+
+87. Double-Sided Tape
+   https://bluetexinsulation.com/collections/tape-and-fasteners/products/double-sided-tape
+
+88. Metal Screws & Locking Washers for Metal and Wood Frames
+   https://bluetexinsulation.com/collections/tape-and-fasteners/products/screw-washer-set-100-pieces
+
+89. On Sale
+   https://bluetexinsulation.com/collections/tape-and-fasteners/products/6-white-tape
+
+90. 6" White Vapor Barrier Insulation Repair Tape
+   https://bluetexinsulation.com/collections/tape-and-fasteners/products/6-white-tape
+
+91. Contact Us
+   https://bluetexinsulation.com/pages/contact-us
+
+92. Learn More About Our Contractor Pricing
+   https://bluetexinsulation.com/pages/bluetex-metal-building-contractors-and-insulation-installers
+
+93. Video Library - Real Installs
+   https://bluetexinsulation.com/pages/bluetex-video-library
+
+94. Existing/Retrofit Construction
+   https://bluetexinsulation.com/pages/existing-retrofit-construction-how-to-install-choose-your-buidling
+
+95. See All The Case studies
+   https://bluetexinsulation.com/blogs/case-studies
+
+96. Case Study: Covering Up Damaged Warehouse Insulation with BlueTex™
+   https://bluetexinsulation.com/blogs/case-studies/case-study-covering-up-damaged-warehouse-insulation-with-bluetex
+
+97. Read more
+   https://bluetexinsulation.com/blogs/case-studies/case-study-covering-up-damaged-warehouse-insulation-with-bluetex
+
+98. Case Study: How BlueTex Reflective Insulation Transformed A Gardener’s Greenhouse for Winter
+   https://bluetexinsulation.com/blogs/case-studies/how-bluetex-reflective-insulation-transformed-gardeners-greenhouse-for-winter
+
+99. Read more
+   https://bluetexinsulation.com/blogs/case-studies/how-bluetex-reflective-insulation-transformed-gardeners-greenhouse-for-winter
+
+100. Case Study: Stopping Condensation and Increasing Comfort in a Quonset Style Metal Building
+   https://bluetexinsulation.com/blogs/case-studies/case-study-stopping-condensation-and-increasing-comfort-in-a-quonset-style-metal-building
+
+101. Read more
+   https://bluetexinsulation.com/blogs/case-studies/case-study-stopping-condensation-and-increasing-comfort-in-a-quonset-style-metal-building
+
+102. How to Repair Holes and Rips in Your Metal Building Insulation
+   https://bluetexinsulation.com/blogs/case-studies/how-to-repair-holes-and-rips-in-your-metal-building-insulation
+
+103. Read more
+   https://bluetexinsulation.com/blogs/case-studies/how-to-repair-holes-and-rips-in-your-metal-building-insulation
+
+104. Case Study: Indoor Volleyball Court
+   https://bluetexinsulation.com/blogs/case-studies/case-study-indoor-volleyball-court
+
+105. Read more
+   https://bluetexinsulation.com/blogs/case-studies/case-study-indoor-volleyball-court
+
+106. Case Study: RV Garage Barn
+   https://bluetexinsulation.com/blogs/case-studies/case-study-rv-garage-barn
+
+107. Read more
+   https://bluetexinsulation.com/blogs/case-studies/case-study-rv-garage-barn
+
+108. Install Gallery
+   https://bluetexinsulation.com/pages/bluetex-install-photos
+
+109. Supplies for Install
+   https://bluetexinsulation.com/pages/resource-page-installation-supplies
+
+110. Your Privacy Choices
+   https://bluetexinsulation.com/pages/data-sharing-opt-out
+
+111. Fasteners - Screws & Locking Washers
+   https://bluetexinsulation.com/products/screw-washer-set-100-pieces
+
+112. Double-Sided Tape
+   https://bluetexinsulation.com/products/double-sided-tape
+
+113. Metal-Framed Buildings
+   https://bluetexinsulation.com/pages/new-construction-metal-framed-buildings-installation
+
+114. Metal-Framed Buildings - Vertical Install
+   https://bluetexinsulation.com/pages/existing-construction-metal-framed-buildings-installation
+
+115. Covering Old Wall Insulation
+   https://bluetexinsulation.com/pages/covering-old-wall-insulation-in-metal-buildings
+
+116. EasyClip™ Roof System (cover purlins)
+   https://bluetexinsulation.com/pages/red-iron-building-insulation-how-to-retrofit-roof-in-existing-red-iron-buildings
+
+117. Roof Cover System (keep purlins visible)
+   https://bluetexinsulation.com/pages/repair-old-torn-ceiling-insulation-in-red-iron-metal-buildings
+
+118. Can I Cover or Paint Over BlueTex™?
+   https://bluetexinsulation.com/blogs/articles/finishing-covering-metal-building-interior-with-bluetex-insulation
+
+119. Which BlueTex Insulation Should I Use?
+   https://bluetexinsulation.com/pages/help-me-choose-the-right-building-insulation
+
+120. Warranty
+   https://bluetexinsulation.com/pages/bluetex-warranty
+
+121. Metal Building Insulation Products
+   https://bluetexinsulation.com/collections/metal-building-insulation-products
+
+122. The Original Roll-Up Garage Door Insulation®
+   https://bluetexinsulation.com/products/bluetex-2mm-pro-roll-up-garage-door-kit
+
+123. Clearance Insulation
+   https://bluetexinsulation.com/products/clearance-insulation-6mm-supreme-62-wide-foil-white
+
+124. BlueTex Insulation
+   https://bluetexinsulation.com/

@@ -1,0 +1,68 @@
+<section id="BlueTexBeforeAfter-{{ section.id }}" class="bt-before-after">
+  <div class="bt-before-after__head">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+  </div>
+  <div class="bt-before-after__frame">
+    <div class="bt-before-after__image bt-before-after__image--before">
+      {%- if section.settings.before_image != blank -%}
+        {{ section.settings.before_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '100vw', alt: section.settings.before_alt }}
+      {%- else -%}
+        <span>Before image</span>
+      {%- endif -%}
+    </div>
+    <div class="bt-before-after__image bt-before-after__image--after">
+      {%- if section.settings.after_image != blank -%}
+        {{ section.settings.after_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '100vw', alt: section.settings.after_alt }}
+      {%- else -%}
+        <span>After image</span>
+      {%- endif -%}
+    </div>
+    <span class="bt-before-after__label bt-before-after__label--before">{{ section.settings.before_label }}</span>
+    <span class="bt-before-after__label bt-before-after__label--after">{{ section.settings.after_label }}</span>
+    <div class="bt-before-after__divider"></div>
+    <div class="bt-before-after__handle">‹›</div>
+  </div>
+  {%- if section.settings.caption != blank -%}
+    <p class="bt-before-after__caption">{{ section.settings.caption }}</p>
+  {%- endif -%}
+</section>
+
+<style>
+  #BlueTexBeforeAfter-{{ section.id }} { --bt-navy:#0011a7; --bt-deep:#002f6c; --bt-orange:#ee7f12; --bt-text:#1b1b1b; --bt-muted:#535254; --bt-soft:#e6e6e7; font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#eeeeee; padding:48px 20px; border-top:1px solid var(--bt-soft); border-bottom:1px solid var(--bt-soft); }
+  #BlueTexBeforeAfter-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__head { max-width:760px; margin:0 auto 20px; text-align:center; }
+  #BlueTexBeforeAfter-{{ section.id }} h2 { margin:0 0 8px; color:var(--bt-navy); font-size:26px; line-height:1.12; font-weight:700; letter-spacing:.2px; text-transform:uppercase; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__head p { margin:0; color:var(--bt-muted); font-size:15px; line-height:1.55; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__frame { position:relative; max-width:920px; margin:0 auto; aspect-ratio:16/9; overflow:hidden; border:1px solid var(--bt-soft); border-radius:4px; background:#fff; box-shadow:none; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__image { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; background:#002f6c; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__image img { width:100%; height:100%; object-fit:cover; display:block; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__image--after { clip-path:inset(0 50% 0 0); z-index:2; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__label { position:absolute; top:16px; z-index:3; color:#fff; padding:6px 12px; border-radius:2px; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__label--before { right:16px; background:var(--bt-navy); }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__label--after { left:16px; background:var(--bt-orange); }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__divider { position:absolute; top:0; bottom:0; left:50%; z-index:4; width:3px; background:#fff; transform:translateX(-1.5px); box-shadow:0 0 10px rgba(0,0,0,.35); }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__handle { position:absolute; left:50%; top:50%; z-index:5; width:46px; height:46px; transform:translate(-50%,-50%); border:3px solid var(--bt-navy); border-radius:4px; background:#fff; color:var(--bt-navy); display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; letter-spacing:-2px; }
+  #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__caption { margin:14px 0 0; text-align:center; color:var(--bt-muted); font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; }
+  @media (max-width: 700px) { #BlueTexBeforeAfter-{{ section.id }} { padding:32px 16px; } #BlueTexBeforeAfter-{{ section.id }} h2 { font-size:22px; } #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__frame { aspect-ratio:4/3; } #BlueTexBeforeAfter-{{ section.id }} .bt-before-after__handle { width:38px; height:38px; } }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex Before After",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From Old Insulation to Clean Finished Interior" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "See how BlueTex changes the inside of a metal building without tearing out the old insulation." },
+    { "type": "image_picker", "id": "after_image", "label": "After image" },
+    { "type": "text", "id": "after_alt", "label": "After image alt", "default": "After clean finished BlueTex wall" },
+    { "type": "text", "id": "after_label", "label": "After label", "default": "After" },
+    { "type": "image_picker", "id": "before_image", "label": "Before image" },
+    { "type": "text", "id": "before_alt", "label": "Before image alt", "default": "Before old metal building insulation" },
+    { "type": "text", "id": "before_label", "label": "Before label", "default": "Before" },
+    { "type": "text", "id": "caption", "label": "Caption", "default": "BlueTex Pro 2mm + TermBar install" }
+  ],
+  "presets": [
+    { "name": "BlueTex Before After" }
+  ]
+}
+{% endschema %}

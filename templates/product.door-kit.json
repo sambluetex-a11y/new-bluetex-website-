@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-door-main",
+      "blocks": {
+        "b1": { "type": "bullet", "settings": { "text": "Choose residential panel door or commercial roll-up door based on your door style." } },
+        "b2": { "type": "bullet", "settings": { "text": "Measure each door before ordering, especially for larger or multiple doors." } },
+        "b3": { "type": "bullet", "settings": { "text": "Ask for help if the opening is oversized, unusual, or part of a larger metal building project." } },
+        "t1": { "type": "trust", "settings": { "icon": "R", "heading": "Panel Doors", "text": "For common sectional garage door panels." } },
+        "t2": { "type": "trust", "settings": { "icon": "U", "heading": "Roll-Up Doors", "text": "For commercial roll-up door applications." } },
+        "t3": { "type": "trust", "settings": { "icon": "M", "heading": "Measure First", "text": "Width and height drive kit choice." } },
+        "t4": { "type": "trust", "settings": { "icon": "H", "heading": "Help Available", "text": "Useful for multiple-door projects." } }
+      },
+      "block_order": ["b1", "b2", "b3", "t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "fit": {
+      "type": "bluetex-product-fit",
+      "blocks": {
+        "best": { "type": "item", "settings": { "kicker": "Best for", "heading": "Metal building doors", "text": "A good fit for residential panel doors or commercial roll-up doors when the kit matches the opening." } },
+        "not": { "type": "item", "settings": { "kicker": "Not ideal for", "heading": "Unmeasured doors", "text": "Do not guess on kit size. Measure width and height before choosing." } },
+        "need": { "type": "item", "settings": { "kicker": "You may need", "heading": "Tape or custom help", "text": "Multiple doors, oversized doors, or unusual doors may need extra material or a quote." } }
+      },
+      "block_order": ["best", "not", "need"],
+      "settings": { "heading": "Is This Right For Me?", "text": "Use the door kit path when the door style and measured size match the product." }
+    },
+    "chooser": {
+      "type": "bluetex-product-chooser",
+      "blocks": {
+        "c1": { "type": "item", "settings": { "kicker": "Single", "heading": "Single door", "text": "Measure the full insulated area and match the kit to the opening." } },
+        "c2": { "type": "item", "settings": { "kicker": "Double", "heading": "Double door", "text": "Confirm width and height before choosing the closest kit." } },
+        "c3": { "type": "item", "settings": { "kicker": "Oversized", "heading": "Ask first", "text": "Oversized or unusual doors are easier to size with photos and dimensions." } },
+        "c4": { "type": "item", "settings": { "kicker": "Multi-door", "heading": "Plan together", "text": "For several doors, request help so material and tape are estimated together." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": { "heading": "Which Door Kit Fits?", "text": "Measure before ordering and choose based on door style, width, and height.", "columns": 4 }
+    },
+    "companions": {
+      "type": "bluetex-product-companions",
+      "blocks": {
+        "p1": { "type": "companion", "settings": { "heading": "Double-Sided Tape", "text": "Useful for temporary hold and door kit layout where the install calls for it.", "cta_label": "View Tape" } },
+        "p2": { "type": "companion", "settings": { "heading": "3\" White Vapor Barrier Seam Tape", "text": "Helps with clean seams or repairs where the door layout needs it.", "cta_label": "View Seam Tape" } },
+        "p3": { "type": "companion", "settings": { "heading": "BlueTex™ Pro 2mm 50\" Wide", "text": "Useful for custom doors or larger multi-door projects.", "cta_label": "View Roll" } },
+        "p4": { "type": "companion", "settings": { "heading": "Request Quote / Help", "text": "Best path for oversized, unusual, or multiple-door projects.", "cta_label": "Get Help" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": { "heading": "What Usually Goes With This", "text": "Door projects often need measuring help, tape, or extra material depending on the door layout." }
+    },
+    "details": {
+      "type": "bluetex-product-details",
+      "blocks": {
+        "d1": { "type": "detail", "settings": { "heading": "Measuring notes", "text": "<p>Measure the full door width and height. For multiple doors, measure each door separately.</p>" } },
+        "d2": { "type": "detail", "settings": { "heading": "Install overview", "text": "<p>Dry fit the material, trim with a sharp utility knife, then attach according to the kit style.</p>" } },
+        "d3": { "type": "detail", "settings": { "heading": "FAQ", "text": "<p>Residential panel doors and commercial roll-up doors use different install paths. Ask for help if you are unsure.</p>" } }
+      },
+      "block_order": ["d1", "d2", "d3"],
+      "settings": { "heading": "Details", "text": "Door sizing, install notes, and common questions are tucked below." }
+    }
+  },
+  "order": ["main", "fit", "chooser", "companions", "details"]
+}

@@ -1,0 +1,50 @@
+{{ 'bluetex-collection.css' | asset_url | stylesheet_tag }}
+
+<section id="BlueTexCollectionHero-{{ section.id }}" class="btxc btxc-hero">
+  <div class="btxc__container">
+    <div class="btxc-hero__panel">
+      <div class="btxc-hero__copy">
+        {%- if section.settings.eyebrow != blank -%}<span class="btxc-hero__eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+        <h1>{{ collection.title | default: section.settings.fallback_title }}</h1>
+        {%- if section.settings.subtitle != blank -%}<p class="btxc-hero__subtitle">{{ section.settings.subtitle }}</p>{%- endif -%}
+        {%- if collection.description != blank -%}
+          <div class="btxc-hero__description">{{ collection.description }}</div>
+        {%- elsif section.settings.description != blank -%}
+          <div class="btxc-hero__description">{{ section.settings.description }}</div>
+        {%- endif -%}
+        <div class="btxc-hero__actions">
+          {%- if section.settings.cta_label != blank -%}<a class="btxc__btn" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>{%- endif -%}
+          {%- if section.settings.secondary_label != blank -%}<a class="btxc__btn btxc__btn--secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{%- endif -%}
+        </div>
+      </div>
+      <div class="btxc-hero__media">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'eager', widths: '500, 800, 1000, 1200', sizes: '(min-width: 990px) 45vw, 100vw', alt: section.settings.image.alt | default: collection.title }}
+        {%- elsif collection.image != blank -%}
+          {{ collection.image | image_url: width: 1200 | image_tag: loading: 'eager', widths: '500, 800, 1000, 1200', sizes: '(min-width: 990px) 45vw, 100vw', alt: collection.image.alt | default: collection.title }}
+        {%- else -%}
+          <span>{{ section.settings.placeholder_label }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BlueTex Collection Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "BlueTex Product System" },
+    { "type": "text", "id": "fallback_title", "label": "Fallback title", "default": "BlueTex Products" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Choose materials for metal building insulation cover, repair, and finishing projects." },
+    { "type": "richtext", "id": "description", "label": "Fallback description", "default": "<p>Use this collection to compare BlueTex rolls, tapes, TermBars, door kits, radiant barriers, and sample materials. For full buildings, send photos and dimensions so the material list can be sized correctly.</p>" },
+    { "type": "image_picker", "id": "image", "label": "Hero image" },
+    { "type": "text", "id": "placeholder_label", "label": "Placeholder label", "default": "BlueTex Metal Building Products" },
+    { "type": "text", "id": "cta_label", "label": "Primary CTA label", "default": "Request a Quote" },
+    { "type": "url", "id": "cta_link", "label": "Primary CTA link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary CTA label", "default": "View Sample Box" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary CTA link" }
+  ],
+  "presets": [{ "name": "BlueTex Collection Hero" }]
+}
+{% endschema %}

@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-roll-main",
+      "blocks": {
+        "b1": { "type": "bullet", "settings": { "text": "Foil side reflects radiant heat; white side creates a clean finished interior surface." } },
+        "b2": { "type": "bullet", "settings": { "text": "50-inch rolls are preferred for most cover and repair jobs when that width fits the project." } },
+        "b3": { "type": "bullet", "settings": { "text": "Pair with TermBars, white vapor barrier seam tape, and the right fasteners for the full system." } },
+        "b4": { "type": "bullet", "settings": { "text": "For full-building work, send photos and dimensions before ordering large quantities." } },
+        "t1": { "type": "trust", "settings": { "icon": "2", "heading": "2mm Pro", "text": "Lean cover and repair layer for common retrofit projects." } },
+        "t2": { "type": "trust", "settings": { "icon": "6", "heading": "6mm Supreme", "text": "Thicker foam layer for projects needing more body." } },
+        "t3": { "type": "trust", "settings": { "icon": "T", "heading": "TermBar System", "text": "Mechanical fastening keeps the surface tight." } },
+        "t4": { "type": "trust", "settings": { "icon": "Q", "heading": "Quote Support", "text": "We can help size rolls, tape, and parts." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "fit": {
+      "type": "bluetex-product-fit",
+      "blocks": {
+        "best": { "type": "item", "settings": { "kicker": "Best for", "heading": "Cover and repair", "text": "A practical fit when old metal building insulation needs a cleaner white finished interior." } },
+        "not": { "type": "item", "settings": { "kicker": "Not ideal for", "heading": "Unclear layouts", "text": "If framing, bay spacing, or product width is uncertain, send photos before ordering." } },
+        "need": { "type": "item", "settings": { "kicker": "You may need", "heading": "Tape and TermBars", "text": "Most finished installs also need seam tape, TermBars, and fasteners." } }
+      },
+      "block_order": ["best", "not", "need"],
+      "settings": { "heading": "Is This Right For Me?", "text": "Use this roll when the goal is a clean BlueTex cover/repair system for a metal building." }
+    },
+    "chooser": {
+      "type": "bluetex-product-chooser",
+      "blocks": {
+        "c1": { "type": "item", "settings": { "kicker": "2mm", "heading": "Pro 2mm", "text": "Lean, practical material for common cover and repair jobs." } },
+        "c2": { "type": "item", "settings": { "kicker": "6mm", "heading": "Supreme 6mm", "text": "More foam thickness and body when the project calls for it." } },
+        "c3": { "type": "item", "settings": { "kicker": "50 inch", "heading": "Preferred width", "text": "Use 50 inch material for most cover/repair runs when appropriate." } },
+        "c4": { "type": "item", "settings": { "kicker": "62 inch", "heading": "Use when needed", "text": "Choose 62 inch only when the product and layout call for it." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": { "heading": "Which Roll Should I Choose?", "text": "Choose thickness and width based on the building layout. Send photos if you are unsure.", "columns": 4 }
+    },
+    "companions": {
+      "type": "bluetex-product-companions",
+      "blocks": {
+        "p1": { "type": "companion", "settings": { "heading": "48\" Wide Aluminum Term Bars", "text": "Fastens BlueTex tight to purlins and girts for the Cover/Repair System.", "cta_label": "View TermBars" } },
+        "p2": { "type": "companion", "settings": { "heading": "3\" White Vapor Barrier Seam Tape", "text": "Seals panel seams on the white interior side.", "cta_label": "View Tape" } },
+        "p3": { "type": "companion", "settings": { "heading": "Metal Screws & Locking Washers", "text": "Useful for alternate fastening or smaller installs.", "cta_label": "View Fasteners" } },
+        "p4": { "type": "companion", "settings": { "heading": "BlueTex™ Cover/Repair System Sample Box", "text": "Test the full system before ordering for the building.", "cta_label": "View Sample Box" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": { "heading": "Complete the System", "text": "Rolls usually need fastening and seam materials to become a complete BlueTex install." }
+    },
+    "details": {
+      "type": "bluetex-product-details",
+      "blocks": {
+        "d1": { "type": "detail", "settings": { "heading": "Full description", "text": "<p>BlueTex roll products are used for metal building insulation cover and repair. The foil side handles radiant reflection and the white side creates a cleaner finished interior.</p>" } },
+        "d2": { "type": "detail", "settings": { "heading": "Specs and sizing", "text": "<p>Check the selected variant for exact width, roll size, coverage, and thickness. For full buildings, request a material list before ordering.</p>" } },
+        "d3": { "type": "detail", "settings": { "heading": "Install notes", "text": "<p>Most cover/repair installs pair rolls with TermBars, white vapor barrier seam tape, and compatible fasteners.</p>" } },
+        "d4": { "type": "detail", "settings": { "heading": "FAQ", "text": "<p>Use 50 inch material for many cover and repair jobs when available. Choose 62 inch only when the product and layout call for it.</p>" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4"],
+      "settings": { "heading": "Details", "text": "Specs, install notes, and common roll questions are available below." }
+    },
+    "quote": { "type": "bluetex-roll-quote-cta", "settings": {} }
+  },
+  "order": ["main", "fit", "chooser", "companions", "details", "quote"]
+}

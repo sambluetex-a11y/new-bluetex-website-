@@ -1,0 +1,193 @@
+BLUETEX PRODUCT TEMPLATE CATEGORIES
+Source: bluetex_all_products_reference.txt
+Purpose: Use this as the product-to-template assignment guide for the Shopify theme.
+
+============================================================
+1. SAMPLE BOX TEMPLATE
+Template: product.sample-box.json
+Shopify template name: sample-box
+============================================================
+
+Use this template for:
+
+- BlueTex™ Cover/Repair System Sample Box
+  Handle: bluetex-cover-repair-system-sample-box
+  Notes: Specific $100 test kit page with sample contents, redeemable credit, how to use the sample box, sample-specific FAQ, and quote CTA.
+
+
+============================================================
+2. BLUETEX ROLL INSULATION TEMPLATE
+Template: product.bluetex-roll.json
+Shopify template name: bluetex-roll
+============================================================
+
+Use this template for main BlueTex insulation roll products:
+
+- *Clearance* Insulation - 6mm Supreme 62" Wide Foil/White 250 sq ft
+  Handle: clearance-insulation-6mm-supreme-62-wide-foil-white
+  Notes: Clearance 6mm Supreme roll. Final sale. Limited supply.
+
+- BlueTex™ Pro 2mm 50" Wide Foil/White + Foam insulation
+  Handle: bluetex-pro-2mm-50-wide-foil-white-foam-insulation
+  Notes: Main 50" 2mm Pro roll. Important product for cover/repair projects.
+
+- BlueTex™ Pro 2mm Super Wide 62" Foil/White + Foam insulation
+  Handle: bluetex-pro-2mm-super-wide-62-inch
+  Notes: 62" wide 2mm Pro roll. Use where the product itself is specifically 62"; do not push 62" elsewhere.
+
+- BlueTex™ Supreme 6mm 50" Wide Foil/White + Foam insulation - 300 sq ft
+  Handle: bluetex-6mm-supreme-50-wide
+  Notes: 6mm Supreme 50" roll. Higher moisture-control/cold-climate positioning.
+
+- BlueTex™ Supreme 6mm 62" Wide Foil/White + Foam insulation - 300 sq ft
+  Handle: bluetex™-supreme-6mm-62-wide-foil-white-foam-insulation-300-sq-ft
+  Notes: 6mm Supreme 62" roll. Use where the product itself is specifically 62"; do not push 62" elsewhere.
+
+
+============================================================
+3. DOOR KIT TEMPLATE
+Template: product.door-kit.json
+Shopify template name: door-kit
+============================================================
+
+Use this template for garage door and roll-up door insulation kits:
+
+- BlueTex™ 2mm Pro Residential Garage Door Insulation Kit
+  Handle: bluetex-22-wide-pro-residential-garage-door-kit
+  Notes: Residential panel garage door kit. Needs door sizing, kit contents, measuring/install guidance, video, and FAQ.
+
+- BlueTex™ 2mm Pro Roll Up Garage Door Kit
+  Handle: bluetex-2mm-pro-roll-up-garage-door-kit
+  Notes: Commercial/metal roll-up garage door kit. Needs size chart, kit contents, measuring guidance, video, before/after, and FAQ.
+
+
+============================================================
+4. TAPE / ADHESIVE TEMPLATE
+Template: product.tape.json
+Shopify template name: tape
+============================================================
+
+Use this template for tapes and adhesive products:
+
+- 2" Foil Seam Tape
+  Handle: 2-foil-seam-tape
+  Notes: Foil seam tape. 2" wide x 150' long variants.
+
+- 3" Foil Seam Tape
+  Handle: foil-tape
+  Notes: Foil seam tape. 3" wide x 150' long variants.
+
+- 3" Red Vapor Barrier Construction Tape
+  Handle: 3-red-vapor-barrier-stucco-construction-tape
+  Notes: Red construction/vapor barrier tape. Not recommended for seaming BlueTex products.
+
+- 3" White Vapor Barrier Seam Tape
+  Handle: white-tape
+  Notes: Main white seam tape for joining/sealing BlueTex seams. Strong product to cross-sell with roll products.
+
+- 4" Red Vapor Barrier Construction Tape
+  Handle: 4-red-vapor-barrier-construction-tape
+  Notes: Red construction/vapor barrier tape. Not recommended for seaming BlueTex products.
+
+- 4" White Vapor Barrier Multi-Use Tape
+  Handle: 4-white-tape
+  Notes: White multi-use tape. Not the main recommended seam tape for BlueTex seams; 3" white is preferred.
+
+- 6" Foil Repair Tape
+  Handle: 6-inch-foil-tape
+  Notes: Wider foil repair tape for repair/patching applications.
+
+- 6" White Vapor Barrier Insulation Repair Tape
+  Handle: 6-white-tape
+  Notes: Wider white repair tape for patching old/torn insulation and larger repair areas.
+
+- Double-Sided Tape
+  Handle: double-sided-tape
+  Notes: Double-sided tape used in door kits and temporary holding/placement applications.
+
+
+============================================================
+5. SYSTEM PART / ACCESSORY TEMPLATE
+Template: product.system-part.json
+Shopify template name: system-part
+============================================================
+
+Use this template for installation parts, fasteners, clips, bars, and spacers:
+
+- 4' HDPE Furring Strip Spacers - 75 count box
+  Handle: 4foot-hdpe-furring-strip-spacers
+  Notes: Spacers for creating airspace / thermal break between BlueTex and exterior metal.
+
+- 48" Wide Aluminum Term Bars for BlueTex™ Cover System
+  Handle: 48-wide-steel-term-bars-for-bluetex-cover-system
+  Notes: Core Cover/Repair System part. Used to fasten BlueTex tight to purlins/girts. Pairs with 2mm Pro / 6mm Supreme.
+
+- EasyClip™ Purlin Insulation Clip Hangers
+  Handle: easyclip-purlin-insulation-clip-hangers
+  Notes: Clip hanger system for C/Z purlins and girts in red iron metal buildings.
+
+- Metal Screws & Locking Washers for Metal and Wood Frames
+  Handle: screw-washer-set-100-pieces
+  Notes: Fastener set for securing insulation. Keep copy focused on metal building use where possible.
+
+
+============================================================
+6. BARRIER / WRAP TEMPLATE
+Template: product.barrier-wrap.json
+Shopify template name: barrier-wrap
+============================================================
+
+Use this template for radiant barrier and wrap products that are not the standard Cover/Repair roll products:
+
+- Double-Sided Radiant Barrier Foil + Foil Perforated
+  Handle: double-sided-radiant-barrier-foil
+  Notes: Perforated radiant barrier. Not a vapor barrier. Good place to explain airspace and when to use Pro/Supreme instead.
+
+- Single-Sided Radiant Barrier Foil + White Perforated
+  Handle: single-sided-radiant-barrier-foil
+  Notes: Perforated radiant barrier with white side. Not a vapor barrier. Needs airspace explanation.
+
+- Thermal Wrap Vapor Barrier for Fully Conditioned Buildings
+  Handle: thermal-wrap-for-fully-conditioned-buildings
+  Notes: Vapor barrier + air barrier + radiant barrier for fully conditioned buildings. Needs clear differentiation from perforated radiant barrier and Pro/Supreme rolls.
+
+
+============================================================
+QUICK TEMPLATE ASSIGNMENT SUMMARY
+============================================================
+
+sample-box:
+- BlueTex™ Cover/Repair System Sample Box
+
+bluetex-roll:
+- *Clearance* Insulation - 6mm Supreme 62" Wide Foil/White 250 sq ft
+- BlueTex™ Pro 2mm 50" Wide Foil/White + Foam insulation
+- BlueTex™ Pro 2mm Super Wide 62" Foil/White + Foam insulation
+- BlueTex™ Supreme 6mm 50" Wide Foil/White + Foam insulation - 300 sq ft
+- BlueTex™ Supreme 6mm 62" Wide Foil/White + Foam insulation - 300 sq ft
+
+door-kit:
+- BlueTex™ 2mm Pro Residential Garage Door Insulation Kit
+- BlueTex™ 2mm Pro Roll Up Garage Door Kit
+
+tape:
+- 2" Foil Seam Tape
+- 3" Foil Seam Tape
+- 3" Red Vapor Barrier Construction Tape
+- 3" White Vapor Barrier Seam Tape
+- 4" Red Vapor Barrier Construction Tape
+- 4" White Vapor Barrier Multi-Use Tape
+- 6" Foil Repair Tape
+- 6" White Vapor Barrier Insulation Repair Tape
+- Double-Sided Tape
+
+system-part:
+- 4' HDPE Furring Strip Spacers - 75 count box
+- 48" Wide Aluminum Term Bars for BlueTex™ Cover System
+- EasyClip™ Purlin Insulation Clip Hangers
+- Metal Screws & Locking Washers for Metal and Wood Frames
+
+barrier-wrap:
+- Double-Sided Radiant Barrier Foil + Foil Perforated
+- Single-Sided Radiant Barrier Foil + White Perforated
+- Thermal Wrap Vapor Barrier for Fully Conditioned Buildings

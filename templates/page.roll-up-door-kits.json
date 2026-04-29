@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-product-family-hub",
+      "blocks": {
+        "single": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Roll-up",
+            "title": "Single Door Kit",
+            "text": "Start here for one hot roll-up door in a shop, garage, or workshop.",
+            "link": "/products/bluetex-2mm-pro-roll-up-garage-door-kit"
+          }
+        },
+        "multi": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Multiple doors",
+            "title": "Double / Multi-Door Kits",
+            "text": "Use the roll-up kit path and quantity options when covering more than one door.",
+            "link": "/products/bluetex-2mm-pro-roll-up-garage-door-kit"
+          }
+        },
+        "residential": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Residential",
+            "title": "Residential Garage Door Kit",
+            "text": "For sectional panel garage doors instead of commercial roll-up doors.",
+            "link": "/products/bluetex-22-wide-pro-residential-garage-door-kit"
+          }
+        },
+        "measure": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Measure first",
+            "title": "Choose Width / Measure",
+            "text": "Measure your door opening first so the kit width and quantity make sense.",
+            "link": "/blogs/articles/how-to-measure-your-roll-up-garage-door-for-insulation"
+          }
+        }
+      },
+      "block_order": ["single", "multi", "residential", "measure"],
+      "settings": {
+        "eyebrow": "Door kits",
+        "heading": "Roll-Up Door Kit Paths",
+        "intro": "Use this page to choose the right BlueTex door kit path for hot roll-up doors, multiple doors, or residential garage doors.",
+        "cta_heading": "Need help choosing the right door kit?",
+        "cta_label": "Contact BlueTex",
+        "cta_link": "/pages/contact-us"
+      }
+    }
+  },
+  "order": ["main"]
+}

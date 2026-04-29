@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-product-family-hub",
+      "blocks": {
+        "termbar": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Cover system",
+            "title": "48\" Aluminum Term Bars",
+            "text": "The main bar used to hold BlueTex tight across purlins and girts in Cover/Repair installs.",
+            "link": "/products/48-wide-steel-term-bars-for-bluetex-cover-system"
+          }
+        },
+        "easyclip": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Fastener",
+            "title": "EasyClips™",
+            "text": "Clip option for selected red iron roofline insulation installs.",
+            "link": "/products/easyclip-purlin-insulation-clip-hangers"
+          }
+        },
+        "screws": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Fasteners",
+            "title": "Screws & Washers",
+            "text": "Fastener pack for BlueTex installation details.",
+            "link": "/products/screw-washer-set-100-pieces"
+          }
+        },
+        "sample": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Try first",
+            "title": "Cover/Repair Sample Box",
+            "text": "Review material, tape, and TermBar pieces before a larger project.",
+            "link": "/products/bluetex-cover-repair-system-sample-box"
+          }
+        }
+      },
+      "block_order": ["termbar", "easyclip", "screws", "sample"],
+      "settings": {
+        "eyebrow": "Cover system hardware",
+        "heading": "Cover/Repair Hardware Paths",
+        "intro": "Start here for TermBars, clips, fasteners, and sample kit pieces used in BlueTex Cover/Repair installs.",
+        "cta_heading": "Not sure which parts your building needs?",
+        "cta_label": "Send Photos",
+        "cta_link": "/pages/contact-us"
+      }
+    }
+  },
+  "order": ["main"]
+}

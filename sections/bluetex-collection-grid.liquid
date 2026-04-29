@@ -1,0 +1,117 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-facets.css' | asset_url | stylesheet_tag }}
+{{ 'bluetex-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+<section id="BlueTexCollectionGrid-{{ section.id }}" class="btxc btxc-grid">
+  {%- paginate collection.products by section.settings.products_per_page -%}
+    <div class="btxc__container">
+      <div class="btxc-grid__header">
+        <div>
+          <div class="btxc__label"><span>{{ section.settings.heading }}</span></div>
+          {%- if section.settings.text != blank -%}<p class="btxc__intro">{{ section.settings.text }}</p>{%- endif -%}
+        </div>
+        <div class="btxc-grid__count" role="status">
+          {%- if collection.products_count == collection.all_products_count -%}
+            {{ collection.products_count }} products
+          {%- else -%}
+            {{ collection.products_count }} of {{ collection.all_products_count }} products
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+      <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ section.id }}">
+        {% render 'facets',
+          results: collection,
+          enable_filtering: section.settings.enable_filtering,
+          enable_sorting: section.settings.enable_sorting,
+          filter_type: section.settings.filter_type,
+          paginate: paginate
+        %}
+      </aside>
+    {%- endif -%}
+
+    <div class="btxc__container">
+      <div id="ProductGridContainer" class="product-grid-container">
+        {%- if collection.products.size == 0 -%}
+          <div class="btxc-grid__empty" id="product-grid" data-id="{{ section.id }}">
+            <strong>{{ section.settings.empty_heading }}</strong>
+            <p>{{ section.settings.empty_text }}</p>
+          </div>
+        {%- else -%}
+          <ul id="product-grid" data-id="{{ section.id }}" class="btxc-grid__list">
+            {%- for product in collection.products -%}
+              {%- liquid
+                assign category_label = product.type | default: product.vendor
+                assign handle_text = product.handle | downcase
+                assign title_text = product.title | downcase
+                if handle_text contains 'clearance' or title_text contains 'clearance'
+                  assign category_label = 'Clearance'
+                elsif handle_text contains 'sample' or title_text contains 'sample box'
+                  assign category_label = 'Sample Box'
+                elsif handle_text contains 'door' or title_text contains 'door'
+                  assign category_label = 'Door Kit'
+                elsif handle_text contains 'tape' or title_text contains 'tape'
+                  assign category_label = 'Tape'
+                elsif handle_text contains 'term' or handle_text contains 'clip' or handle_text contains 'screw' or handle_text contains 'spacer' or title_text contains 'term' or title_text contains 'clip' or title_text contains 'screw' or title_text contains 'spacer'
+                  assign category_label = 'System Part'
+                elsif handle_text contains 'barrier' or handle_text contains 'wrap' or title_text contains 'barrier' or title_text contains 'wrap'
+                  assign category_label = 'Barrier / Wrap'
+                elsif handle_text contains 'insulation' or title_text contains 'bluetex'
+                  assign category_label = 'Roll Insulation'
+                endif
+              -%}
+              <li>
+                <article class="btxc-card">
+                  <a class="btxc-card__media" href="{{ product.url | within: collection }}" aria-label="{{ product.title | escape }}">
+                    {%- if product.featured_media -%}
+                      {{ product.featured_media | image_url: width: 700 | image_tag: loading: 'lazy', widths: '300, 450, 600, 700', sizes: '(min-width: 990px) 33vw, (min-width: 680px) 50vw, 100vw', alt: product.featured_media.alt | default: product.title }}
+                    {%- endif -%}
+                    <span class="btxc-card__tag">{{ category_label }}</span>
+                  </a>
+                  <div class="btxc-card__body">
+                    <h3><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h3>
+                    {%- if product.type != blank or product.vendor != blank -%}
+                      <p class="btxc-card__meta">{{ product.type | default: product.vendor }}</p>
+                    {%- endif -%}
+                    <div class="btxc-card__price">{% render 'price', product: product, show_badges: false %}</div>
+                    <div class="btxc-card__actions">
+                      <a class="btxc__btn" href="{{ product.url | within: collection }}">{{ section.settings.product_cta }}</a>
+                      {%- if section.settings.show_help_line -%}<a class="btxc-card__help" href="{{ section.settings.help_link }}">{{ section.settings.help_text }}</a>{%- endif -%}
+                    </div>
+                  </div>
+                </article>
+              </li>
+            {%- endfor -%}
+          </ul>
+          {%- if paginate.pages > 1 -%}
+            <div class="btxc-grid__pagination">{% render 'pagination', paginate: paginate, anchor: '' %}</div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endpaginate -%}
+</section>
+
+{% schema %}
+{
+  "name": "BlueTex Grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Products" },
+    { "type": "textarea", "id": "text", "label": "Intro text", "default": "Browse the collection below. For full-building jobs, request help before ordering so rolls, tape, TermBars, and fasteners are sized together." },
+    { "type": "range", "id": "products_per_page", "min": 8, "max": 36, "step": 4, "default": 12, "label": "Products per page" },
+    { "type": "checkbox", "id": "enable_filtering", "default": true, "label": "Enable filtering" },
+    { "type": "select", "id": "filter_type", "options": [{ "value": "horizontal", "label": "Horizontal" }, { "value": "vertical", "label": "Vertical" }, { "value": "drawer", "label": "Drawer" }], "default": "horizontal", "label": "Filter type" },
+    { "type": "checkbox", "id": "enable_sorting", "default": true, "label": "Enable sorting" },
+    { "type": "text", "id": "product_cta", "label": "Product CTA", "default": "View Product" },
+    { "type": "checkbox", "id": "show_help_line", "label": "Show help line", "default": true },
+    { "type": "text", "id": "help_text", "label": "Help text", "default": "Need help sizing? Send Photos" },
+    { "type": "url", "id": "help_link", "label": "Help link" },
+    { "type": "text", "id": "empty_heading", "label": "Empty heading", "default": "No products found" },
+    { "type": "textarea", "id": "empty_text", "label": "Empty text", "default": "Try clearing filters or contact BlueTex for help finding the right material." }
+  ],
+  "presets": [{ "name": "BlueTex Grid" }]
+}
+{% endschema %}

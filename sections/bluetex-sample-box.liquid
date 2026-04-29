@@ -1,0 +1,96 @@
+<section id="BlueTexSampleBox-{{ section.id }}" class="bt-sample-box">
+  <div class="bt-sample-box__inner">
+    <div class="bt-sample-box__media">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400, 700, 900', sizes: '(min-width: 990px) 42vw, 100vw', alt: section.settings.image_alt }}
+      {%- else -%}
+        <span>BlueTex sample box image</span>
+      {%- endif -%}
+      <strong>{{ section.settings.badge }}</strong>
+    </div>
+    <div class="bt-sample-box__copy">
+      <span class="bt-sample-box__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+      <div class="bt-sample-box__grid">
+        {%- for block in section.blocks -%}
+          <div class="bt-sample-box__item" {{ block.shopify_attributes }}>
+            <span>{{ block.settings.qty }}</span>
+            <strong>{{ block.settings.heading }}</strong>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="bt-sample-box__actions">
+        {%- if section.settings.primary_label != blank -%}<a class="bt-sample-box__btn bt-sample-box__btn--orange" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>{%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}<a class="bt-sample-box__btn bt-sample-box__btn--navy" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #BlueTexSampleBox-{{ section.id }} { --bt-navy:#0011a7; --bt-navy-hov:#3f62c5; --bt-orange:#ee7f12; --bt-orange-hov:#3f62c5; --bt-ink:#1b1b1b; --bt-text:#1b1b1b; --bt-muted:#535254; --bt-line:#e6e6e7; --bt-soft:#e6e6e7; --bt-grey:#eeeeee; font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#fff; padding:48px 0; }
+  #BlueTexSampleBox-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__inner { max-width:1140px; margin:0 auto; padding:0 20px; display:grid; grid-template-columns:.9fr 1.1fr; gap:32px; align-items:start; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__media { position:relative; background:var(--bt-grey); border:1px solid var(--bt-soft); border-radius:6px; min-height:360px; display:flex; align-items:center; justify-content:center; overflow:hidden; color:var(--bt-navy); font-size:11px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__media img { width:100%; height:100%; min-height:360px; object-fit:contain; background:#fff; display:block; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__media strong { position:absolute; top:14px; left:14px; color:#fff; background:var(--bt-orange); border-radius:2px; padding:6px 12px; font-size:11px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__eyebrow { display:inline-flex; background:#fef2e4; color:var(--bt-orange-hov); border-left:3px solid var(--bt-orange); border-radius:2px; padding:6px 12px; font-size:11px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; margin-bottom:12px; }
+  #BlueTexSampleBox-{{ section.id }} h2 { margin:0 0 10px; color:var(--bt-navy); font-size:28px; line-height:1.1; font-weight:700; letter-spacing:.2px; text-transform:uppercase; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__copy > p { margin:0 0 18px; color:var(--bt-muted); font-size:15px; line-height:1.55; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__item { background:var(--bt-grey); border:1px solid var(--bt-soft); border-top:4px solid var(--bt-navy); border-radius:2px; padding:16px; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__item:nth-child(2n) { border-top-color:var(--bt-orange); }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__item span { display:block; color:var(--bt-orange); font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:5px; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__item strong { display:block; color:var(--bt-navy); font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; line-height:1.25; margin-bottom:5px; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__item p { margin:0; color:var(--bt-text); font-size:13px; line-height:1.45; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__btn { display:inline-flex; align-items:center; justify-content:center; padding:14px 22px; border-radius:4px; border:2px solid transparent; font-size:13px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; text-decoration:none; }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__btn--orange { background:var(--bt-navy); color:#fff; border-color:var(--bt-navy); }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__btn--orange:hover { background:var(--bt-navy-hov); border-color:var(--bt-navy-hov); }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__btn--navy { background:var(--bt-navy); color:#fff; border-color:var(--bt-navy); }
+  #BlueTexSampleBox-{{ section.id }} .bt-sample-box__btn--navy:hover { background:var(--bt-navy-hov); border-color:var(--bt-navy-hov); }
+  @media (max-width: 920px) { #BlueTexSampleBox-{{ section.id }} .bt-sample-box__inner { grid-template-columns:1fr; } }
+  @media (max-width: 560px) { #BlueTexSampleBox-{{ section.id }} { padding:32px 0; } #BlueTexSampleBox-{{ section.id }} .bt-sample-box__inner { padding:0 16px; } #BlueTexSampleBox-{{ section.id }} .bt-sample-box__grid { grid-template-columns:1fr; } #BlueTexSampleBox-{{ section.id }} .bt-sample-box__btn { width:100%; } }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex Sample Box",
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Image badge", "default": "$100 Test Kit" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Try Before You Commit" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "BlueTex™ Cover/Repair System Sample Box" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Full-size pieces of every part of the system so you can test the install on one section of your metal building before ordering full rolls." },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt", "default": "BlueTex Cover/Repair System Sample Box" },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Order the $100 Test Kit" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Send Photos for a Quote" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Box item",
+      "settings": [
+        { "type": "text", "id": "qty", "label": "Quantity", "default": "Qty 1 · 20 ft" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "BlueTex™ 2mm Pro 50″" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "A 20-foot length of our 50-inch-wide 2mm Pro material." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BlueTex Sample Box",
+      "blocks": [
+        { "type": "item", "settings": { "qty": "Qty 1 · 20 ft", "heading": "BlueTex™ 2mm Pro 50″", "text": "A 20-foot length of our 50-inch-wide 2mm Pro material." } },
+        { "type": "item", "settings": { "qty": "Qty 4 · 48″ each", "heading": "Aluminum TermBars", "text": "Four 48-inch aluminum TermBars for fastening BlueTex tight to the purlins and girts." } },
+        { "type": "item", "settings": { "qty": "Qty 1 · 30 ft", "heading": "3″ White Vapor Barrier Seam Tape", "text": "White seam tape for sealing the joints between BlueTex panels." } },
+        { "type": "item", "settings": { "qty": "Qty 6 · Sample Set", "heading": "EasyClip™ Purlin Insulation Clip Hangers", "text": "Sample EasyClips for testing roofline attachment on red iron buildings." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

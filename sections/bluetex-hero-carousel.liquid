@@ -1,0 +1,233 @@
+{% comment %}
+  BTI v14 header hero footer upgrade
+  Three-path homepage hero carousel.
+{% endcomment %}
+
+<section id="BlueTexHeroCarousel-{{ section.id }}" class="bt-hero-carousel" data-autoplay="{{ section.settings.enable_autoplay }}" data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
+  <div class="bt-hero-carousel__shell">
+    <div class="bt-hero-carousel__viewport" data-bt-hero-viewport>
+      <div class="bt-hero-carousel__track" data-bt-hero-track>
+        {%- for i in (1..3) -%}
+          {%- liquid
+            assign eyebrow_key = 'slide_' | append: i | append: '_eyebrow'
+            assign heading_key = 'slide_' | append: i | append: '_heading'
+            assign body_key = 'slide_' | append: i | append: '_body'
+            assign primary_label_key = 'slide_' | append: i | append: '_primary_label'
+            assign primary_link_key = 'slide_' | append: i | append: '_primary_link'
+            assign secondary_label_key = 'slide_' | append: i | append: '_secondary_label'
+            assign secondary_link_key = 'slide_' | append: i | append: '_secondary_link'
+            assign bullet_1_key = 'slide_' | append: i | append: '_bullet_1'
+            assign bullet_2_key = 'slide_' | append: i | append: '_bullet_2'
+            assign bullet_3_key = 'slide_' | append: i | append: '_bullet_3'
+            assign image_key = 'slide_' | append: i | append: '_image'
+            assign image_alt_key = 'slide_' | append: i | append: '_image_alt'
+            assign image_label_key = 'slide_' | append: i | append: '_image_label'
+            assign primary_link = section.settings[primary_link_key]
+            assign secondary_link = section.settings[secondary_link_key]
+            if primary_link == blank
+              if i == 3
+                assign primary_link = '/products/bluetex-2mm-pro-roll-up-garage-door-kit'
+              else
+                assign primary_link = '/pages/contact-us'
+              endif
+            endif
+            if secondary_link == blank
+              if i == 1
+                assign secondary_link = '/products/bluetex-cover-repair-system-sample-box'
+              elsif i == 3
+                assign secondary_link = '/blogs/installations/commercial-roll-up-garage-door-installation'
+              else
+                assign secondary_link = '/pages/contact-us'
+              endif
+            endif
+          -%}
+          <article class="bt-hero-carousel__slide" id="BlueTexHeroSlide-{{ section.id }}-{{ i }}" aria-label="Slide {{ i }} of 3">
+            <div class="bt-hero-carousel__copy">
+              {%- if section.settings[eyebrow_key] != blank -%}
+                <span class="bt-hero-carousel__eyebrow">{{ section.settings[eyebrow_key] }}</span>
+              {%- endif -%}
+              <h1>{{ section.settings[heading_key] }}</h1>
+              <p>{{ section.settings[body_key] }}</p>
+              <div class="bt-hero-carousel__buttons">
+                {%- if section.settings[primary_label_key] != blank -%}
+                  <a class="bt-hero-carousel__btn bt-hero-carousel__btn--primary" href="{{ primary_link }}">{{ section.settings[primary_label_key] }}</a>
+                {%- endif -%}
+                {%- if section.settings[secondary_label_key] != blank -%}
+                  <a class="bt-hero-carousel__btn bt-hero-carousel__btn--secondary" href="{{ secondary_link }}">{{ section.settings[secondary_label_key] }}</a>
+                {%- endif -%}
+              </div>
+              <div class="bt-hero-carousel__proof">
+                {%- if section.settings[bullet_1_key] != blank -%}<span>{{ section.settings[bullet_1_key] }}</span>{%- endif -%}
+                {%- if section.settings[bullet_2_key] != blank -%}<span>{{ section.settings[bullet_2_key] }}</span>{%- endif -%}
+                {%- if section.settings[bullet_3_key] != blank -%}<span>{{ section.settings[bullet_3_key] }}</span>{%- endif -%}
+              </div>
+            </div>
+            <div class="bt-hero-carousel__media">
+              {%- if section.settings[image_key] != blank -%}
+                {{ section.settings[image_key] | image_url: width: 1400 | image_tag: loading: 'eager', widths: '500, 800, 1100, 1400', sizes: '(min-width: 990px) 50vw, 100vw', alt: section.settings[image_alt_key] }}
+              {%- else -%}
+                <div class="bt-hero-carousel__placeholder">Add {{ section.settings[image_label_key] }} image</div>
+              {%- endif -%}
+              {%- if section.settings[image_label_key] != blank -%}
+                <span class="bt-hero-carousel__media-label">{{ section.settings[image_label_key] }}</span>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+
+      <button class="bt-hero-carousel__arrow bt-hero-carousel__arrow--prev" type="button" aria-label="Previous slide" data-bt-hero-prev>‹</button>
+      <button class="bt-hero-carousel__arrow bt-hero-carousel__arrow--next" type="button" aria-label="Next slide" data-bt-hero-next>›</button>
+      <div class="bt-hero-carousel__dots" role="tablist" aria-label="Hero slides">
+        {%- for i in (1..3) -%}
+          <button type="button" class="{% if forloop.first %}is-active{% endif %}" aria-label="Go to slide {{ i }}" data-bt-hero-dot="{{ forloop.index0 }}"></button>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #BlueTexHeroCarousel-{{ section.id }} {
+    --bt-navy:#12205c; --bt-navy-hov:#1a2d80; --bt-deep:#0c1742; --bt-orange:#ee7f12; --bt-line:#cbcbcb; --bt-soft:#f5f7fa; --bt-text:#262626;
+    background:#fff;
+    padding:22px 0 0;
+    font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  #BlueTexHeroCarousel-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__shell { max-width:1180px; margin:0 auto; padding:0 20px; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__viewport { position:relative; overflow:hidden; border:1px solid var(--bt-line); border-radius:6px; background:#fff; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__track { display:flex; transition:transform .42s ease; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__slide { min-width:100%; display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; background:#fff; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__copy { padding:56px 48px; border-right:1px solid var(--bt-line); display:flex; flex-direction:column; justify-content:center; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__eyebrow { align-self:flex-start; background:var(--bt-orange); color:#fff; font-size:11px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; padding:5px 12px; border-radius:2px; margin-bottom:12px; }
+  #BlueTexHeroCarousel-{{ section.id }} h1 { max-width:560px; margin:0 0 14px; color:var(--bt-navy); font-size:42px; line-height:1.06; font-weight:900; letter-spacing:0; text-transform:uppercase; }
+  #BlueTexHeroCarousel-{{ section.id }} p { max-width:540px; margin:0 0 22px; color:var(--bt-text); font-size:16px; line-height:1.55; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__buttons { display:flex; gap:10px; flex-wrap:wrap; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__btn { display:inline-flex; align-items:center; justify-content:center; padding:15px 24px; border-radius:4px; border:2px solid transparent; font-size:13px; font-weight:800; letter-spacing:.8px; line-height:1.1; text-transform:uppercase; text-decoration:none; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__btn--primary { background:var(--bt-navy); color:#fff; border-color:var(--bt-navy); }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__btn--primary:hover { background:var(--bt-navy-hov); border-color:var(--bt-navy-hov); color:#fff; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__btn--secondary { background:#fff; color:var(--bt-navy); border-color:var(--bt-navy); }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__btn--secondary:hover { background:var(--bt-navy); color:#fff; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__proof { display:flex; gap:18px; margin-top:22px; flex-wrap:wrap; color:var(--bt-navy); font-size:12px; font-weight:800; letter-spacing:.8px; text-transform:uppercase; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__proof span { display:inline-flex; align-items:center; gap:8px; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__proof span:before { content:""; width:10px; height:10px; background:var(--bt-orange); border-radius:2px; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__media { position:relative; min-height:420px; background:var(--bt-deep); overflow:hidden; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__media:after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(12,23,66,0) 58%,rgba(12,23,66,.58)); pointer-events:none; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__placeholder { min-height:420px; height:100%; display:flex; align-items:center; justify-content:center; color:#fff; padding:24px; font-size:12px; font-weight:800; letter-spacing:1.4px; text-align:center; text-transform:uppercase; border:1px dashed rgba(255,255,255,.35); }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__media-label { position:absolute; left:20px; bottom:20px; z-index:2; background:rgba(238,127,18,.94); color:#fff; padding:5px 10px; border-radius:2px; font-size:11px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; }
+  /* BTI v14 header hero footer upgrade: keep hero controls out of the copy safe area. */
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__arrow { position:absolute; right:18px; bottom:18px; z-index:4; width:40px; height:40px; border-radius:4px; border:2px solid var(--bt-navy); background:#fff; color:var(--bt-navy); font-size:24px; font-weight:900; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__arrow:hover { background:var(--bt-navy); color:#fff; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__arrow--prev { right:66px; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__arrow--next { right:18px; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__dots { position:absolute; left:0; right:0; bottom:14px; z-index:4; display:flex; justify-content:center; gap:7px; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__dots button { width:9px; height:9px; padding:0; border:0; border-radius:999px; background:rgba(255,255,255,.62); cursor:pointer; }
+  #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__dots button.is-active { width:27px; background:var(--bt-orange); }
+  @media (max-width: 990px) {
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__slide { grid-template-columns:1fr; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__copy { padding:38px 30px; border-right:0; border-bottom:1px solid var(--bt-line); }
+    #BlueTexHeroCarousel-{{ section.id }} h1 { font-size:31px; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__media { min-height:300px; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__placeholder { min-height:300px; }
+  }
+  @media (max-width: 560px) {
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__shell { padding:0 16px; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__copy { padding:30px 22px 42px; }
+    #BlueTexHeroCarousel-{{ section.id }} h1 { font-size:26px; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__btn { width:100%; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__arrow { right:12px; bottom:12px; width:34px; height:34px; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__arrow--prev { right:54px; }
+    #BlueTexHeroCarousel-{{ section.id }} .bt-hero-carousel__arrow--next { right:12px; }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.getElementById('BlueTexHeroCarousel-{{ section.id }}');
+    if (!root) return;
+    const track = root.querySelector('[data-bt-hero-track]');
+    const dots = Array.from(root.querySelectorAll('[data-bt-hero-dot]'));
+    const prev = root.querySelector('[data-bt-hero-prev]');
+    const next = root.querySelector('[data-bt-hero-next]');
+    const total = dots.length;
+    let index = 0;
+    let timer;
+
+    const goTo = (nextIndex) => {
+      index = (nextIndex + total) % total;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
+    };
+
+    const stop = () => window.clearInterval(timer);
+    const start = () => {
+      stop();
+      if (root.dataset.autoplay !== 'true') return;
+      timer = window.setInterval(() => goTo(index + 1), Number(root.dataset.speed || 7000));
+    };
+
+    prev.addEventListener('click', () => { stop(); goTo(index - 1); start(); });
+    next.addEventListener('click', () => { stop(); goTo(index + 1); start(); });
+    dots.forEach((dot) => dot.addEventListener('click', () => { stop(); goTo(Number(dot.dataset.btHeroDot)); start(); }));
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    start();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BlueTex Hero Carousel",
+  "settings": [
+    { "type": "checkbox", "id": "enable_autoplay", "label": "Enable autoplay", "default": true },
+    { "type": "range", "id": "autoplay_speed", "label": "Autoplay speed", "min": 4, "max": 12, "step": 1, "unit": "s", "default": 7 },
+    { "type": "header", "content": "Slide 1" },
+    { "type": "text", "id": "slide_1_eyebrow", "label": "Eyebrow", "default": "Cover · Repair · Retrofit" },
+    { "type": "text", "id": "slide_1_heading", "label": "Heading", "default": "Fix Old Metal Building Insulation Without Tearing It Out" },
+    { "type": "textarea", "id": "slide_1_body", "label": "Body", "default": "Cover torn, stained, or sagging insulation with a clean BlueTex finish using the TermBar system. Built for metal buildings, shops, barns, warehouses, and hangars." },
+    { "type": "text", "id": "slide_1_primary_label", "label": "Primary label", "default": "Request a Quote" },
+    { "type": "url", "id": "slide_1_primary_link", "label": "Primary link" },
+    { "type": "text", "id": "slide_1_secondary_label", "label": "Secondary label", "default": "Order the $100 Test Kit" },
+    { "type": "url", "id": "slide_1_secondary_link", "label": "Secondary link" },
+    { "type": "text", "id": "slide_1_bullet_1", "label": "Bullet 1", "default": "TermBar install" },
+    { "type": "text", "id": "slide_1_bullet_2", "label": "Bullet 2", "default": "Clean white finish" },
+    { "type": "text", "id": "slide_1_bullet_3", "label": "Bullet 3", "default": "Built for existing metal buildings" },
+    { "type": "image_picker", "id": "slide_1_image", "label": "Image" },
+    { "type": "text", "id": "slide_1_image_alt", "label": "Image alt", "default": "Finished BlueTex TermBar cover and repair interior" },
+    { "type": "text", "id": "slide_1_image_label", "label": "Image label", "default": "TermBar cover and repair" },
+    { "type": "header", "content": "Slide 2" },
+    { "type": "text", "id": "slide_2_eyebrow", "label": "Eyebrow", "default": "Existing Metal Buildings" },
+    { "type": "text", "id": "slide_2_heading", "label": "Heading", "default": "Retrofit Your Building With a Cleaner Interior" },
+    { "type": "textarea", "id": "slide_2_body", "label": "Body", "default": "Have a shop, barn, warehouse, facility, or hangar with old insulation? Send photos and rough dimensions and we'll help build the material list." },
+    { "type": "text", "id": "slide_2_primary_label", "label": "Primary label", "default": "Get Project Help" },
+    { "type": "url", "id": "slide_2_primary_link", "label": "Primary link" },
+    { "type": "text", "id": "slide_2_secondary_label", "label": "Secondary label", "default": "What Photos We Need" },
+    { "type": "url", "id": "slide_2_secondary_link", "label": "Secondary link" },
+    { "type": "text", "id": "slide_2_bullet_1", "label": "Bullet 1", "default": "No full tear-out in most projects" },
+    { "type": "text", "id": "slide_2_bullet_2", "label": "Bullet 2", "default": "Photo-based quote help" },
+    { "type": "text", "id": "slide_2_bullet_3", "label": "Bullet 3", "default": "Material list support" },
+    { "type": "image_picker", "id": "slide_2_image", "label": "Image" },
+    { "type": "text", "id": "slide_2_image_alt", "label": "Image alt", "default": "Existing metal building retrofit interior" },
+    { "type": "text", "id": "slide_2_image_label", "label": "Image label", "default": "Existing building retrofit" },
+    { "type": "header", "content": "Slide 3" },
+    { "type": "text", "id": "slide_3_eyebrow", "label": "Eyebrow", "default": "Roll-Up Door Kits" },
+    { "type": "text", "id": "slide_3_heading", "label": "Heading", "default": "Cool Down a Hot Roll-Up Door" },
+    { "type": "textarea", "id": "slide_3_body", "label": "Body", "default": "BlueTex roll-up door kits help reduce radiant heat from hot garage, shop, and workshop doors. The foil side reflects 97% radiant heat, like putting the door in the shade." },
+    { "type": "text", "id": "slide_3_primary_label", "label": "Primary label", "default": "Shop Roll-Up Door Kits" },
+    { "type": "url", "id": "slide_3_primary_link", "label": "Primary link" },
+    { "type": "text", "id": "slide_3_secondary_label", "label": "Secondary label", "default": "See Install Guide" },
+    { "type": "url", "id": "slide_3_secondary_link", "label": "Secondary link" },
+    { "type": "text", "id": "slide_3_bullet_1", "label": "Bullet 1", "default": "Simple helper install" },
+    { "type": "text", "id": "slide_3_bullet_2", "label": "Bullet 2", "default": "Double-sided tape system" },
+    { "type": "text", "id": "slide_3_bullet_3", "label": "Bullet 3", "default": "Great for shops and workshops" },
+    { "type": "image_picker", "id": "slide_3_image", "label": "Image" },
+    { "type": "text", "id": "slide_3_image_alt", "label": "Image alt", "default": "BlueTex roll-up door kit installed" },
+    { "type": "text", "id": "slide_3_image_label", "label": "Image label", "default": "Roll-up door kit" }
+  ],
+  "presets": [
+    { "name": "BlueTex Hero Carousel" }
+  ]
+}
+{% endschema %}

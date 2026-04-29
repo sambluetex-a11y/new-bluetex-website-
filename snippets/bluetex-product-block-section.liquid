@@ -1,0 +1,97 @@
+{{ 'bluetex-product-templates.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign band_class = 'btp__band'
+  if section.settings.background == 'grey'
+    assign band_class = 'btp__band btp__band--grey'
+  endif
+  assign columns = section.settings.columns | default: 3
+-%}
+
+<section id="BlueTexBlockSection-{{ section.id }}" class="btp {{ band_class }}">
+  <div class="btp__container">
+    {%- if mode == 'cta' -%}
+      <div class="btp-cta">
+        <div>
+          <h2>{{ section.settings.heading }}</h2>
+          <p>{{ section.settings.text }}</p>
+        </div>
+        <div class="btp-cta__actions">
+          {%- if section.settings.primary_label != blank -%}<a class="btp__btn btp__btn--orange" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>{%- endif -%}
+          {%- if section.settings.secondary_label != blank -%}<a class="btp__btn btp__btn--white" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{%- endif -%}
+        </div>
+      </div>
+    {%- elsif mode == 'video' -%}
+      <div class="btp__label">
+        <span>{{ section.settings.heading }}</span>
+        {%- if section.settings.link_label != blank -%}<a href="{{ section.settings.link }}">{{ section.settings.link_label }}</a>{%- endif -%}
+      </div>
+      <div class="btp-video__frame">
+        {%- if section.settings.video_url != blank -%}
+          {%- if section.settings.video_url.type == 'youtube' -%}
+            <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}" title="{{ section.settings.heading | escape }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          {%- elsif section.settings.video_url.type == 'vimeo' -%}
+            <iframe src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" title="{{ section.settings.heading | escape }}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          {%- endif -%}
+        {%- elsif section.settings.embed != blank -%}
+          {{ section.settings.embed }}
+        {%- else -%}
+          <span>Add video URL</span>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.caption != blank -%}<p class="btp__intro" style="text-align:center;margin-left:auto;margin-right:auto;">{{ section.settings.caption }}</p>{%- endif -%}
+    {%- elsif mode == 'before_after' -%}
+      <div class="btp__label"><span>{{ section.settings.heading }}</span></div>
+      {%- if section.settings.text != blank -%}<p class="btp__intro">{{ section.settings.text }}</p>{%- endif -%}
+      <div class="btp-before-after">
+        <div class="btp-before-after__pane"><div class="btp-before-after__media">{{ section.settings.before_label }}</div><div class="btp-before-after__body"><h3>{{ section.settings.before_heading }}</h3><p>{{ section.settings.before_text }}</p></div></div>
+        <div class="btp-before-after__pane"><div class="btp-before-after__media">{{ section.settings.after_label }}</div><div class="btp-before-after__body"><h3>{{ section.settings.after_heading }}</h3><p>{{ section.settings.after_text }}</p></div></div>
+      </div>
+    {%- elsif mode == 'fit' -%}
+      <div class="btp__label">
+        <span>{{ section.settings.heading }}</span>
+        {%- if section.settings.link_label != blank -%}<a href="{{ section.settings.link }}">{{ section.settings.link_label }}</a>{%- endif -%}
+      </div>
+      {%- if section.settings.text != blank -%}<p class="btp__intro">{{ section.settings.text }}</p>{%- endif -%}
+      <div class="btp-fit__grid">
+        {%- for block in section.blocks limit: 3 -%}
+          <article class="btp__card btp__card--left" {{ block.shopify_attributes }}>
+            {%- if block.settings.kicker != blank -%}<span class="btp__card-kicker">{{ block.settings.kicker }}</span>{%- endif -%}
+            <h3>{{ block.settings.heading }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- elsif mode == 'chooser' -%}
+      <div class="btp__label">
+        <span>{{ section.settings.heading }}</span>
+        {%- if section.settings.link_label != blank -%}<a href="{{ section.settings.link }}">{{ section.settings.link_label }}</a>{%- endif -%}
+      </div>
+      {%- if section.settings.text != blank -%}<p class="btp__intro">{{ section.settings.text }}</p>{%- endif -%}
+      <div class="btp-chooser__grid" style="grid-template-columns:repeat({{ columns }},minmax(0,1fr));">
+        {%- for block in section.blocks -%}
+          <article class="btp__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.kicker != blank -%}<span class="btp__card-kicker">{{ block.settings.kicker }}</span>{%- endif -%}
+            <h3>{{ block.settings.heading }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="btp__label">
+        <span>{{ section.settings.heading }}</span>
+        {%- if section.settings.link_label != blank -%}<a href="{{ section.settings.link }}">{{ section.settings.link_label }}</a>{%- endif -%}
+      </div>
+      {%- if section.settings.text != blank -%}<p class="btp__intro">{{ section.settings.text }}</p>{%- endif -%}
+      <div class="btp__grid btp__grid--{{ columns }}">
+        {%- for block in section.blocks -%}
+          <article class="btp__card{% if block.type == 'faq' %} btp__card--left{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.kicker != blank -%}<span class="btp__card-kicker">{{ block.settings.kicker }}</span>{%- endif -%}
+            <h3>{{ block.settings.heading | default: block.settings.question }}</h3>
+            <p>{{ block.settings.text | default: block.settings.answer }}</p>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>

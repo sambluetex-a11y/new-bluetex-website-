@@ -1,0 +1,119 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'bluetex-product-templates.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+<section id="BlueTexProductMain-{{ section.id }}" class="btp btp-main">
+  <div class="btp-main__grid">
+    <div>
+      <div class="btp-main__media">
+        {%- if product.featured_media -%}
+          {%- case product.featured_media.media_type -%}
+            {%- when 'image' -%}
+              {{ product.featured_media | image_url: width: 1200 | image_tag: loading: 'eager', widths: '500, 800, 1000, 1200', sizes: '(min-width: 990px) 50vw, 100vw', alt: product.featured_media.alt | default: product.title }}
+            {%- when 'video' -%}
+              {{ product.featured_media | video_tag: controls: true, image_size: '900x' }}
+            {%- when 'external_video' -%}
+              {{ product.featured_media | external_video_tag }}
+            {%- else -%}
+              {{ product.featured_media | media_tag }}
+          {%- endcase -%}
+        {%- else -%}
+          <span>{{ section.settings.media_placeholder }}</span>
+        {%- endif -%}
+        <strong class="btp-main__media-badge">{{ section.settings.media_badge }}</strong>
+      </div>
+      {%- if product.media.size > 1 -%}
+        <div class="btp-main__thumbs">
+          {%- for media in product.media limit: 5 -%}
+            <a class="btp-main__thumb" href="{{ media.preview_image | image_url: width: 1200 }}">
+              {{ media.preview_image | image_url: width: 180 | image_tag: loading: 'lazy', widths: '90, 140, 180', alt: media.alt | default: product.title }}
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div>
+      <span class="btp-main__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h1>{{ product.title | default: section.settings.fallback_title }}</h1>
+      <p class="btp-main__subhead">{{ section.settings.subheadline }}</p>
+
+      <div class="btp-main__price" id="price-{{ section.id }}" role="status">
+        {%- render 'price', product: product, use_variant: true, show_badges: false, price_class: 'price--large' -%}
+        {%- if section.settings.price_note != blank -%}<span class="btp-main__price-note">{{ section.settings.price_note }}</span>{%- endif -%}
+      </div>
+
+      <ul class="btp-main__bullets">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'bullet' -%}
+            <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+
+      <product-form class="btp-main__form" data-section-id="{{ section.id }}">
+        <div class="product-form__error-message-wrapper" role="alert" hidden>
+          <span class="svg-wrapper">{{- 'icon-error.svg' | inline_asset_content -}}</span>
+          <span class="product-form__error-message"></span>
+        </div>
+        {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          {%- unless product.has_only_default_variant -%}
+            <label class="btp-main__label" for="VariantSelect-{{ section.id }}">{{ section.settings.variant_label }}</label>
+            <select class="btp-main__select product-variant-id" id="VariantSelect-{{ section.id }}" name="id">
+              {%- for variant in product.variants -%}
+                <option value="{{ variant.id }}" {% if variant == current_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled{% endunless %}>
+                  {{ variant.title }}{% unless variant.available %} - Sold out{% endunless %}
+                </option>
+              {%- endfor -%}
+            </select>
+          {%- else -%}
+            <input type="hidden" name="id" value="{{ current_variant.id }}" class="product-variant-id">
+          {%- endunless -%}
+
+          <div class="btp-main__qty-row">
+            <label class="btp-main__label" for="Quantity-{{ section.id }}">{{ section.settings.quantity_label }}</label>
+            <quantity-input class="quantity btp-main__qty">
+              <button class="quantity__button" name="minus" type="button">
+                <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                <span aria-hidden="true">−</span>
+              </button>
+              <input class="quantity__input" type="number" name="quantity" id="Quantity-{{ section.id }}" data-cart-quantity="{{ cart | item_count_for_variant: current_variant.id }}" data-min="{{ current_variant.quantity_rule.min }}" min="{{ current_variant.quantity_rule.min }}" {% if current_variant.quantity_rule.max != null %}max="{{ current_variant.quantity_rule.max }}"{% endif %} step="{{ current_variant.quantity_rule.increment }}" value="{{ current_variant.quantity_rule.min }}" form="{{ product_form_id }}">
+              <button class="quantity__button" name="plus" type="button">
+                <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </quantity-input>
+          </div>
+
+          <button id="ProductSubmitButton-{{ section.id }}" type="submit" name="add" class="btp-main__cart product-form__submit" {% unless current_variant.available %}disabled{% endunless %}>
+            <span>{%- if current_variant.available -%}{{ section.settings.add_to_cart_label }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}</span>
+            {%- render 'loading-spinner' -%}
+          </button>
+          {%- if section.settings.show_dynamic_checkout -%}
+            <div class="btp-main__dynamic">{{ form | payment_button }}</div>
+          {%- endif -%}
+        {%- endform -%}
+      </product-form>
+
+      {%- if section.settings.quote_label != blank -%}
+        <a class="btp__btn btp__btn--navy btp-main__quote" href="{{ section.settings.quote_link }}">{{ section.settings.quote_label }}</a>
+      {%- endif -%}
+
+      <div class="btp-main__trust">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'trust' -%}
+            <div class="btp-main__trust-item" {{ block.shopify_attributes }}>
+              <span class="btp-main__trust-icon">{{ block.settings.icon }}</span>
+              <div><strong>{{ block.settings.heading }}</strong><p>{{ block.settings.text }}</p></div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>

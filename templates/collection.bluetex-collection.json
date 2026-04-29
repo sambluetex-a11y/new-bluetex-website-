@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "hero": {
+      "type": "bluetex-collection-hero",
+      "settings": {
+        "eyebrow": "BlueTex Product System",
+        "fallback_title": "BlueTex Products",
+        "subtitle": "Metal building insulation cover, repair, and finishing materials.",
+        "description": "<p>Use this collection to compare BlueTex rolls, tapes, TermBars, door kits, radiant barriers, and sample materials. For full buildings, send photos and dimensions so the material list can be sized correctly.</p>",
+        "placeholder_label": "BlueTex Metal Building Products",
+        "cta_label": "Request a Quote",
+        "secondary_label": "View Sample Box"
+      }
+    },
+    "guidance": {
+      "type": "bluetex-collection-guidance",
+      "blocks": {
+        "roll": { "type": "category", "settings": { "title": "BlueTex Roll Insulation", "text": "Main BlueTex rolls for metal building cover and repair. Use 50 inch material for most finished interior runs unless the product itself calls for a wider roll.", "link_label": "View Products" } },
+        "door": { "type": "category", "settings": { "title": "Door Kits", "text": "Pre-planned kits for residential panel doors and commercial roll-up doors. Measure first, then choose the kit that matches the door style.", "link_label": "View Door Kits" } },
+        "tape": { "type": "category", "settings": { "title": "Tape & Adhesives", "text": "White vapor barrier seam tape is the main seaming tape for BlueTex products. Wider repair tapes help patch larger tears.", "link_label": "View Tape" } },
+        "parts": { "type": "category", "settings": { "title": "System Parts", "text": "TermBars, EasyClips, fasteners, and spacers help the system install cleanly against metal building framing.", "link_label": "View Parts" } },
+        "barrier": { "type": "category", "settings": { "title": "Radiant Barrier / Thermal Wrap", "text": "Foil and wrap products for jobs where radiant heat control, airspace, or conditioned-building vapor control matter.", "link_label": "View Barriers" } },
+        "sample": { "type": "category", "settings": { "title": "Sample Box", "text": "Test full-size BlueTex materials, TermBars, tape, screws, and EasyClips on one section before a larger order.", "link_label": "View Sample Box" } }
+      },
+      "block_order": ["roll", "door", "tape", "parts", "barrier", "sample"],
+      "settings": {
+        "heading": "Product Category Guidance",
+        "text": "Start with the product group that matches the job. If you are covering a full metal building, photos and dimensions are usually the fastest path to an accurate list."
+      }
+    },
+    "grid": {
+      "type": "bluetex-collection-grid",
+      "settings": {
+        "heading": "Products",
+        "text": "Browse the collection below. For full-building jobs, request help before ordering so rolls, tape, TermBars, and fasteners are sized together.",
+        "products_per_page": 12,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "product_cta": "View Product",
+        "show_help_line": true,
+        "help_text": "Need help sizing? Send Photos",
+        "empty_heading": "No products found",
+        "empty_text": "Try clearing filters or contact BlueTex for help finding the right material."
+      }
+    },
+    "quote": {
+      "type": "bluetex-collection-quote-cta",
+      "settings": {
+        "heading": "Not sure what to order?",
+        "text": "Send photos and dimensions and we will help build an accurate material list for your metal building.",
+        "primary_label": "Request a Quote",
+        "secondary_label": "View Sample Box"
+      }
+    },
+    "faq": {
+      "type": "bluetex-collection-faq",
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "Which BlueTex product do I need?", "answer": "It depends on the building, existing insulation condition, and install method. Send photos and dimensions if you are planning more than a small repair." } },
+        "q2": { "type": "faq", "settings": { "question": "Should I order rolls directly or request a quote?", "answer": "For full-building cover or repair, request a quote so rolls, tape, TermBars, and fasteners can be sized as a system." } },
+        "q3": { "type": "faq", "settings": { "question": "What photos help with a material list?", "answer": "Send wide shots of the interior, problem areas, purlins or girts, corners, doors, and a few measurements of wall or roof runs." } },
+        "q4": { "type": "faq", "settings": { "question": "Do I need TermBars and tape?", "answer": "Most finished cover and repair projects use TermBars to fasten the material and white vapor barrier tape to seal seams." } },
+        "q5": { "type": "faq", "settings": { "question": "What if I am repairing existing insulation?", "answer": "BlueTex is commonly used to cover stained, torn, or sagging insulation in metal buildings without removing all existing material first." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "settings": {
+        "heading": "Collection Questions"
+      }
+    }
+  },
+  "order": ["hero", "guidance", "grid", "quote", "faq"]
+}

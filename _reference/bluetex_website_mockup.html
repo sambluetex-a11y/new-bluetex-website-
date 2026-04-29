@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BlueTex Insulation — Cover, Repair & Retrofit Systems for Metal Buildings</title>
+<meta name="description" content="BlueTex cover, repair and retrofit insulation systems for metal buildings. TermBar system install, Wall Cover, Roof Cover, Roll-Up Door kits. Request a quote or order the $100 Test Kit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Inspired by ProTapes structure, not copied content. -->
+<!--
+  BlueTex Homepage Mockup — Industrial, squared-off, TermBar-forward.
+  Structure modeled on ProTapes homepage (1140px container, label-bar
+  section headings, 4-button category row, Browse carousels, helper
+  selector). Colors: BlueTex navy #12205c + orange #ee7f12.
+  Font: Inter. Radii mostly 2–6px. White body with #f4f4f4 alt bands.
+-->
+
+<style>
+:root{
+  --navy:#12205c;
+  --navy-hov:#1a2d80;
+  --navy-deep:#0c1742;
+  --orange:#ee7f12;
+  --orange-hov:#c9660a;
+  --ink:#1b1b1b;
+  --text:#262626;
+  --muted:#5c5c5c;
+  --line:#cbcbcb;
+  --line-soft:#e4e4e7;
+  --bg:#ffffff;
+  --bg-grey:#f4f4f4;
+  --bg-grey-2:#ededed;
+  --bg-grey-3:#e6e6e6;
+  --r-sm:2px;
+  --r:4px;
+  --r-md:6px;
+  --container:1140px;
+  --fs:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--fs);
+  color:var(--text);
+  background:var(--bg);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--navy);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:inherit;color:var(--ink);text-transform:uppercase;font-weight:800;letter-spacing:.2px;margin:0 0 .5em;line-height:1.12}
+h1{font-size:38px;font-weight:900;letter-spacing:-.2px}
+h2{font-size:26px}
+h3{font-size:20px}
+h4{font-size:15px}
+p{margin:0 0 1em}
+sup{font-size:.55em;font-weight:600;letter-spacing:0}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+/* ===== Buttons — squared with 4px corners ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;border-radius:var(--r);
+  font-family:var(--fs);font-weight:700;font-size:13px;letter-spacing:.8px;
+  text-transform:uppercase;text-align:center;cursor:pointer;
+  border:2px solid transparent;transition:all .12s ease;
+  text-decoration:none;white-space:nowrap;
+}
+.btn:hover{text-decoration:none}
+.btn--navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn--navy:hover{background:var(--navy-hov);border-color:var(--navy-hov)}
+.btn--orange{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn--orange:hover{background:var(--orange-hov);border-color:var(--orange-hov)}
+.btn--outline{background:#fff;color:var(--navy);border-color:var(--navy)}
+.btn--outline:hover{background:var(--navy);color:#fff}
+.btn--white{background:#fff;color:var(--navy);border-color:#fff}
+.btn--white:hover{background:var(--bg-grey-3);border-color:var(--bg-grey-3)}
+.btn--lg{padding:16px 28px;font-size:14px}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ProTapes-style "label bar" section heading */
+.label-bar{
+  background:var(--bg-grey-3);
+  padding:14px 22px;
+  font-weight:800;font-size:18px;line-height:1.2;
+  text-transform:uppercase;letter-spacing:1.4px;color:var(--ink);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border-left:4px solid var(--navy);
+}
+.label-bar a{
+  font-size:12px;color:var(--navy);font-weight:700;letter-spacing:.8px;white-space:nowrap;
+}
+.label-bar a:hover{color:var(--orange);text-decoration:none}
+
+.eyebrow{display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:5px 12px;border-radius:var(--r-sm);margin-bottom:12px}
+
+/* ===============================================================
+   Shopify Section: Announcement Bar
+   =============================================================== */
+.announce{background:var(--navy);color:#fff;font-size:13px;text-align:center;padding:10px 16px;letter-spacing:.3px}
+.announce a{color:#ffcf9c;font-weight:700}
+.announce a:hover{color:#fff}
+
+/* ===============================================================
+   Shopify Section: Header
+   =============================================================== */
+.header{background:#fff;border-bottom:1px solid var(--line)}
+.header-inner{
+  max-width:var(--container);margin:0 auto;padding:22px 20px;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;
+}
+.logo{display:flex;align-items:center}
+.logo img{height:54px;width:auto}
+
+/* ProTapes-style large search: square input + navy SEARCH button */
+.searchbar{
+  display:flex;align-items:stretch;max-width:600px;margin:0 auto;width:100%;
+  border:2px solid #7b7b7b;border-radius:0;
+}
+.searchbar input{
+  flex:1;border:0;outline:0;padding:12px 16px;
+  font-family:inherit;font-size:15px;color:var(--ink);background:#fff;
+}
+.searchbar input::placeholder{color:#8a8a8a}
+.searchbar-btn{
+  background:var(--navy);color:#fff;border:0;cursor:pointer;
+  padding:10px 24px;margin:-2px -2px -2px 0;border-radius:0;
+  font-family:inherit;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.2px;
+  display:flex;align-items:center;gap:8px;
+}
+.searchbar-btn:hover{background:var(--navy-hov)}
+
+.header-utility{display:flex;align-items:center;gap:10px;font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:.6px}
+.header-utility a{color:var(--navy)}
+.header-utility a:hover{color:var(--orange);text-decoration:none}
+.phone-pill{
+  background:var(--navy);color:#fff !important;padding:10px 16px;border-radius:var(--r);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.phone-pill:hover{background:var(--navy-hov)}
+.icon-btn{
+  width:38px;height:38px;border:2px solid var(--line);border-radius:var(--r);
+  display:inline-flex;align-items:center;justify-content:center;color:var(--navy);
+}
+.icon-btn:hover{border-color:var(--navy);background:var(--bg-grey)}
+.mobile-toggle{display:none;background:none;border:0;font-size:26px;color:var(--navy);cursor:pointer;padding:4px 8px}
+
+/* Nav row */
+.navrow{background:#fff;border-bottom:1px solid var(--line)}
+.nav{
+  max-width:var(--container);margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;justify-content:center;gap:2px;flex-wrap:wrap;
+}
+.nav a{
+  padding:16px 20px;font-size:13px;font-weight:800;color:var(--navy);
+  text-transform:uppercase;letter-spacing:.9px;border-bottom:3px solid transparent;
+  transition:border-color .12s ease,color .12s ease;
+}
+.nav a:hover{border-bottom-color:var(--orange);color:var(--navy-hov);text-decoration:none}
+.nav a.is-cta{color:var(--orange)}
+
+/* ===============================================================
+   Shopify Section: Hero Carousel Banner
+   =============================================================== */
+.hero-wrap{background:#fff;padding:22px 0 0}
+.hero{max-width:var(--container);margin:0 auto;padding:0 20px}
+.hero-carousel{position:relative;overflow:hidden;border-radius:var(--r-md);border:1px solid var(--line)}
+.hero-slides{display:flex;transition:transform .45s ease}
+.hero-slide{
+  min-width:100%;display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;gap:0;
+  background:#fff;
+}
+.hero-text{padding:56px 48px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
+.hero-text h1{font-size:42px;line-height:1.06;color:var(--navy);margin-bottom:14px;max-width:540px}
+.hero-lead{text-transform:none;font-size:16px;color:var(--text);max-width:520px;margin:0 0 22px;font-weight:400}
+.hero-strip{display:flex;gap:18px;margin-top:22px;font-size:12px;color:var(--navy);flex-wrap:wrap;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.hero-strip span{display:inline-flex;align-items:center;gap:8px}
+.hero-strip span::before{content:"";width:10px;height:10px;background:var(--orange);border-radius:var(--r-sm)}
+.hero-visual{background:var(--navy-deep);position:relative;min-height:380px;overflow:hidden}
+.hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-visual::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(12,23,66,0) 60%,rgba(12,23,66,.55));
+}
+.hero-vlabel{
+  position:absolute;left:20px;bottom:20px;z-index:2;color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+  background:rgba(238,127,18,.92);padding:5px 10px;border-radius:var(--r-sm);
+}
+.hero-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:3}
+.hero-dots button{
+  width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.55);cursor:pointer;padding:0;
+}
+.hero-dots button.is-active{background:var(--orange);width:26px;border-radius:4px}
+.hero-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:4;
+  width:40px;height:40px;border-radius:var(--r);background:#fff;border:2px solid var(--navy);cursor:pointer;
+  color:var(--navy);font-size:22px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-arrow.prev{left:14px}.hero-arrow.next{right:14px}
+.hero-arrow:hover{background:var(--navy);color:#fff}
+
+/* ===============================================================
+   Shopify Section: Category Button Row (squared navy blocks)
+   =============================================================== */
+.catrow-wrap{background:#fff;padding:18px 0 6px}
+.catrow{max-width:var(--container);margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.catbtn{
+  background:var(--navy);color:#fff;padding:22px 22px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;
+  border-bottom:4px solid var(--orange);transition:background .15s ease;line-height:1.2;
+}
+.catbtn:hover{background:var(--navy-hov);text-decoration:none}
+.catbtn .arrow{color:var(--orange);font-size:20px;font-weight:900}
+
+/* ===============================================================
+   Shopify Section: Before After Slider (AFTER on LEFT, BEFORE on RIGHT)
+   =============================================================== */
+.ba-wrap{background:var(--bg-grey);padding:48px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.ba-head{max-width:var(--container);margin:0 auto 20px;padding:0 20px;text-align:center}
+.ba-head h2{color:var(--navy);margin-bottom:8px;font-size:26px}
+.ba-head p{text-transform:none;color:var(--muted);margin:0;font-size:15px;max-width:720px;margin:0 auto}
+.ba-slider{max-width:1000px;margin:0 auto;padding:0 20px;position:relative}
+.ba-frame{
+  position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:var(--r-md);
+  background:#0c1742;box-shadow:0 6px 18px rgba(0,0,0,.16);user-select:none;
+  touch-action:none;border:1px solid var(--navy-deep);
+}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+/* Base layer = BEFORE (right) | Top clipped layer reveals from LEFT = AFTER */
+.ba-img.base-before{z-index:1}
+.ba-img.top-after{z-index:2;clip-path:inset(0 50% 0 0)}
+.ba-label{
+  position:absolute;top:16px;z-index:3;color:#fff;
+  font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 12px;border-radius:var(--r-sm);pointer-events:none;
+}
+.ba-label.before{left:16px;background:var(--navy)}
+.ba-label.after{right:16px;background:var(--orange)}
+.ba-divider{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:4;
+  transform:translateX(-1.5px);box-shadow:0 0 10px rgba(0,0,0,.35);pointer-events:none;
+}
+.ba-handle{
+  position:absolute;top:50%;left:50%;z-index:5;
+  width:46px;height:46px;border-radius:var(--r);background:#fff;
+  transform:translate(-50%,-50%);box-shadow:0 2px 12px rgba(0,0,0,.25);
+  display:flex;align-items:center;justify-content:center;cursor:ew-resize;
+  color:var(--navy);font-size:18px;font-weight:900;border:3px solid var(--navy);
+}
+.ba-handle::before{content:"‹›";letter-spacing:-2px}
+.ba-input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:6;margin:0}
+.ba-caption{text-align:center;margin-top:14px;font-weight:700;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+
+/* ===============================================================
+   Shopify Section: TermBar System (near top, white, industrial)
+   =============================================================== */
+.termbar-wrap{background:#fff;padding:54px 0}
+.termbar-head{max-width:var(--container);margin:0 auto 26px;padding:0 20px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end}
+.termbar-head-left h2{color:var(--navy);font-size:30px;margin-bottom:8px;line-height:1.1}
+.termbar-head-left p{text-transform:none;font-size:16px;color:var(--text);margin:0;max-width:620px}
+.termbar-head-right{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap}
+.popular-badge{
+  display:inline-flex;align-items:center;gap:8px;background:#fef2e4;color:var(--orange-hov);
+  padding:6px 12px;border-radius:var(--r-sm);font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+  border-left:3px solid var(--orange);
+}
+.termbar-main{max-width:var(--container);margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+.termbar-imgbig{
+  background:#ddd;overflow:hidden;position:relative;aspect-ratio:4/3;border-radius:var(--r-md);border:1px solid var(--line);
+}
+.termbar-imgbig img{width:100%;height:100%;object-fit:cover;display:block}
+.termbar-imgbig .tag{
+  position:absolute;bottom:12px;left:12px;background:var(--navy);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:5px 10px;border-radius:var(--r-sm);
+}
+.termbar-imggrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px}
+.termbar-imggrid .ti{
+  background:#ccc;overflow:hidden;aspect-ratio:4/3;border-radius:var(--r-sm);border:1px solid var(--line);position:relative;
+}
+.termbar-imggrid .ti img{width:100%;height:100%;object-fit:cover}
+.termbar-imggrid .ti span{
+  position:absolute;left:8px;bottom:8px;background:rgba(18,32,92,.88);color:#fff;
+  font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:3px 8px;border-radius:2px;
+}
+
+/* Four-column TermBar explainer cards */
+.termbar-cards{max-width:var(--container);margin:28px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tb-card{
+  background:var(--bg-grey);border-top:4px solid var(--navy);padding:22px 20px 24px;border-radius:var(--r-sm);
+  display:flex;flex-direction:column;gap:6px;
+}
+.tb-card:nth-child(3){border-top-color:var(--orange)}
+.tb-card .step{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--orange)}
+.tb-card h4{color:var(--navy);text-transform:uppercase;letter-spacing:.4px;font-size:16px;margin-bottom:4px}
+.tb-card p{text-transform:none;color:var(--text);font-size:14px;margin:0}
+
+.termbar-ctas{max-width:var(--container);margin:22px auto 0;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+/* ===============================================================
+   Shopify Section: Common TermBar Questions
+   =============================================================== */
+.faq-wrap{background:var(--bg-grey);padding:44px 0}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:18px}
+.faq-card{
+  background:#fff;border:1px solid var(--line-soft);border-left:4px solid var(--orange);padding:22px 22px 24px;border-radius:var(--r-sm);
+  display:flex;flex-direction:column;gap:10px;
+}
+.faq-card.with-img{padding:0;overflow:hidden}
+.faq-card-img{aspect-ratio:4/3;overflow:hidden;background:#ddd}
+.faq-card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.faq-card-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px}
+.faq-q{font-weight:800;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:.4px;margin:0}
+.faq-a{text-transform:none;font-size:14px;color:var(--text);margin:0}
+
+/* ===============================================================
+   Shopify Section: Intro Content Block
+   =============================================================== */
+.intro-wrap{background:#fff;padding:48px 0;border-top:1px solid var(--line-soft)}
+.intro-card{max-width:var(--container);margin:0 auto;padding:0 20px;text-align:center}
+.intro-card h2{font-size:26px;color:var(--navy);margin-bottom:12px}
+.intro-card p{text-transform:none;font-size:16px;color:var(--text);max-width:780px;margin:0 auto}
+
+/* ===============================================================
+   Shopify Section: Browse by System
+   =============================================================== */
+.browse-sys{background:var(--bg-grey);padding:36px 0 52px}
+.browse-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.browse-card{
+  background:#fff;overflow:hidden;display:block;border-radius:var(--r-sm);
+  border:1px solid var(--line-soft);transition:transform .15s ease,box-shadow .15s ease;
+}
+.browse-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(18,32,92,.12);text-decoration:none}
+.browse-img{aspect-ratio:4/3;background:linear-gradient(135deg,#dde4f1,#eef2f9);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:700;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;position:relative}
+.browse-img img{width:100%;height:100%;object-fit:cover;display:block}
+.browse-title{
+  background:var(--navy);color:#fff;padding:13px 16px;
+  font-weight:800;font-size:13px;letter-spacing:.8px;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.browse-title .arrow{color:var(--orange);font-size:17px}
+
+/* ===============================================================
+   Shopify Section: Browse by Product Type (carousel)
+   =============================================================== */
+.browse-prod{background:#fff;padding:36px 0 52px}
+.carousel-wrap{position:relative;margin-top:18px}
+.carousel-track{display:flex;gap:14px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding:4px 2px 16px}
+.carousel-track::-webkit-scrollbar{height:6px}
+.carousel-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.prod-cell{
+  flex:0 0 20%;min-width:200px;scroll-snap-align:start;
+  background:#fff;border:1px solid var(--line-soft);display:flex;flex-direction:column;
+  transition:border-color .15s ease;border-radius:var(--r-sm);overflow:hidden;
+}
+.prod-cell:hover{border-color:var(--navy);text-decoration:none}
+.prod-img{aspect-ratio:1/1;background:linear-gradient(135deg,#f1f4fa,#dfe5f2);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:700;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;overflow:hidden}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-name{padding:12px 14px 16px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.3px;color:var(--ink);line-height:1.3;min-height:66px}
+.carousel-arrow{
+  position:absolute;top:44%;transform:translateY(-50%);z-index:2;
+  width:40px;height:40px;border-radius:var(--r);background:#fff;border:2px solid var(--navy);
+  color:var(--navy);font-size:20px;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.carousel-arrow:hover{background:var(--navy);color:#fff}
+.carousel-arrow.prev{left:-20px}
+.carousel-arrow.next{right:-20px}
+
+/* ===============================================================
+   Shopify Section: Helper Selector
+   =============================================================== */
+.helper-wrap{background:var(--bg-grey);padding:36px 0 52px}
+.helper-inner{
+  background:#fff;padding:32px 36px;border:1px solid var(--line-soft);border-radius:var(--r-sm);
+  display:grid;grid-template-columns:1fr 1.45fr;gap:36px;align-items:start;margin-top:18px;
+}
+.helper-left h2{font-size:22px;color:var(--navy);margin-bottom:10px}
+.helper-left p{text-transform:none;font-size:15px;color:var(--muted);margin-bottom:18px}
+.helper-left ul{list-style:none;padding:0;margin:0;color:var(--muted);font-size:14px;display:grid;gap:8px}
+.helper-left li{padding-left:20px;position:relative}
+.helper-left li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}
+.select-rows{display:grid;gap:12px}
+.select-row{display:grid;gap:6px}
+.select-label{
+  background:var(--bg-grey-3);padding:9px 14px;
+  font-weight:800;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink);
+  border-left:3px solid var(--navy);
+}
+.select-chips{display:flex;gap:6px;flex-wrap:wrap;padding:2px 0}
+.chip{
+  background:#fff;border:2px solid var(--line);padding:7px 14px;border-radius:var(--r-sm);
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;
+  color:var(--ink);cursor:pointer;transition:all .12s ease;
+}
+.chip:hover,.chip.is-active{background:var(--navy);border-color:var(--navy);color:#fff}
+.helper-cta{margin-top:14px;text-align:right}
+
+/* ===============================================================
+   Shopify Section: Case Study / Gallery
+   =============================================================== */
+.case-wrap{background:#fff;padding:40px 0 52px}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.case-card{background:#fff;border:1px solid var(--line-soft);border-radius:var(--r-sm);overflow:hidden}
+.case-img{aspect-ratio:4/3;background:#ddd;overflow:hidden}
+.case-img img{width:100%;height:100%;object-fit:cover;display:block}
+.case-body{padding:14px 16px 16px}
+.case-body strong{display:block;color:var(--navy);font-size:14px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
+.case-body span{color:var(--muted);font-size:13px}
+.case-cta{text-align:center;margin-top:22px}
+
+/* ===============================================================
+   Shopify Section: Quote CTA
+   =============================================================== */
+.quote-wrap{background:var(--bg-grey);padding:40px 0}
+.quote-inner{
+  max-width:var(--container);margin:0 auto;padding:40px 44px;border-radius:var(--r-sm);
+  background:var(--navy);color:#fff;border-left:6px solid var(--orange);
+  display:grid;grid-template-columns:1.4fr auto;gap:32px;align-items:center;
+}
+.quote-inner h2{color:#fff;font-size:24px;margin-bottom:8px}
+.quote-inner p{text-transform:none;color:#e0e4f0;margin:0;font-size:15px;max-width:620px}
+
+/* ===============================================================
+   Shopify Section: Resources / Support
+   =============================================================== */
+.res-wrap{background:#fff;padding:40px 0 60px}
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.res-card{
+  background:#fff;border:1px solid var(--line-soft);padding:22px 20px 24px;border-radius:var(--r-sm);
+  display:flex;flex-direction:column;transition:all .15s ease;
+}
+.res-card:hover{border-color:var(--navy);text-decoration:none;box-shadow:0 4px 12px rgba(18,32,92,.1)}
+.res-icon{
+  width:42px;height:42px;background:var(--bg-grey);color:var(--navy);border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;margin-bottom:12px;
+  border-left:3px solid var(--orange);
+}
+.res-card h4{font-size:14px;color:var(--navy);margin-bottom:6px}
+.res-card p{text-transform:none;font-size:14px;color:var(--muted);margin-bottom:12px;flex:1}
+.res-cta{color:var(--orange);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px}
+
+/* ===============================================================
+   Shopify Section: Footer
+   =============================================================== */
+.footer{background:var(--navy-deep);color:#c7cde0;padding:48px 0 20px;font-size:14px}
+.footer a{color:#c7cde0}
+.footer a:hover{color:#fff}
+.footer-grid{max-width:var(--container);margin:0 auto 32px;padding:0 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:28px}
+.footer h4{color:#fff;font-size:12px;letter-spacing:1.5px;margin-bottom:12px;text-transform:uppercase}
+.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.footer-brand img{height:44px;width:auto;filter:brightness(0) invert(1);opacity:.92;margin-bottom:10px}
+.footer-brand p{color:#8d97b3;margin:0 0 14px;line-height:1.5;font-size:14px}
+.footer-contact{color:#8d97b3;line-height:1.7}
+.footer-contact strong{color:#fff;display:block;margin-bottom:2px}
+.footer-bottom{max-width:var(--container);margin:0 auto;padding:18px 20px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:12px;color:#6f7a99;gap:14px;flex-wrap:wrap}
+
+/* =================== Responsive =================== */
+@media (max-width:1080px){
+  .browse-grid,.res-grid,.catrow,.faq-grid,.case-grid{grid-template-columns:repeat(2,1fr)}
+  .termbar-cards{grid-template-columns:repeat(2,1fr)}
+  .termbar-head,.termbar-main,.helper-inner,.quote-inner,.hero-slide{grid-template-columns:1fr;gap:20px}
+  .hero-text{border-right:0;border-bottom:1px solid var(--line);padding:36px 28px}
+  .hero-text h1{font-size:30px}
+  .hero-visual{min-height:280px}
+  .prod-cell{flex:0 0 33.33%}
+  .quote-inner{padding:30px 28px}
+  .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
+}
+@media (max-width:820px){
+  .header-inner{grid-template-columns:auto 1fr auto;gap:10px;padding:14px 18px}
+  .header-utility{gap:6px}
+  .header-utility .phone-pill{display:none}
+  .logo img{height:40px}
+  .nav{gap:0;justify-content:flex-start;overflow-x:auto;padding:0 18px}
+  .nav a{padding:12px 10px;font-size:12px;white-space:nowrap}
+  h1,.hero-text h1{font-size:26px}
+  h2{font-size:20px}
+  .ba-wrap,.termbar-wrap,.faq-wrap,.intro-wrap,.browse-sys,.browse-prod,.helper-wrap,.case-wrap,.quote-wrap,.res-wrap{padding:32px 0}
+  .prod-cell{flex:0 0 44%;min-width:180px}
+  .helper-inner,.termbar-main,.quote-inner{padding:20px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .ba-handle{width:38px;height:38px}
+  .carousel-arrow.prev{left:-8px}
+  .carousel-arrow.next{right:-8px}
+}
+@media (max-width:560px){
+  .browse-grid,.res-grid,.catrow,.faq-grid,.case-grid{grid-template-columns:1fr}
+  .termbar-cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .prod-cell{flex:0 0 65%}
+  .container{padding:0 16px}
+  .hero-text{padding:28px 22px}
+}
+.nav::-webkit-scrollbar{display:none}
+.nav{scrollbar-width:none}
+</style>
+</head>
+<body>
+
+<!-- Shopify Section: Announcement Bar -->
+<div class="announce">
+  Free shipping on orders $100+ in the contiguous USA · <a href="bluetex_sample_box_product_page.html">Order the $100 Test Kit →</a>
+</div>
+
+<!-- Shopify Section: Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo" aria-label="BlueTex Insulation home">
+      <img src="../brand_assets/logos/bluetex-logo-med.png" alt="BlueTex Insulation">
+    </a>
+
+    <form class="searchbar" role="search" onsubmit="return false;">
+      <input type="search" placeholder="Search systems, products, install guides…" aria-label="Search">
+      <button type="submit" class="searchbar-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search
+      </button>
+    </form>
+
+    <div class="header-utility">
+      <a href="tel:18005958772" class="phone-pill">📞 1-800-595-8772</a>
+      <a href="#" class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      </a>
+      <a href="#" class="icon-btn" aria-label="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L22 7H6"/><circle cx="9" cy="21" r="1.5"/><circle cx="18" cy="21" r="1.5"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+
+  <div class="navrow">
+    <nav class="nav" aria-label="Primary">
+      <a href="#">Cover &amp; Repair Systems</a>
+      <a href="#">Applications</a>
+      <a href="#">Products</a>
+      <a href="#">Resources</a>
+      <a href="#">About Us</a>
+      <a href="#" class="is-cta">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Shopify Section: Hero Carousel Banner -->
+<section class="hero-wrap">
+  <div class="hero">
+    <div class="hero-carousel" id="heroCarousel">
+      <div class="hero-slides" id="heroSlides">
+
+        <div class="hero-slide">
+          <div class="hero-text">
+            <span class="eyebrow">Cover · Repair · Retrofit</span>
+            <h1>Fix Old Metal Building Insulation Without Tearing It Out</h1>
+            <p class="hero-lead">Cover torn, stained, or sagging insulation with a clean BlueTex finish using the TermBar system. Built for metal buildings, pole barns, shops, and hangars.</p>
+            <div class="btn-row">
+              <a href="#" class="btn btn--orange btn--lg">Request a Quote</a>
+              <a href="bluetex_sample_box_product_page.html" class="btn btn--navy btn--lg">Order the $100 Test Kit</a>
+            </div>
+            <div class="hero-strip">
+              <span>Blocks 97% radiant heat</span>
+              <span>Vapor barrier</span>
+              <span>10× more durable than vinyl</span>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="../brand_assets/termbars/final-roof-wall-look.jpg" alt="Finished BlueTex roof and wall install with TermBars">
+            <span class="hero-vlabel">Finished interior · TermBar install</span>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <div class="hero-text">
+            <span class="eyebrow">Most Popular Install</span>
+            <h1>The TermBar System Gives BlueTex Its Finished Look</h1>
+            <p class="hero-lead">Aluminum TermBars fasten BlueTex tight to the purlins and girts of the building. The result is a flat, drum-tight, finished panel look you can paint if you want.</p>
+            <div class="btn-row">
+              <a href="#" class="btn btn--orange btn--lg">View Install Guide</a>
+              <a href="#" class="btn btn--navy btn--lg">View Application Overview</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="../brand_assets/termbars/installing-termbars.jpg" alt="Installer fastening TermBar over BlueTex">
+            <span class="hero-vlabel">TermBar install · in progress</span>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <div class="hero-text">
+            <span class="eyebrow">Start Small</span>
+            <h1>Try the System Before You Commit to a Full Retrofit</h1>
+            <p class="hero-lead">The $100 BlueTex™ Cover/Repair System Sample Box has a full-size BlueTex piece, a TermBar section, seam tape, and fasteners — everything to test the system on one section of your building.</p>
+            <div class="btn-row">
+              <a href="bluetex_sample_box_product_page.html" class="btn btn--orange btn--lg">Order the $100 Test Kit</a>
+              <a href="#" class="btn btn--navy btn--lg">What's Inside?</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="../brand_assets/termbars/complete-wall-finish.jpg" alt="Completed BlueTex wall finish with TermBars">
+            <span class="hero-vlabel">Completed wall · clean finish</span>
+          </div>
+        </div>
+
+      </div>
+      <button class="hero-arrow prev" aria-label="Previous slide" onclick="btHero(-1)">‹</button>
+      <button class="hero-arrow next" aria-label="Next slide" onclick="btHero(1)">›</button>
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Category Button Row -->
+<section class="catrow-wrap">
+  <div class="catrow">
+    <a href="#" class="catbtn"><span>Wall Cover &amp; Repair</span><span class="arrow">›</span></a>
+    <a href="#" class="catbtn"><span>Roof Cover &amp; Repair</span><span class="arrow">›</span></a>
+    <a href="#" class="catbtn"><span>Metal Building Retrofit</span><span class="arrow">›</span></a>
+    <a href="#" class="catbtn"><span>Roll-Up Doors</span><span class="arrow">›</span></a>
+  </div>
+</section>
+
+<!-- Shopify Section: Before After Slider (BEFORE on LEFT, AFTER on RIGHT) -->
+<section class="ba-wrap">
+  <div class="ba-head">
+    <h2>From Old Insulation to Clean Finished Interior</h2>
+    <p>See how BlueTex changes the inside of a metal building without tearing out the old insulation.</p>
+  </div>
+  <div class="ba-slider">
+    <div class="ba-frame" id="baFrame">
+      <!-- Base layer = AFTER (clean finished BlueTex, shown on RIGHT) -->
+      <img class="ba-img base-before" src="../brand_assets/before_after/Gemini_Generated_Image_f76gk8f76gk8f76g.webp" alt="After — clean finished BlueTex wall">
+      <!-- Top layer clipped from left = BEFORE (dirty/old insulation, shown on LEFT) -->
+      <img class="ba-img top-after" id="baTop" src="../brand_assets/before_after/BT_blog_case_study_cover_system_after.webp" alt="Before — old dirty, yellowed insulation">
+      <span class="ba-label before">Before</span>
+      <span class="ba-label after">After</span>
+      <div class="ba-divider" id="baDivider"></div>
+      <div class="ba-handle" id="baHandle" aria-label="Drag to compare"></div>
+      <input class="ba-input" id="baInput" type="range" min="0" max="100" value="50" aria-label="Before after slider position">
+    </div>
+    <div class="ba-caption">Drag the slider · BlueTex Pro 2mm + TermBar install</div>
+  </div>
+</section>
+
+<!-- Shopify Section: TermBar System -->
+<section class="termbar-wrap">
+  <div class="termbar-head">
+    <div class="termbar-head-left">
+      <span class="popular-badge">★ Most Popular Install Method</span>
+      <h2>The TermBar System Is the Main BlueTex Install Method</h2>
+      <p>TermBars fasten BlueTex to the purlins and girts so the finished surface stays tight, flat, and clean.</p>
+    </div>
+    <div class="termbar-head-right">
+      <a href="#" class="btn btn--navy">View Install Guide</a>
+      <a href="#" class="btn btn--outline">View Application Overview</a>
+    </div>
+  </div>
+
+  <div class="termbar-main">
+    <div class="termbar-imgbig">
+      <img src="../brand_assets/termbars/termbars-install-photo.jpg" alt="Installed TermBar detail on BlueTex wall">
+      <span class="tag">Installed TermBar Detail</span>
+    </div>
+    <div class="termbar-imggrid">
+      <div class="ti"><img src="../brand_assets/termbars/installing-termbars.jpg" alt="Installing TermBars"><span>Install</span></div>
+      <div class="ti"><img src="../brand_assets/termbars/final-roof-wall-look.jpg" alt="Finished roof and wall look"><span>Finished Look</span></div>
+      <div class="ti"><img src="../brand_assets/termbars/complete-wall-finish.jpg" alt="Complete wall finish"><span>Wall Finish</span></div>
+      <div class="ti"><img src="../brand_assets/termbars/before-sagging-insulation.jpg" alt="Before — sagging insulation"><span>Before</span></div>
+    </div>
+  </div>
+
+  <div class="termbar-cards">
+    <div class="tb-card">
+      <span class="step">01 · What It Is</span>
+      <h4>What It Is</h4>
+      <p>TermBars are aluminum bars that fasten the BlueTex material to the building frame.</p>
+    </div>
+    <div class="tb-card">
+      <span class="step">02 · Why It Works</span>
+      <h4>Why It Works</h4>
+      <p>It creates a clean panel look and keeps the material tight against the purlins and girts.</p>
+    </div>
+    <div class="tb-card">
+      <span class="step">03 · Why It's Popular</span>
+      <h4>Why It's Popular</h4>
+      <p>Most customers prefer the finished look and strong mechanical attachment.</p>
+    </div>
+    <div class="tb-card">
+      <span class="step">04 · Other Options</span>
+      <h4>Other Options</h4>
+      <p>EasyClip and other methods are secondary, used when the building calls for them.</p>
+    </div>
+  </div>
+
+  <div class="termbar-ctas">
+    <a href="bluetex_sample_box_product_page.html" class="btn btn--orange btn--lg">Order the $100 Test Kit</a>
+    <a href="#" class="btn btn--navy btn--lg">Request a Quote</a>
+  </div>
+</section>
+
+<!-- Shopify Section: Common TermBar Questions -->
+<section class="faq-wrap">
+  <div class="container">
+    <div class="label-bar">
+      Common TermBar Questions
+      <a href="#">View Full FAQ →</a>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <h3 class="faq-q">Is It Strong?</h3>
+        <p class="faq-a">Yes. TermBars mechanically fasten the material to the building frame. The finished wall is tighter and more durable than the original metal building insulation it covers.</p>
+      </div>
+      <div class="faq-card with-img">
+        <div class="faq-card-img">
+          <img src="../brand_assets/termbars/painted-termbars.jpg" alt="Painted TermBars on a finished BlueTex wall">
+        </div>
+        <div class="faq-card-body">
+          <h3 class="faq-q">Can You Paint It?</h3>
+          <p class="faq-a">Yes. BlueTex and the TermBars both hold paint. Most customers leave it bright white for light reflection, but you can roll or spray any latex paint for a custom color.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h3 class="faq-q">Do I Have to Tear Out the Old Insulation?</h3>
+        <p class="faq-a">Usually no. BlueTex is commonly installed over existing insulation. The TermBar presses the old material in place and the new BlueTex creates the finished interior.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Intro Content Block -->
+<section class="intro-wrap">
+  <div class="intro-card">
+    <h2>BlueTex Cover &amp; Repair Systems</h2>
+    <p>BlueTex helps metal building owners cover old insulation, repair damaged areas, and create a clean finished interior without a full tear-out. Four systems, one proven material, installed with TermBar for a flat, drum-tight finish.</p>
+  </div>
+</section>
+
+<!-- Shopify Section: Browse by System -->
+<section class="browse-sys">
+  <div class="container">
+    <div class="label-bar">
+      Browse by System
+      <a href="#">View All Systems →</a>
+    </div>
+    <div class="browse-grid">
+      <a href="#" class="browse-card">
+        <div class="browse-img"><img src="../brand_assets/termbars/complete-wall-finish.jpg" alt="Wall Cover & Repair"></div>
+        <div class="browse-title">Wall Cover &amp; Repair <span class="arrow">›</span></div>
+      </a>
+      <a href="#" class="browse-card">
+        <div class="browse-img"><img src="../brand_assets/termbars/final-roof-wall-look.jpg" alt="Roof Cover & Repair"></div>
+        <div class="browse-title">Roof Cover &amp; Repair <span class="arrow">›</span></div>
+      </a>
+      <a href="#" class="browse-card">
+        <div class="browse-img"><img src="../brand_assets/termbars/termbars-install-photo.jpg" alt="Metal Building Retrofit"></div>
+        <div class="browse-title">Metal Building Retrofit <span class="arrow">›</span></div>
+      </a>
+      <a href="#" class="browse-card">
+        <div class="browse-img">[ Roll-Up Door Install ]</div>
+        <div class="browse-title">Roll-Up Door Applications <span class="arrow">›</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Case Study / Gallery -->
+<section class="case-wrap">
+  <div class="container">
+    <div class="label-bar">
+      Case Studies &amp; Install Gallery
+      <a href="#">View Full Gallery →</a>
+    </div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-img"><img src="../brand_assets/termbars/before-sagging-insulation.jpg" alt="Old sagging insulation before BlueTex"></div>
+        <div class="case-body"><strong>Before · Sagging Insulation</strong><span>Old vinyl-faced insulation pulling away from the purlins.</span></div>
+      </div>
+      <div class="case-card">
+        <div class="case-img"><img src="../brand_assets/termbars/final-roof-wall-look.jpg" alt="After BlueTex TermBar install"></div>
+        <div class="case-body"><strong>After · Finished Roof &amp; Wall</strong><span>Full retrofit with TermBar install, walls and roof.</span></div>
+      </div>
+      <div class="case-card">
+        <div class="case-img"><img src="../brand_assets/termbars/complete-wall-finish.jpg" alt="Complete BlueTex wall finish"></div>
+        <div class="case-body"><strong>Complete Wall Finish</strong><span>Flat, drum-tight, bright white finished interior wall.</span></div>
+      </div>
+    </div>
+    <div class="case-cta">
+      <a href="#" class="btn btn--navy">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Browse by Product Type -->
+<section class="browse-prod">
+  <div class="container">
+    <div class="label-bar">
+      Browse by Product &amp; System Part
+      <a href="#">View All Products →</a>
+    </div>
+    <div class="carousel-wrap">
+      <button class="carousel-arrow prev" onclick="btScroll('prodTrack',-1)" aria-label="Scroll left">‹</button>
+      <div class="carousel-track" id="prodTrack">
+        <a href="#" class="prod-cell">
+          <div class="prod-img">[ BlueTex Pro 2mm ]</div>
+          <div class="prod-name">BlueTex™ Pro 2mm 50″ Wide</div>
+        </a>
+        <a href="#" class="prod-cell">
+          <div class="prod-img"><img src="../brand_assets/termbars/termbars-install-photo.jpg" alt="Aluminum TermBars"></div>
+          <div class="prod-name">Aluminum TermBars</div>
+        </a>
+        <a href="#" class="prod-cell">
+          <div class="prod-img">[ White Tape ]</div>
+          <div class="prod-name">3″ White Vapor Barrier Seam Tape</div>
+        </a>
+        <a href="#" class="prod-cell">
+          <div class="prod-img">[ Sample Box ]</div>
+          <div class="prod-name">BlueTex™ Cover/Repair System Sample Box</div>
+        </a>
+        <a href="#" class="prod-cell">
+          <div class="prod-img">[ EasyClip ]</div>
+          <div class="prod-name">EasyClip</div>
+        </a>
+        <a href="#" class="prod-cell">
+          <div class="prod-img">[ Door Kits ]</div>
+          <div class="prod-name">Roll-Up Door Kits</div>
+        </a>
+        <a href="#" class="prod-cell">
+          <div class="prod-img">[ Measuring ]</div>
+          <div class="prod-name">Measuring Guide</div>
+        </a>
+        <a href="#" class="prod-cell">
+          <div class="prod-img">[ Install Guide ]</div>
+          <div class="prod-name">Install Guide</div>
+        </a>
+      </div>
+      <button class="carousel-arrow next" onclick="btScroll('prodTrack',1)" aria-label="Scroll right">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Helper Selector -->
+<section class="helper-wrap">
+  <div class="container">
+    <div class="label-bar">Need Help Choosing the Right System?</div>
+    <div class="helper-inner">
+      <div class="helper-left">
+        <h2>Tell Us About Your Building</h2>
+        <p>Answer a few questions and we'll point you to the right BlueTex system, install guide, or test kit. No signup, no pressure.</p>
+        <ul>
+          <li>Works on any metal, red iron, or C-purlin building</li>
+          <li>Covers existing insulation — no tear-out needed</li>
+          <li>Clean white finished interior, paintable surface</li>
+        </ul>
+      </div>
+      <div>
+        <div class="select-rows">
+          <div class="select-row">
+            <div class="select-label">What are you working on?</div>
+            <div class="select-chips">
+              <span class="chip is-active">Wall</span>
+              <span class="chip">Roof</span>
+              <span class="chip">Full Building</span>
+              <span class="chip">Roll-Up Door</span>
+            </div>
+          </div>
+          <div class="select-row">
+            <div class="select-label">What condition is your insulation in?</div>
+            <div class="select-chips">
+              <span class="chip">Torn</span>
+              <span class="chip is-active">Stained</span>
+              <span class="chip">Sagging</span>
+              <span class="chip">Missing</span>
+              <span class="chip">New Build</span>
+            </div>
+          </div>
+          <div class="select-row">
+            <div class="select-label">What do you need next?</div>
+            <div class="select-chips">
+              <span class="chip is-active">Quote</span>
+              <span class="chip">Test Kit</span>
+              <span class="chip">Install Guide</span>
+              <span class="chip">Measuring Help</span>
+            </div>
+          </div>
+        </div>
+        <div class="helper-cta">
+          <a href="#" class="btn btn--orange">Get Help With My Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Quote CTA -->
+<section class="quote-wrap">
+  <div class="container">
+    <div class="quote-inner">
+      <div>
+        <h2>Send Photos and Dimensions for a Quote</h2>
+        <p>We put together a material list faster when we can see your building. Simple quote for a budget number, complete quote for a full line-item list.</p>
+      </div>
+      <div class="btn-row">
+        <a href="#" class="btn btn--orange btn--lg">Request a Quote</a>
+        <a href="#" class="btn btn--white btn--lg">Send Photos for a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Resources / Support -->
+<section class="res-wrap">
+  <div class="container">
+    <div class="label-bar">
+      Resources &amp; Support
+      <a href="#">All Resources →</a>
+    </div>
+    <div class="res-grid">
+      <a href="#" class="res-card">
+        <div class="res-icon">📐</div>
+        <h4>Measuring Guide</h4>
+        <p>Step-by-step measuring for walls, roof, and roll-up doors.</p>
+        <span class="res-cta">View Guide →</span>
+      </a>
+      <a href="#" class="res-card">
+        <div class="res-icon">🔧</div>
+        <h4>Install Guide</h4>
+        <p>Full TermBar install instructions with photos and tips.</p>
+        <span class="res-cta">View Install Guide →</span>
+      </a>
+      <a href="#" class="res-card">
+        <div class="res-icon">🗺</div>
+        <h4>Application Overview</h4>
+        <p>Map your building type to the right BlueTex system.</p>
+        <span class="res-cta">View Application Overview →</span>
+      </a>
+      <a href="#" class="res-card">
+        <div class="res-icon">📦</div>
+        <h4>$100 Test Kit</h4>
+        <p>Full-size BlueTex sample, a TermBar, tape, and fasteners.</p>
+        <span class="res-cta">Order the Test Kit →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Shopify Section: Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../brand_assets/logos/bluetex-logo-med.png" alt="BlueTex Insulation">
+      <p>Cover, repair, and retrofit insulation systems for metal buildings. Practical products, real installs, quote-based service.</p>
+      <div class="footer-contact">
+        <strong>1-800-595-8772</strong>
+        9560 Swafford Rd<br>
+        Justin, TX 76247
+      </div>
+    </div>
+    <div>
+      <h4>Systems</h4>
+      <ul>
+        <li><a href="#">Wall Cover &amp; Repair</a></li>
+        <li><a href="#">Roof Cover &amp; Repair</a></li>
+        <li><a href="#">Metal Building Retrofit</a></li>
+        <li><a href="#">Roll-Up Door Kits</a></li>
+        <li><a href="#">TermBar System</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Install Guide</a></li>
+        <li><a href="#">Measuring Guide</a></li>
+        <li><a href="#">Application Overview</a></li>
+        <li><a href="#">Video Library</a></li>
+        <li><a href="#">Case Studies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About BlueTex</a></li>
+        <li><a href="#">Contractor Pricing</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Dealers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get Started</h4>
+      <ul>
+        <li><a href="#">Request a Quote</a></li>
+        <li><a href="bluetex_sample_box_product_page.html">Order the $100 Test Kit</a></li>
+        <li><a href="#">Send Photos for a Quote</a></li>
+        <li><a href="#">Get a Material List</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© BlueTex Insulation · All rights reserved</div>
+    <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Data Opt-Out</a></div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Hero carousel ---------- */
+(function(){
+  var track=document.getElementById('heroSlides');
+  var dotsWrap=document.getElementById('heroDots');
+  if(!track||!dotsWrap) return;
+  var count=track.children.length;
+  var idx=0;
+  for(var i=0;i<count;i++){
+    var b=document.createElement('button');
+    b.setAttribute('aria-label','Go to slide '+(i+1));
+    (function(n){b.addEventListener('click',function(){go(n);})})(i);
+    dotsWrap.appendChild(b);
+  }
+  function go(n){
+    idx=(n+count)%count;
+    track.style.transform='translateX(-'+(idx*100)+'%)';
+    Array.prototype.forEach.call(dotsWrap.children,function(d,j){d.classList.toggle('is-active',j===idx);});
+  }
+  window.btHero=function(dir){go(idx+dir);};
+  go(0);
+  setInterval(function(){go(idx+1);},7000);
+})();
+
+/* ---------- Horizontal carousel scroll ---------- */
+function btScroll(id,dir){
+  var el=document.getElementById(id);
+  if(!el) return;
+  var cell=el.querySelector('.prod-cell');
+  var w=cell?cell.getBoundingClientRect().width+14:240;
+  el.scrollBy({left:w*dir*2,behavior:'smooth'});
+}
+
+/* ---------- Before / After slider ----------
+   Base layer: BEFORE image (shown on RIGHT)
+   Top layer:  AFTER image, clipped from LEFT (shown on LEFT)
+   pos% moves the divider: left of divider = AFTER, right = BEFORE
+--------------------------------------------- */
+(function(){
+  var frame=document.getElementById('baFrame');
+  var top=document.getElementById('baTop');
+  var divider=document.getElementById('baDivider');
+  var handle=document.getElementById('baHandle');
+  var input=document.getElementById('baInput');
+  if(!frame||!top||!input) return;
+  function setPos(p){
+    p=Math.max(0,Math.min(100,p));
+    top.style.clipPath='inset(0 '+(100-p)+'% 0 0)';
+    divider.style.left=p+'%';
+    handle.style.left=p+'%';
+    input.value=p;
+  }
+  input.addEventListener('input',function(){setPos(parseFloat(input.value));});
+  var dragging=false;
+  function fromEvent(e){
+    var rect=frame.getBoundingClientRect();
+    var x=(e.touches?e.touches[0].clientX:e.clientX)-rect.left;
+    return (x/rect.width)*100;
+  }
+  function start(e){dragging=true;setPos(fromEvent(e));e.preventDefault();}
+  function move(e){if(dragging)setPos(fromEvent(e));}
+  function end(){dragging=false;}
+  frame.addEventListener('mousedown',start);
+  window.addEventListener('mousemove',move);
+  window.addEventListener('mouseup',end);
+  frame.addEventListener('touchstart',start,{passive:false});
+  window.addEventListener('touchmove',move,{passive:true});
+  window.addEventListener('touchend',end);
+  setPos(50);
+})();
+
+/* ---------- Helper selector single-select ---------- */
+document.querySelectorAll('.select-chips').forEach(function(row){
+  row.addEventListener('click',function(e){
+    var t=e.target.closest('.chip'); if(!t) return;
+    row.querySelectorAll('.chip').forEach(function(c){c.classList.remove('is-active');});
+    t.classList.add('is-active');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+BLUETEX BRAND + WEBSITE COPY REFERENCE GUIDE
+
+----------------------------------------
+BRAND COLORS (VISUAL - NEED CSS CONFIRMATION)
+----------------------------------------
+Primary: Deep/Royal Blue
+Secondary: Medium Gray
+Background: White
+
+NOTE:
+Exact HEX values should be pulled from website CSS for precision.
+
+----------------------------------------
+FONTS (NOT YET VERIFIED)
+----------------------------------------
+Likely: Clean sans-serif font
+Status: Needs confirmation via website CSS inspection
+
+----------------------------------------
+PREFERRED TONE
+----------------------------------------
+- Practical
+- Direct
+- Product-focused
+- Installer-friendly
+- Solution-oriented
+
+----------------------------------------
+HOW BLUETEX SHOULD SOUND
+----------------------------------------
+- Confident, not fluffy
+- Technical but easy to understand
+- Focused on real-world metal building problems
+- Helpful and instructional
+- Sales through trust, not hype
+
+Core voice formula:
+"Here’s the problem → here’s the right product → here’s how it installs → here’s why it works → here’s how to test it"
+
+----------------------------------------
+PRODUCT NAMES (MUST STAY EXACT)
+----------------------------------------
+BlueTex™ Cover/Repair System Sample Box
+
+BlueTex™ Pro 2mm 50" Wide Foil/White + Foam insulation
+BlueTex™ Pro 2mm Super Wide 62" Foil/White + Foam insulation
+
+BlueTex™ Supreme 6mm 50" Wide Foil/White + Foam insulation - 300 sq ft
+BlueTex™ Supreme 6mm 62" Wide Foil/White + Foam insulation - 300 sq ft
+
+EasyClip™ Purlin Insulation Clip Hangers
+
+48" aluminum term bars (standardize naming internally)
+
+----------------------------------------
+CTA WORDING PREFERENCES
+----------------------------------------
+Preferred style:
+- Helpful
+- Action-based
+- Low pressure
+
+Approved examples:
+- Request Free Samples
+- Read Guide Now
+- Browse All Products
+- See the Install Guide
+- See How It’s Done
+- Learn More About Contractor Pricing
+
+Avoid:
+- "Shop Now"
+- Aggressive or hype-driven CTAs
+
+----------------------------------------
+REFERENCE PAGES (MODEL THESE)
+----------------------------------------
+Homepage:
+- Strong overview of product + value + trust
+
+Covering Old Insulation Page:
+- Problem → solution → materials → steps
+
+New Construction Installation Page:
+- Technical but clear instructions
+
+Sample Box Product Page:
+- Encourages testing before large purchase
+
+----------------------------------------
+STRATEGIC NOTES
+----------------------------------------
+- Keep focus 100% on metal building insulation
+- Drive toward quotes and samples (NOT direct pushy sales)
+- Favor 50" product over 62" when possible
+- Reduce mention of unrelated use cases
+- Emphasize install simplicity + real-world results
+
+----------------------------------------
+HOW TO USE THIS DOCUMENT
+----------------------------------------
+Use this as a reference for:
+- Website pages
+- PDFs (like quote guide)
+- Emails
+- Shopify content
+- AI/Codex prompts
+
+----------------------------------------
+END OF DOCUMENT
+----------------------------------------

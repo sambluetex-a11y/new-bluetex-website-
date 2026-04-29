@@ -1,0 +1,112 @@
+{% comment %}
+  BTI v16 grouped product family landing page.
+  Reusable hub for grouped product paths such as door kits, tape, insulation, and cover hardware.
+{% endcomment %}
+
+<section class="bt-family-hub">
+  <div class="bt-family-hub__inner">
+    <header class="bt-family-hub__hero">
+      {%- if section.settings.eyebrow != blank -%}
+        <span>{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h1>{{ section.settings.heading | default: page.title }}</h1>
+      {%- if section.settings.intro != blank -%}
+        <p>{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </header>
+
+    <div class="bt-family-hub__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'family_card' -%}
+            <a class="bt-family-hub__card" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+              <div class="bt-family-hub__media">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 25vw, 100vw', widths: '360, 540, 720, 900', alt: block.settings.title }}
+                {%- else -%}
+                  <div class="bt-family-hub__placeholder">BlueTex</div>
+                {%- endif -%}
+              </div>
+              <div>
+                {%- if block.settings.badge != blank -%}<span>{{ block.settings.badge }}</span>{%- endif -%}
+                <h2>{{ block.settings.title }}</h2>
+                {%- if block.settings.text != blank -%}<p>{{ block.settings.text }}</p>{%- endif -%}
+              </div>
+            </a>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+      <div class="bt-family-hub__cta">
+        <strong>{{ section.settings.cta_heading }}</strong>
+        <a href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .bt-family-hub {
+    --bt-navy:#12205c;
+    --bt-blue:#0011a7;
+    --bt-orange:#ee7f12;
+    --bt-line:#dbe4f0;
+    --bt-soft:#f5f7fa;
+    --bt-text:#252525;
+    background:#fff;
+    padding:42px 20px 58px;
+    font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  .bt-family-hub * { box-sizing:border-box; }
+  .bt-family-hub__inner { max-width:1180px; margin:0 auto; }
+  .bt-family-hub__hero { max-width:860px; margin:0 0 26px; }
+  .bt-family-hub__hero span { display:inline-flex; margin-bottom:10px; border-left:4px solid var(--bt-orange); background:var(--bt-soft); color:var(--bt-navy); padding:6px 10px; font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+  .bt-family-hub__hero h1 { margin:0 0 12px; color:var(--bt-navy); font-size:clamp(34px,4vw,54px); line-height:1.05; font-weight:900; letter-spacing:0; }
+  .bt-family-hub__hero p { margin:0; color:var(--bt-text); font-size:18px; line-height:1.55; }
+  .bt-family-hub__grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+  .bt-family-hub__card { display:grid; grid-template-rows:auto 1fr; min-width:0; border:1px solid var(--bt-line); border-left:4px solid var(--bt-navy); border-radius:6px; background:#fff; color:var(--bt-text); overflow:hidden; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+  .bt-family-hub__card:hover, .bt-family-hub__card:focus { border-color:#c5d3e6; box-shadow:0 14px 28px rgba(11,47,107,.12); transform:translateY(-2px); outline:none; }
+  .bt-family-hub__media { aspect-ratio:4 / 3; background:var(--bt-soft); overflow:hidden; }
+  .bt-family-hub__media img { width:100%; height:100%; object-fit:cover; display:block; }
+  .bt-family-hub__placeholder { display:flex; width:100%; height:100%; align-items:center; justify-content:center; background:linear-gradient(135deg,#0c1742,#12205c); color:#fff; font-size:14px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+  .bt-family-hub__card > div:last-child { padding:16px; }
+  .bt-family-hub__card span { display:inline-flex; margin-bottom:9px; border-radius:2px; background:var(--bt-soft); color:var(--bt-navy); padding:5px 8px; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+  .bt-family-hub__card h2 { margin:0 0 8px; color:var(--bt-navy); font-size:20px; line-height:1.16; font-weight:900; }
+  .bt-family-hub__card p { margin:0; color:var(--bt-text); font-size:15px; line-height:1.45; }
+  .bt-family-hub__cta { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:22px; padding:14px; border:1px solid #c86a10; border-radius:6px; background:var(--bt-orange); box-shadow:inset 0 0 0 1px rgba(255,255,255,.28); }
+  .bt-family-hub__cta strong { color:#fff; font-size:18px; line-height:1.25; }
+  .bt-family-hub__cta a { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:10px 16px; border:1px solid rgba(255,255,255,.75); border-radius:4px; background:#fff; color:var(--bt-navy); font-size:13px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; white-space:nowrap; }
+  @media (max-width: 989px) { .bt-family-hub__grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 640px) { .bt-family-hub { padding:30px 16px 44px; } .bt-family-hub__grid { grid-template-columns:1fr; } .bt-family-hub__cta { align-items:flex-start; flex-direction:column; } .bt-family-hub__cta a { width:100%; } }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex product family hub",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Start here" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Choose the right BlueTex product family" },
+    { "type": "textarea", "id": "intro", "label": "Intro", "default": "Use this page as a simple grouped path into related BlueTex products and guides." },
+    { "type": "text", "id": "cta_heading", "label": "CTA heading", "default": "Not sure which path fits your building?" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Request a Quote" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" }
+  ],
+  "blocks": [
+    {
+      "type": "family_card",
+      "name": "Family card",
+      "settings": [
+        { "type": "text", "id": "badge", "label": "Badge", "default": "Product path" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Product family" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Short explanation of who should choose this option." },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "image_picker", "id": "image", "label": "Image" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "BlueTex product family hub" }
+  ]
+}
+{% endschema %}

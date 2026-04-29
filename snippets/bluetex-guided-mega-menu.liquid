@@ -1,0 +1,498 @@
+{% comment %}
+  Built-in BlueTex guided mega menu.
+  BTI v11 mega menu stabilization
+  BTI v12 three core paths
+  BTI v14 header hero footer upgrade
+  BTI v15 image preview mega menu
+  BTI v16 left preview grouped mega menu
+  BTI v17 simplified visual mega menu
+  Desktop top-level labels are true links; hover/focus on the item opens the panel.
+{% endcomment %}
+
+{%- liquid
+  assign bt_product_sample = all_products['bluetex-cover-repair-system-sample-box']
+  assign bt_product_termbars = all_products['48-wide-steel-term-bars-for-bluetex-cover-system']
+  assign bt_product_2mm_50 = all_products['bluetex-pro-2mm-50-wide-foil-white-foam-insulation']
+  assign bt_product_2mm_62 = all_products['bluetex-pro-2mm-super-wide-62-inch']
+  assign bt_product_6mm_50 = all_products['bluetex-6mm-supreme-50-wide']
+  assign bt_product_6mm_62 = all_products['bluetex™-supreme-6mm-62-wide-foil-white-foam-insulation-300-sq-ft']
+  assign bt_product_white_tape = all_products['white-tape']
+  assign bt_product_foil_tape = all_products['foil-tape']
+  assign bt_product_easyclips = all_products['easyclip-purlin-insulation-clip-hangers']
+  assign bt_product_door = all_products['bluetex-2mm-pro-roll-up-garage-door-kit']
+  assign bt_product_res_door = all_products['bluetex-22-wide-pro-residential-garage-door-kit']
+  assign bt_product_double_tape = all_products['double-sided-tape']
+
+  assign bt_img_sample = blank
+  assign bt_img_termbars = blank
+  assign bt_img_2mm_50 = blank
+  assign bt_img_2mm_62 = blank
+  assign bt_img_6mm_50 = blank
+  assign bt_img_6mm_62 = blank
+  assign bt_img_white_tape = blank
+  assign bt_img_foil_tape = blank
+  assign bt_img_easyclips = blank
+  assign bt_img_door = blank
+  assign bt_img_res_door = blank
+  assign bt_img_double_tape = blank
+
+  if bt_product_sample.featured_image != blank
+    assign bt_img_sample = bt_product_sample.featured_image | image_url: width: 900
+  endif
+  if bt_product_termbars.featured_image != blank
+    assign bt_img_termbars = bt_product_termbars.featured_image | image_url: width: 900
+  endif
+  if bt_product_2mm_50.featured_image != blank
+    assign bt_img_2mm_50 = bt_product_2mm_50.featured_image | image_url: width: 900
+  endif
+  if bt_product_2mm_62.featured_image != blank
+    assign bt_img_2mm_62 = bt_product_2mm_62.featured_image | image_url: width: 900
+  endif
+  if bt_product_6mm_50.featured_image != blank
+    assign bt_img_6mm_50 = bt_product_6mm_50.featured_image | image_url: width: 900
+  endif
+  if bt_product_6mm_62.featured_image != blank
+    assign bt_img_6mm_62 = bt_product_6mm_62.featured_image | image_url: width: 900
+  endif
+  if bt_product_white_tape.featured_image != blank
+    assign bt_img_white_tape = bt_product_white_tape.featured_image | image_url: width: 900
+  endif
+  if bt_product_foil_tape.featured_image != blank
+    assign bt_img_foil_tape = bt_product_foil_tape.featured_image | image_url: width: 900
+  endif
+  if bt_product_easyclips.featured_image != blank
+    assign bt_img_easyclips = bt_product_easyclips.featured_image | image_url: width: 900
+  endif
+  if bt_product_door.featured_image != blank
+    assign bt_img_door = bt_product_door.featured_image | image_url: width: 900
+  endif
+  if bt_product_res_door.featured_image != blank
+    assign bt_img_res_door = bt_product_res_door.featured_image | image_url: width: 900
+  endif
+  if bt_product_double_tape.featured_image != blank
+    assign bt_img_double_tape = bt_product_double_tape.featured_image | image_url: width: 900
+  endif
+
+  assign bt_products_default_image = bt_img_2mm_50
+  if header_settings.products_default_preview_image != blank
+    assign bt_products_default_image = header_settings.products_default_preview_image | image_url: width: 900
+  endif
+
+  assign bt_cover_default_image = bt_img_sample
+  if header_settings.cover_default_preview_image != blank
+    assign bt_cover_default_image = header_settings.cover_default_preview_image | image_url: width: 900
+  endif
+
+  assign bt_install_default_image = bt_cover_default_image
+  if header_settings.install_default_preview_image != blank
+    assign bt_install_default_image = header_settings.install_default_preview_image | image_url: width: 900
+  endif
+
+  assign bt_project_default_image = bt_cover_default_image
+  if header_settings.project_default_preview_image != blank
+    assign bt_project_default_image = header_settings.project_default_preview_image | image_url: width: 900
+  endif
+
+  assign bt_samples_default_image = bt_img_sample
+  if header_settings.samples_default_preview_image != blank
+    assign bt_samples_default_image = header_settings.samples_default_preview_image | image_url: width: 900
+  endif
+
+  assign bt_products_custom_count = 0
+  assign bt_cover_custom_count = 0
+  assign bt_install_custom_count = 0
+  assign bt_project_custom_count = 0
+  assign bt_samples_custom_count = 0
+  for block in header_blocks
+    if block.type == 'visual_mega_item'
+      if block.settings.menu_key == 'products'
+        assign bt_products_custom_count = bt_products_custom_count | plus: 1
+      elsif block.settings.menu_key == 'cover_repair'
+        assign bt_cover_custom_count = bt_cover_custom_count | plus: 1
+      elsif block.settings.menu_key == 'install_guides'
+        assign bt_install_custom_count = bt_install_custom_count | plus: 1
+      elsif block.settings.menu_key == 'project_help'
+        assign bt_project_custom_count = bt_project_custom_count | plus: 1
+      elsif block.settings.menu_key == 'samples'
+        assign bt_samples_custom_count = bt_samples_custom_count | plus: 1
+      endif
+    endif
+  endfor
+-%}
+
+<nav class="header__inline-menu bluetex-guided-nav" aria-label="BlueTex guided navigation" data-bluetex-guided-nav>
+  <ul class="list-menu list-menu--inline bluetex-guided-nav__list" role="list">
+    <li class="bluetex-guided-nav__item bluetex-guided-menu" data-bluetex-guided-menu>
+      <a class="header__menu-item list-menu__item link focus-inset" href="/collections/metal-building-insulation-products" aria-haspopup="true"><span>Products</span><span class="bluetex-nav-caret" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span></a>
+      <div class="mega-menu__content bluetex-mega bluetex-guided-mega motion-reduce global-settings-popup" tabindex="-1">
+        <div class="bluetex-mega__inner">
+          <div class="bluetex-mega__top"><div><span class="bluetex-mega__eyebrow">Product paths</span><h2>{{ header_settings.products_mega_title | default: 'Products' }}</h2><p>{{ header_settings.products_mega_intro | default: 'Pick the material, accessory, or door kit path that matches the job.' }}</p></div><a class="bluetex-mega__top-link" href="/collections/all">View all products</a></div>
+          <div class="bluetex-mega__layout bluetex-mega__layout--visual">
+            <div class="bluetex-guided-mega__grid bluetex-guided-mega__grid--visual">
+              {%- if bt_products_custom_count > 0 -%}
+                {%- for block in header_blocks -%}
+                  {%- if block.type == 'visual_mega_item' and block.settings.menu_key == 'products' -%}
+                    {%- liquid
+                      assign block_preview = bt_products_default_image
+                      if block.settings.preview_image != blank
+                        assign block_preview = block.settings.preview_image | image_url: width: 900
+                      endif
+                    -%}
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="{{ block.settings.item_link | default: '/collections/all' }}" data-preview-image="{{ block_preview }}" data-preview-title="{{ block.settings.item_title | escape }}" data-preview-caption="{{ block.settings.item_subtitle | escape }}" data-preview-fit="{{ block.settings.preview_fit | default: 'contain' }}" data-preview-position="{{ block.settings.preview_position | default: 'center' }}" {{ block.shopify_attributes }}>
+                      {%- if block.settings.item_badge != blank -%}<span>{{ block.settings.item_badge }}</span>{%- endif -%}
+                      <strong>{{ block.settings.item_title | default: 'Mega menu item' }}</strong>
+                      {%- if block.settings.item_subtitle != blank -%}<small>{{ block.settings.item_subtitle }}</small>{%- endif -%}
+                    </a>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                <div class="bluetex-mega__visual-group">
+                  <a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/collections/radiant-barrier-foam-moisture-control" data-preview-image="{{ bt_img_2mm_50 }}" data-preview-title="BlueTex Insulation" data-preview-caption="Compare 2mm Pro and 6mm Supreme in the 50 inch and 62 inch widths.">BlueTex Insulation</a>
+                  <div class="bluetex-mega__group-items">
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-pro-2mm-50-wide-foil-white-foam-insulation" data-preview-image="{{ bt_img_2mm_50 }}" data-preview-title="BlueTex™ Pro 2mm 50&quot;" data-preview-caption="The main 50 inch foil/white product path."><span>Most used</span><strong>2mm Pro 50&quot;</strong><small>Main retrofit roll.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-pro-2mm-super-wide-62-inch" data-preview-image="{{ bt_img_2mm_62 }}" data-preview-title="BlueTex™ Pro 2mm 62&quot;" data-preview-caption="Wider 62 inch roll option for larger spacing."><span>Wide</span><strong>2mm Pro 62&quot;</strong><small>Super-wide Pro roll.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-6mm-supreme-50-wide" data-preview-image="{{ bt_img_6mm_50 }}" data-preview-title="BlueTex™ Supreme 6mm 50&quot;" data-preview-caption="Thicker 6mm Supreme material in the preferred 50 inch width."><span>Thicker</span><strong>6mm 50&quot;</strong><small>Heavier foam option.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex%E2%84%A2-supreme-6mm-62-wide-foil-white-foam-insulation-300-sq-ft" data-preview-image="{{ bt_img_6mm_62 }}" data-preview-title="BlueTex™ Supreme 6mm 62&quot;" data-preview-caption="Wide 6mm Supreme roll for larger spans."><span>Wide</span><strong>6mm 62&quot;</strong><small>Thicker wide roll.</small></a>
+                  </div>
+                </div>
+                <div class="bluetex-mega__visual-group">
+                  <a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/collections/fasteners" data-preview-image="{{ bt_img_termbars }}" data-preview-title="Cover System Hardware" data-preview-caption="TermBars and EasyClips for BlueTex cover and retrofit installs.">Cover System Hardware</a>
+                  <div class="bluetex-mega__group-items">
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/48-wide-steel-term-bars-for-bluetex-cover-system" data-preview-image="{{ bt_img_termbars }}" data-preview-title="48&quot; Aluminum Term Bars" data-preview-caption="TermBars hold the new BlueTex finish tight across purlins and girts."><span>Cover</span><strong>Term Bars</strong><small>Cover/Repair bars.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/easyclip-purlin-insulation-clip-hangers" data-preview-image="{{ bt_img_easyclips }}" data-preview-title="EasyClip™ Purlin Insulation Hangers" data-preview-caption="Clip option for selected red iron roofline installs."><span>Fastener</span><strong>EasyClips™</strong><small>Purlin hanger option.</small></a>
+                  </div>
+                </div>
+                <div class="bluetex-mega__visual-group">
+                  <a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/bluetex-vapor-barrier-white-tapes" data-preview-image="{{ bt_img_white_tape }}" data-preview-title="Tape / Sealing" data-preview-caption="White seam tape, foil tape, and double-sided tape for clean finishing and door installs.">Tape / Sealing</a>
+                  <div class="bluetex-mega__group-items">
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/white-tape" data-preview-image="{{ bt_img_white_tape }}" data-preview-title="3&quot; White Vapor Barrier Seam Tape" data-preview-caption="Bright white seam tape for joining and finishing BlueTex material."><span>Finish</span><strong>White Tape</strong><small>White seam finish.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/foil-tape" data-preview-image="{{ bt_img_foil_tape }}" data-preview-title="Foil Seam Tape" data-preview-caption="Foil tape for foil-side seams and related insulation work."><span>Foil</span><strong>Foil Tape</strong><small>Foil-side seams.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/double-sided-tape" data-preview-image="{{ bt_img_double_tape }}" data-preview-title="Double-Sided Tape" data-preview-caption="Tape used with door kit installs and selected attachment details."><span>Door</span><strong>Double-Sided</strong><small>Door kit helper tape.</small></a>
+                  </div>
+                </div>
+                <div class="bluetex-mega__visual-group">
+                  <a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/roll-up-door-kits" data-preview-image="{{ bt_img_door }}" data-preview-title="Door Kits" data-preview-caption="Start here for single, double, multi-door, and residential garage door paths.">Door Kits</a>
+                  <div class="bluetex-mega__group-items">
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-2mm-pro-roll-up-garage-door-kit" data-preview-image="{{ bt_img_door }}" data-preview-title="Roll-Up Door Kits" data-preview-caption="Choose this path for hot roll-up doors in shops and workshops."><span>Roll-up</span><strong>Single Door</strong><small>50&quot; Pro kit path.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-2mm-pro-roll-up-garage-door-kit" data-preview-image="{{ bt_img_door }}" data-preview-title="Double / Multi-Door Kits" data-preview-caption="Use kit quantity and width options for multiple roll-up doors."><span>Multi</span><strong>Double / Multi</strong><small>Multiple door setup.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-22-wide-pro-residential-garage-door-kit" data-preview-image="{{ bt_img_res_door }}" data-preview-title="Residential Garage Door Kit" data-preview-caption="Panel/sectional garage door kit option."><span>Residential</span><strong>Panel Door Kit</strong><small>Sectional garage doors.</small></a>
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/roll-up-door-kits" data-preview-image="{{ bt_img_door }}" data-preview-title="Door Kit Hub" data-preview-caption="Choose single, double, multi-door, residential, or measurement help from one grouped page."><span>Choose</span><strong>Door Kit Hub</strong><small>Single, double, multi, width.</small></a>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+            <aside class="bluetex-mega__preview" data-bt-mega-preview data-default-image="{{ bt_products_default_image }}" data-default-title="BlueTex product guide" data-default-caption="Hover or focus a product card to preview the item here." data-default-fit="contain" data-default-position="center">
+              {%- if bt_products_default_image != blank -%}<img src="{{ bt_products_default_image }}" alt="" loading="lazy" data-bt-mega-preview-image>{%- endif -%}
+              <div class="bluetex-mega__preview-placeholder{% if bt_products_default_image != blank %} is-hidden{% endif %}" data-bt-mega-preview-placeholder>BlueTex</div>
+              <div><span data-bt-mega-preview-title>BlueTex product guide</span><p data-bt-mega-preview-caption>Hover or focus a product card to preview the item here.</p></div>
+            </aside>
+            <div class="bluetex-mega__action-strip"><span>Grouped paths</span><a href="/collections/radiant-barrier-foam-moisture-control">BlueTex Insulation</a><a href="/pages/bluetex-vapor-barrier-white-tapes">Tape</a><a href="/collections/fasteners">Hardware</a><a href="/pages/roll-up-door-kits">Door Kits</a></div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="bluetex-guided-nav__item bluetex-guided-menu" data-bluetex-guided-menu>
+      <a class="header__menu-item list-menu__item link focus-inset" href="/pages/help-me-choose-the-right-building-insulation" aria-haspopup="true"><span>Cover/Repair System</span><span class="bluetex-nav-caret" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span></a>
+      <div class="mega-menu__content bluetex-mega bluetex-guided-mega motion-reduce global-settings-popup" tabindex="-1">
+        <div class="bluetex-mega__inner">
+          <div class="bluetex-mega__top"><div><span class="bluetex-mega__eyebrow">Core system</span><h2>{{ header_settings.cover_mega_title | default: 'Cover/Repair System' }}</h2><p>{{ header_settings.cover_mega_intro | default: 'Best path for old, torn, stained, or sagging insulation in existing metal buildings.' }}</p></div><a class="bluetex-mega__top-link" href="/pages/contact-us">Send Photos</a></div>
+          <div class="bluetex-mega__layout bluetex-mega__layout--visual">
+            <div class="bluetex-guided-mega__grid bluetex-guided-mega__grid--visual">
+              {%- if bt_cover_custom_count > 0 -%}
+                {%- for block in header_blocks -%}
+                  {%- if block.type == 'visual_mega_item' and block.settings.menu_key == 'cover_repair' -%}
+                    {%- liquid
+                      assign block_preview = bt_cover_default_image
+                      if block.settings.preview_image != blank
+                        assign block_preview = block.settings.preview_image | image_url: width: 900
+                      endif
+                    -%}
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="{{ block.settings.item_link | default: '/pages/help-me-choose-the-right-building-insulation' }}" data-preview-image="{{ block_preview }}" data-preview-title="{{ block.settings.item_title | escape }}" data-preview-caption="{{ block.settings.item_subtitle | escape }}" data-preview-fit="{{ block.settings.preview_fit | default: 'contain' }}" data-preview-position="{{ block.settings.preview_position | default: 'center' }}" {{ block.shopify_attributes }}>
+                      {%- if block.settings.item_badge != blank -%}<span>{{ block.settings.item_badge }}</span>{%- endif -%}
+                      <strong>{{ block.settings.item_title | default: 'Cover/Repair item' }}</strong>
+                      {%- if block.settings.item_subtitle != blank -%}<small>{{ block.settings.item_subtitle }}</small>{%- endif -%}
+                    </a>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/help-me-choose-the-right-building-insulation" data-preview-image="{{ bt_cover_default_image }}" data-preview-title="Cover/Repair System Overview" data-preview-caption="Start here for old, torn, stained, or sagging metal building insulation."><span>Start here</span><strong>System Overview</strong><small>See how the BlueTex Cover/Repair System works.</small></a>
+                <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/repair-old-torn-ceiling-insulation-in-red-iron-metal-buildings" data-preview-image="{{ bt_cover_default_image }}" data-preview-title="Roof Cover & Repair" data-preview-caption="Cover old roof insulation with a clean white BlueTex finish."><span>Roof</span><strong>Roof Cover & Repair</strong><small>For ceiling and purlin-line cover work.</small></a>
+                <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/covering-old-wall-insulation-in-metal-buildings" data-preview-image="{{ bt_cover_default_image }}" data-preview-title="Wall Cover & Repair" data-preview-caption="Wall paths for old insulation with visible or hidden girts."><span>Walls</span><strong>Wall Cover & Repair</strong><small>Clean up wall insulation in existing metal buildings.</small></a>
+                <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/48-wide-steel-term-bars-for-bluetex-cover-system" data-preview-image="{{ bt_img_termbars }}" data-preview-title="TermBar System" data-preview-caption="TermBars hold the new BlueTex finish tight across purlins and girts."><span>Hardware</span><strong>TermBar System</strong><small>See the aluminum bars used in the system.</small></a>
+                <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/existing-retrofit-construction-how-to-install-choose-your-buidling" data-preview-image="{{ bt_img_2mm_50 }}" data-preview-title="Install Guide" data-preview-caption="Install guidance for existing metal building retrofit work."><span>Install</span><strong>Install Guide</strong><small>Choose the right existing-building install path.</small></a>
+                <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-cover-repair-system-sample-box" data-preview-image="{{ bt_img_sample }}" data-preview-title="Order Sample Kit" data-preview-caption="Review the material, tape, and TermBar pieces before a larger project."><span>Sample</span><strong>Order Sample Kit</strong><small>Get the Cover/Repair sample box.</small></a>
+                <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/contact-us" data-preview-image="{{ bt_cover_default_image }}" data-preview-title="Request a Quote" data-preview-caption="Send photos and rough dimensions so BlueTex can help build the material list."><span>Quote</span><strong>Request a Quote</strong><small>Best next step for full-building projects.</small></a>
+              {%- endif -%}
+            </div>
+            <aside class="bluetex-mega__preview" data-bt-mega-preview data-default-image="{{ bt_cover_default_image }}" data-default-title="Cover/Repair visual guide" data-default-caption="Hover or focus a path to preview the system, product, or next step here." data-default-fit="contain" data-default-position="center">
+              {%- if bt_cover_default_image != blank -%}<img src="{{ bt_cover_default_image }}" alt="" loading="lazy" data-bt-mega-preview-image>{%- endif -%}
+              <div class="bluetex-mega__preview-placeholder{% if bt_cover_default_image != blank %} is-hidden{% endif %}" data-bt-mega-preview-placeholder>BlueTex</div>
+              <div><span data-bt-mega-preview-title>Cover/Repair visual guide</span><p data-bt-mega-preview-caption>Hover or focus a path to preview the system, product, or next step here.</p></div>
+              <a class="bluetex-mega__preview-cta" href="/pages/contact-us">Send Photos for a Quote</a>
+            </aside>
+            <div class="bluetex-mega__action-strip"><span>Start here</span><a href="/products/bluetex-cover-repair-system-sample-box">Order Sample Kit</a><a href="/pages/contact-us">Request a Quote</a><a href="/pages/help-me-choose-the-right-building-insulation">Help Me Choose</a></div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="bluetex-guided-nav__item bluetex-guided-menu" data-bluetex-guided-menu>
+      <a class="header__menu-item list-menu__item link focus-inset" href="/pages/bluetex-video-library" aria-haspopup="true"><span>Install Guides</span><span class="bluetex-nav-caret" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span></a>
+      <div class="mega-menu__content bluetex-mega bluetex-guided-mega motion-reduce global-settings-popup" tabindex="-1">
+        <div class="bluetex-mega__inner">
+          <div class="bluetex-mega__top"><div><span class="bluetex-mega__eyebrow">Install help</span><h2>Install Guides</h2><p>Cover/repair guides first, with door kit instructions easy to find.</p></div><a class="bluetex-mega__top-link" href="/pages/bluetex-install-photos">Photo library</a></div>
+          <div class="bluetex-mega__layout bluetex-mega__layout--visual">
+            <div class="bluetex-guided-mega__grid bluetex-guided-mega__grid--visual">
+              {%- if bt_install_custom_count > 0 -%}
+                {%- for block in header_blocks -%}
+                  {%- if block.type == 'visual_mega_item' and block.settings.menu_key == 'install_guides' -%}
+                    {%- liquid
+                      assign block_preview = bt_install_default_image
+                      if block.settings.preview_image != blank
+                        assign block_preview = block.settings.preview_image | image_url: width: 900
+                      endif
+                    -%}
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="{{ block.settings.item_link | default: '/pages/bluetex-video-library' }}" data-preview-image="{{ block_preview }}" data-preview-title="{{ block.settings.item_title | escape }}" data-preview-caption="{{ block.settings.item_subtitle | escape }}" data-preview-fit="{{ block.settings.preview_fit | default: 'contain' }}" data-preview-position="{{ block.settings.preview_position | default: 'center' }}" {{ block.shopify_attributes }}><strong>{{ block.settings.item_title | default: 'Install guide' }}</strong>{%- if block.settings.item_subtitle != blank -%}<small>{{ block.settings.item_subtitle }}</small>{%- endif -%}</a>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                <div class="bluetex-mega__visual-group"><a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/bluetex-video-library" data-preview-image="{{ bt_install_default_image }}" data-preview-title="Start Here" data-preview-caption="Measure, choose product, and review install photos before starting.">Start Here</a><div class="bluetex-mega__group-items">
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/how-to-measure-your-building-for-bluetex-metal-building-insulation" data-preview-image="{{ bt_install_default_image }}" data-preview-title="How to Measure Your Building" data-preview-caption="Measure the building before choosing material or asking for a quote."><strong>Measure Building</strong><small>Start with rough dimensions.</small></a>
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/bluetex-video-library" data-preview-image="{{ bt_install_default_image }}" data-preview-title="Photos / Video Library" data-preview-caption="See real install examples and video guidance."><strong>Photo / Video Library</strong><small>Install examples.</small></a>
+                </div></div>
+                <div class="bluetex-mega__visual-group"><a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/existing-retrofit-construction-how-to-install-choose-your-buidling" data-preview-image="{{ bt_cover_default_image }}" data-preview-title="Cover/Repair Installs" data-preview-caption="Roof, wall, and TermBar install paths for existing metal buildings.">Cover/Repair Installs</a><div class="bluetex-mega__group-items">
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/repair-old-torn-ceiling-insulation-in-red-iron-metal-buildings" data-preview-image="{{ bt_cover_default_image }}" data-preview-title="Roof Cover System" data-preview-caption="Cover old roof insulation with a clean white finish."><strong>Roof Cover System</strong><small>Purlin-line roof work.</small></a>
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/covering-old-wall-insulation-in-metal-buildings" data-preview-image="{{ bt_cover_default_image }}" data-preview-title="Wall Cover System" data-preview-caption="Wall paths for old insulation in metal buildings."><strong>Wall Cover System</strong><small>Girts visible or hidden.</small></a>
+                </div></div>
+                <div class="bluetex-mega__visual-group"><a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/roll-up-door-kits" data-preview-image="{{ bt_img_door }}" data-preview-title="Door Installs" data-preview-caption="Door kit, residential panel door, and measuring help.">Door Installs</a><div class="bluetex-mega__group-items">
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/roll-up-door-kits" data-preview-image="{{ bt_img_door }}" data-preview-title="Roll-Up Door Kit Hub" data-preview-caption="Choose single, double, multi-door, or residential door paths."><strong>Door Kit Hub</strong><small>Choose kit path.</small></a>
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/blogs/articles/how-to-measure-your-roll-up-garage-door-for-insulation" data-preview-image="{{ bt_img_door }}" data-preview-title="How to Measure a Garage Door" data-preview-caption="Measure first to choose the right kit width and quantity."><strong>Measure Door</strong><small>50&quot; or 62&quot; help.</small></a>
+                </div></div>
+              {%- endif -%}
+            </div>
+            <aside class="bluetex-mega__preview" data-bt-mega-preview data-default-image="{{ bt_install_default_image }}" data-default-title="Install guide preview" data-default-caption="Hover or focus an install path to preview the guide area here." data-default-fit="contain" data-default-position="center">
+              {%- if bt_install_default_image != blank -%}<img src="{{ bt_install_default_image }}" alt="" loading="lazy" data-bt-mega-preview-image>{%- endif -%}
+              <div class="bluetex-mega__preview-placeholder{% if bt_install_default_image != blank %} is-hidden{% endif %}" data-bt-mega-preview-placeholder>BlueTex</div>
+              <div><span data-bt-mega-preview-title>Install guide preview</span><p data-bt-mega-preview-caption>Hover or focus an install path to preview the guide area here.</p></div>
+            </aside>
+            <div class="bluetex-mega__action-strip"><span>Install help</span><a href="/pages/bluetex-video-library">Video Library</a><a href="/pages/bluetex-install-photos">Photo Library</a><a href="/pages/roll-up-door-kits">Door Kits</a></div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="bluetex-guided-nav__item bluetex-guided-menu" data-bluetex-guided-menu>
+      <a class="header__menu-item list-menu__item link focus-inset" href="/pages/contact-us" aria-haspopup="true"><span>Project Help</span><span class="bluetex-nav-caret" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span></a>
+      <div class="mega-menu__content bluetex-mega bluetex-guided-mega motion-reduce global-settings-popup" tabindex="-1">
+        <div class="bluetex-mega__inner">
+          <div class="bluetex-mega__top"><div><span class="bluetex-mega__eyebrow">Retrofit help</span><h2>Project Help</h2><p>For existing metal buildings, start with photos and rough dimensions.</p></div><a class="bluetex-mega__top-link" href="/pages/contact-us">Request a Quote</a></div>
+          <div class="bluetex-mega__layout bluetex-mega__layout--visual">
+            <div class="bluetex-guided-mega__grid bluetex-guided-mega__grid--visual">
+              {%- if bt_project_custom_count > 0 -%}
+                {%- for block in header_blocks -%}
+                  {%- if block.type == 'visual_mega_item' and block.settings.menu_key == 'project_help' -%}
+                    {%- liquid
+                      assign block_preview = bt_project_default_image
+                      if block.settings.preview_image != blank
+                        assign block_preview = block.settings.preview_image | image_url: width: 900
+                      endif
+                    -%}
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="{{ block.settings.item_link | default: '/pages/contact-us' }}" data-preview-image="{{ block_preview }}" data-preview-title="{{ block.settings.item_title | escape }}" data-preview-caption="{{ block.settings.item_subtitle | escape }}" data-preview-fit="{{ block.settings.preview_fit | default: 'contain' }}" data-preview-position="{{ block.settings.preview_position | default: 'center' }}" {{ block.shopify_attributes }}><strong>{{ block.settings.item_title | default: 'Project help' }}</strong>{%- if block.settings.item_subtitle != blank -%}<small>{{ block.settings.item_subtitle }}</small>{%- endif -%}</a>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                <div class="bluetex-mega__visual-group"><a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/contact-us" data-preview-image="{{ bt_project_default_image }}" data-preview-title="Start With Photos" data-preview-caption="Send interior wide shots, problem areas, and rough dimensions.">Start With Photos</a><div class="bluetex-mega__group-items">
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/contact-us" data-preview-image="{{ bt_project_default_image }}" data-preview-title="Request a Quote" data-preview-caption="Use photos and dimensions to start a project quote."><strong>Request a Quote</strong><small>Full-building material help.</small></a>
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/contact-us" data-preview-image="{{ bt_project_default_image }}" data-preview-title="What Photos We Need" data-preview-caption="Interior wide shots and problem areas are enough to start."><strong>What Photos We Need</strong><small>Simple quote prep.</small></a>
+                </div></div>
+                <div class="bluetex-mega__visual-group"><a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/how-to-measure-your-building-for-bluetex-metal-building-insulation" data-preview-image="{{ bt_install_default_image }}" data-preview-title="Measure and Plan" data-preview-caption="Measure your building and choose the right product path.">Measure and Plan</a><div class="bluetex-mega__group-items">
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/how-to-measure-your-building-for-bluetex-metal-building-insulation" data-preview-image="{{ bt_install_default_image }}" data-preview-title="How to Measure Your Building" data-preview-caption="Get rough dimensions before quote or order decisions."><strong>Measure Building</strong><small>Rough dimensions.</small></a>
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/help-me-choose-the-right-building-insulation" data-preview-image="{{ bt_products_default_image }}" data-preview-title="Help Me Choose" data-preview-caption="Choose material and install path before ordering."><strong>Help Me Choose</strong><small>Product path help.</small></a>
+                </div></div>
+              {%- endif -%}
+            </div>
+            <aside class="bluetex-mega__preview" data-bt-mega-preview data-default-image="{{ bt_project_default_image }}" data-default-title="Project help preview" data-default-caption="Hover or focus a project help path to preview the next step here." data-default-fit="contain" data-default-position="center">
+              {%- if bt_project_default_image != blank -%}<img src="{{ bt_project_default_image }}" alt="" loading="lazy" data-bt-mega-preview-image>{%- endif -%}
+              <div class="bluetex-mega__preview-placeholder{% if bt_project_default_image != blank %} is-hidden{% endif %}" data-bt-mega-preview-placeholder>BlueTex</div>
+              <div><span data-bt-mega-preview-title>Project help preview</span><p data-bt-mega-preview-caption>Hover or focus a project help path to preview the next step here.</p></div>
+            </aside>
+            <div class="bluetex-mega__action-strip"><span>Project help</span><a href="/pages/contact-us">Request a Quote</a><a href="/pages/how-to-measure-your-building-for-bluetex-metal-building-insulation">Measure</a><a href="/pages/help-me-choose-the-right-building-insulation">Choose Product</a></div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="bluetex-guided-nav__item bluetex-guided-menu" data-bluetex-guided-menu>
+      <a class="header__menu-item list-menu__item link focus-inset" href="/products/bluetex-cover-repair-system-sample-box" aria-haspopup="true"><span>Samples</span><span class="bluetex-nav-caret" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span></a>
+      <div class="mega-menu__content bluetex-mega bluetex-guided-mega motion-reduce global-settings-popup" tabindex="-1">
+        <div class="bluetex-mega__inner">
+          <div class="bluetex-mega__top"><div><span class="bluetex-mega__eyebrow">Samples</span><h2>Samples</h2><p>Separate free samples from the paid system sample box.</p></div><a class="bluetex-mega__top-link" href="/pages/request-a-sample">Free sample packet</a></div>
+          <div class="bluetex-mega__layout bluetex-mega__layout--visual">
+            <div class="bluetex-guided-mega__grid bluetex-guided-mega__grid--visual">
+              {%- if bt_samples_custom_count > 0 -%}
+                {%- for block in header_blocks -%}
+                  {%- if block.type == 'visual_mega_item' and block.settings.menu_key == 'samples' -%}
+                    {%- liquid
+                      assign block_preview = bt_samples_default_image
+                      if block.settings.preview_image != blank
+                        assign block_preview = block.settings.preview_image | image_url: width: 900
+                      endif
+                    -%}
+                    <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="{{ block.settings.item_link | default: '/products/bluetex-cover-repair-system-sample-box' }}" data-preview-image="{{ block_preview }}" data-preview-title="{{ block.settings.item_title | escape }}" data-preview-caption="{{ block.settings.item_subtitle | escape }}" data-preview-fit="{{ block.settings.preview_fit | default: 'contain' }}" data-preview-position="{{ block.settings.preview_position | default: 'center' }}" {{ block.shopify_attributes }}><strong>{{ block.settings.item_title | default: 'Sample' }}</strong>{%- if block.settings.item_subtitle != blank -%}<small>{{ block.settings.item_subtitle }}</small>{%- endif -%}</a>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                <div class="bluetex-mega__visual-group"><a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/products/bluetex-cover-repair-system-sample-box" data-preview-image="{{ bt_img_sample }}" data-preview-title="Cover/Repair Sample Box" data-preview-caption="Full-size BlueTex sample, TermBar piece, tape, and fastener pieces.">Sample Box</a><div class="bluetex-mega__group-items">
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-cover-repair-system-sample-box" data-preview-image="{{ bt_img_sample }}" data-preview-title="Order the Sample Box" data-preview-caption="Review material, tape, and TermBar pieces before a larger project."><strong>Order Sample Box</strong><small>Best for cover/repair.</small></a>
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/products/bluetex-cover-repair-system-sample-box" data-preview-image="{{ bt_img_sample }}" data-preview-title="What's Inside" data-preview-caption="See the sample material, TermBar, tape, and fastener pieces."><strong>What's Inside</strong><small>System pieces in hand.</small></a>
+                </div></div>
+                <div class="bluetex-mega__visual-group"><a class="bluetex-mega__group-heading bluetex-mega__preview-link" href="/pages/request-a-sample" data-preview-image="{{ bt_samples_default_image }}" data-preview-title="Free Sample Packet" data-preview-caption="Use this for basic material review before choosing a path.">Free Samples</a><div class="bluetex-mega__group-items">
+                  <a class="bluetex-mega__visual-card bluetex-mega__preview-link" href="/pages/request-a-sample" data-preview-image="{{ bt_samples_default_image }}" data-preview-title="Request Free Samples" data-preview-caption="A simple material packet for early comparison."><strong>Free Sample Packet</strong><small>Basic material review.</small></a>
+                </div></div>
+              {%- endif -%}
+            </div>
+            <aside class="bluetex-mega__preview" data-bt-mega-preview data-default-image="{{ bt_samples_default_image }}" data-default-title="Samples preview" data-default-caption="Hover or focus a sample path to preview it here." data-default-fit="contain" data-default-position="center">
+              {%- if bt_samples_default_image != blank -%}<img src="{{ bt_samples_default_image }}" alt="" loading="lazy" data-bt-mega-preview-image>{%- endif -%}
+              <div class="bluetex-mega__preview-placeholder{% if bt_samples_default_image != blank %} is-hidden{% endif %}" data-bt-mega-preview-placeholder>BlueTex</div>
+              <div><span data-bt-mega-preview-title>Samples preview</span><p data-bt-mega-preview-caption>Hover or focus a sample path to preview it here.</p></div>
+            </aside>
+            <div class="bluetex-mega__action-strip"><span>Samples</span><a href="/products/bluetex-cover-repair-system-sample-box">Sample Box</a><a href="/pages/request-a-sample">Free Samples</a></div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="bluetex-guided-nav__item bluetex-guided-menu" data-bluetex-guided-menu>
+      <a class="header__menu-item list-menu__item link focus-inset" href="/pages/contact-us" aria-haspopup="true"><span>Support</span><span class="bluetex-nav-caret" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span></a>
+      <div class="mega-menu__content bluetex-mega bluetex-guided-mega motion-reduce global-settings-popup" tabindex="-1">
+        <div class="bluetex-mega__inner">
+          <div class="bluetex-mega__top"><div><span class="bluetex-mega__eyebrow">Support</span><h2>Support</h2><p>Useful education and support links without overloading the header.</p></div><a class="bluetex-mega__top-link" href="/pages/contact-us">Contact BlueTex</a></div>
+          <div class="bluetex-mega__layout">
+            <div class="bluetex-guided-mega__grid">
+              <a class="bluetex-mega__card-link" href="/pages/help-me-choose-the-right-building-insulation">FAQ</a>
+              <a class="bluetex-mega__card-link" href="/pages/r-value-of-bluetex-insulation">R-Value</a>
+              <a class="bluetex-mega__card-link" href="/pages/bubble-foil-fails">Bubble Foil vs. BlueTex™</a>
+              <a class="bluetex-mega__card-link" href="/pages/moisture-in-metal-buildings-causes">Moisture in Metal Buildings</a>
+              <a class="bluetex-mega__card-link" href="/pages/bluetex-warranty">Warranty</a>
+              <a class="bluetex-mega__card-link" href="/pages/contact-us">Shipping Times</a>
+              <a class="bluetex-mega__card-link" href="/pages/bluetex-video-library">Video Library</a>
+              <a class="bluetex-mega__card-link" href="/blogs/case-studies">Case Studies</a>
+            </div>
+            <aside class="bluetex-mega__feature"><span>Need a hand?</span><h3>BlueTex project support</h3><p>Send questions, photos, or dimensions and we will point you toward the right next step.</p><a href="/pages/contact-us">Contact Support</a></aside>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  (() => {
+    const nav = document.querySelector('[data-bluetex-guided-nav]');
+    if (!nav) return;
+
+    const desktopQuery = window.matchMedia('(min-width: 990px)');
+    const menus = Array.from(nav.querySelectorAll('[data-bluetex-guided-menu]'));
+    const closeTimers = new WeakMap();
+
+    const closeMenu = (menu) => {
+      window.clearTimeout(closeTimers.get(menu));
+      menu.classList.remove('is-open');
+    };
+
+    const closeOthers = (activeMenu) => {
+      menus.forEach((menu) => {
+        if (menu !== activeMenu) closeMenu(menu);
+      });
+    };
+
+    const openMenu = (menu) => {
+      if (!desktopQuery.matches) return;
+      window.clearTimeout(closeTimers.get(menu));
+      closeOthers(menu);
+      menu.classList.add('is-open');
+    };
+
+    const queueClose = (menu) => {
+      if (!desktopQuery.matches) {
+        closeMenu(menu);
+        return;
+      }
+      window.clearTimeout(closeTimers.get(menu));
+      closeTimers.set(menu, window.setTimeout(() => closeMenu(menu), 180));
+    };
+
+    menus.forEach((menu) => {
+      const preview = menu.querySelector('[data-bt-mega-preview]');
+      const previewImage = preview?.querySelector('[data-bt-mega-preview-image]');
+      const previewPlaceholder = preview?.querySelector('[data-bt-mega-preview-placeholder]');
+      const previewTitle = preview?.querySelector('[data-bt-mega-preview-title]');
+      const previewCaption = preview?.querySelector('[data-bt-mega-preview-caption]');
+      const defaultPreview = {
+        image: preview?.dataset.defaultImage || '',
+        title: preview?.dataset.defaultTitle || '',
+        caption: preview?.dataset.defaultCaption || '',
+        fit: preview?.dataset.defaultFit || 'contain',
+        position: preview?.dataset.defaultPosition || 'center'
+      };
+
+      const updatePreview = (link) => {
+        if (!preview || !link) return;
+        const nextImage = link.dataset.previewImage || defaultPreview.image;
+        if (previewImage && nextImage) {
+          previewImage.src = nextImage;
+          previewImage.style.setProperty('--bt-preview-fit', link.dataset.previewFit || defaultPreview.fit);
+          previewImage.style.setProperty('--bt-preview-position', link.dataset.previewPosition || defaultPreview.position);
+          previewImage.classList.remove('is-hidden');
+          previewPlaceholder?.classList.add('is-hidden');
+        } else if (previewImage) {
+          previewImage.removeAttribute('src');
+          previewImage.classList.add('is-hidden');
+          previewPlaceholder?.classList.remove('is-hidden');
+        }
+        if (previewTitle) previewTitle.textContent = link.dataset.previewTitle || defaultPreview.title;
+        if (previewCaption) previewCaption.textContent = link.dataset.previewCaption || defaultPreview.caption;
+      };
+
+      const resetPreview = () => {
+        if (!preview) return;
+        if (previewImage && defaultPreview.image) {
+          previewImage.src = defaultPreview.image;
+          previewImage.style.setProperty('--bt-preview-fit', defaultPreview.fit);
+          previewImage.style.setProperty('--bt-preview-position', defaultPreview.position);
+          previewImage.classList.remove('is-hidden');
+          previewPlaceholder?.classList.add('is-hidden');
+        } else if (previewImage) {
+          previewImage.removeAttribute('src');
+          previewImage.classList.add('is-hidden');
+          previewPlaceholder?.classList.remove('is-hidden');
+        }
+        if (previewTitle) previewTitle.textContent = defaultPreview.title;
+        if (previewCaption) previewCaption.textContent = defaultPreview.caption;
+      };
+
+      menu.addEventListener('mouseenter', () => openMenu(menu));
+      menu.addEventListener('mouseleave', () => {
+        resetPreview();
+        queueClose(menu);
+      });
+      menu.addEventListener('focusin', () => openMenu(menu));
+      menu.addEventListener('focusout', () => queueClose(menu));
+
+      menu.querySelectorAll('.bluetex-mega__preview-link').forEach((link) => {
+        link.addEventListener('mouseenter', () => updatePreview(link));
+        link.addEventListener('focus', () => updatePreview(link));
+      });
+    });
+
+    nav.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      menus.forEach(closeMenu);
+    });
+
+    desktopQuery.addEventListener('change', () => {
+      menus.forEach(closeMenu);
+    });
+  })();
+</script>

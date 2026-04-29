@@ -1,0 +1,36 @@
+{% render 'bluetex-product-block-section', mode: 'fit' %}
+
+{% schema %}
+{
+  "name": "BlueTex Product Fit",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Is This Right For Me?" },
+    { "type": "textarea", "id": "text", "label": "Intro text", "default": "Use these quick checks before choosing the product or variant." },
+    { "type": "select", "id": "background", "label": "Background", "options": [{ "value": "white", "label": "White" }, { "value": "grey", "label": "Light gray" }], "default": "white" },
+    { "type": "text", "id": "link_label", "label": "Link label" },
+    { "type": "url", "id": "link", "label": "Link" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Fit card",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "kicker", "label": "Kicker", "default": "Best for" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Cover and repair work" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "A practical fit when you need a clean BlueTex system for a metal building." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BlueTex Product Fit",
+      "blocks": [
+        { "type": "item", "settings": { "kicker": "Best for", "heading": "Metal building projects", "text": "Use when the product matches the building condition and install method." } },
+        { "type": "item", "settings": { "kicker": "Not ideal for", "heading": "Unknown layouts", "text": "Send photos before ordering if the framing, measurements, or application are unclear." } },
+        { "type": "item", "settings": { "kicker": "You may need", "heading": "System parts", "text": "Tape, fasteners, TermBars, clips, or spacers may be needed depending on the product." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

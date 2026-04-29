@@ -1,0 +1,79 @@
+<section id="BlueTexQuotePhotos-{{ section.id }}" class="bt-quote-photos">
+  <div class="bt-quote-photos__inner">
+    <div>
+      <span class="bt-quote-photos__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+    </div>
+    <div class="bt-quote-photos__steps">
+      {%- for block in section.blocks -%}
+        <div class="bt-quote-photos__step" {{ block.shopify_attributes }}>
+          <span>{{ block.settings.step }}</span>
+          <strong>{{ block.settings.heading }}</strong>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="bt-quote-photos__actions">
+      {%- if section.settings.primary_label != blank -%}<a class="bt-quote-photos__btn bt-quote-photos__btn--orange" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>{%- endif -%}
+      {%- if section.settings.secondary_label != blank -%}<a class="bt-quote-photos__btn bt-quote-photos__btn--white" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  #BlueTexQuotePhotos-{{ section.id }} { --bt-navy:#0011a7; --bt-deep:#002f6c; --bt-orange:#ee7f12; --bt-orange-hov:#3f62c5; --bt-soft:#e6e6e7; font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#eeeeee; padding:40px 20px; }
+  #BlueTexQuotePhotos-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__inner { max-width:1140px; margin:0 auto; background:var(--bt-deep); color:#fff; border-left:6px solid var(--bt-navy); border-radius:2px; padding:34px 38px; display:grid; grid-template-columns:1.1fr 1.2fr auto; gap:28px; align-items:center; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__eyebrow { display:inline-block; color:#ffcf9c; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+  #BlueTexQuotePhotos-{{ section.id }} h2 { margin:0 0 8px; color:#fff; font-size:24px; line-height:1.12; font-weight:700; letter-spacing:.2px; text-transform:uppercase; }
+  #BlueTexQuotePhotos-{{ section.id }} p { margin:0; color:#e0e4f0; font-size:15px; line-height:1.55; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__steps { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__step { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:2px; padding:14px; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__step span { display:block; color:#ffcf9c; font-size:10px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; margin-bottom:5px; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__step strong { display:block; color:#fff; font-size:12px; line-height:1.25; font-weight:700; letter-spacing:.6px; text-transform:uppercase; margin-bottom:4px; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__step p { color:#d9deee; font-size:12px; line-height:1.35; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__actions { display:flex; flex-direction:column; gap:8px; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__btn { display:inline-flex; justify-content:center; align-items:center; padding:14px 22px; border-radius:4px; border:2px solid transparent; text-decoration:none; font-size:13px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; white-space:nowrap; }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__btn--orange { background:var(--bt-navy); color:#fff; border-color:var(--bt-navy); }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__btn--orange:hover { background:var(--bt-navy-hov); border-color:var(--bt-navy-hov); }
+  #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__btn--white { background:#fff; color:var(--bt-navy); border-color:#fff; }
+  @media (max-width: 1040px) { #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__inner { grid-template-columns:1fr; align-items:start; } #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__actions { flex-direction:row; flex-wrap:wrap; } }
+  @media (max-width: 680px) { #BlueTexQuotePhotos-{{ section.id }} { padding:32px 16px; } #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__inner { padding:28px 22px; } #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__steps { grid-template-columns:1fr; } #BlueTexQuotePhotos-{{ section.id }} .bt-quote-photos__btn { width:100%; } }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex Quote Photos",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Quote Path" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Send Photos and Dimensions for a Quote" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "We put together a material list faster when we can see your building. Simple quote for a budget number, complete quote for a full line-item list." },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Request a Quote" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Send Photos for a Quote" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Quote step",
+      "settings": [
+        { "type": "text", "id": "step", "label": "Step", "default": "01" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Photos" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Show the roofline, walls, doors, and any damaged insulation." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BlueTex Quote Photos",
+      "blocks": [
+        { "type": "step", "settings": { "step": "01", "heading": "Photos", "text": "Show the roofline, walls, doors, and any damaged insulation." } },
+        { "type": "step", "settings": { "step": "02", "heading": "Dimensions", "text": "Send wall height, building length, width, and bay spacing if you have it." } },
+        { "type": "step", "settings": { "step": "03", "heading": "Material List", "text": "We map the BlueTex rolls, TermBars, tape, and fasteners." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

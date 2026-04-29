@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-product-sample-box-main",
+      "blocks": {
+        "bullet_1": { "type": "bullet", "settings": { "text": "20 ft of BlueTex™ 2mm Pro 50″ — the same product used on full-building cover and repair installs" } },
+        "bullet_2": { "type": "bullet", "settings": { "text": "4 aluminum TermBars and #10 hex screws to test the main attachment method" } },
+        "bullet_3": { "type": "bullet", "settings": { "text": "30 ft of 3″ white vapor barrier seam tape for sealing a test seam" } },
+        "bullet_4": { "type": "bullet", "settings": { "text": "EasyClip™ samples for testing roofline attachment on red iron buildings" } },
+        "trust_1": { "type": "trust", "settings": { "icon": "$", "heading": "Risk-Free Trial", "text": "$100 credited back on any order of $500 or more." } },
+        "trust_2": { "type": "trust", "settings": { "icon": "↓", "heading": "Free Shipping", "text": "Ships free in the contiguous USA." } },
+        "trust_3": { "type": "trust", "settings": { "icon": "★", "heading": "Full-Size Materials", "text": "Real product, not swatches. Test it on the building." } },
+        "trust_4": { "type": "trust", "settings": { "icon": "☎", "heading": "Real Person on the Phone", "text": "1-800-595-8772 — we help you size up the order." } }
+      },
+      "block_order": ["bullet_1", "bullet_2", "bullet_3", "bullet_4", "trust_1", "trust_2", "trust_3", "trust_4"],
+      "settings": {}
+    },
+    "box_contents": {
+      "type": "bluetex-product-box-contents",
+      "blocks": {
+        "item_1": { "type": "item", "settings": { "qty": "Qty 1 · 20 ft", "heading": "BlueTex™ 2mm Pro 50″", "text": "A 20-foot length of our 50-inch-wide 2mm Pro material used on full-building Cover & Repair installs." } },
+        "item_2": { "type": "item", "settings": { "qty": "Qty 4 · 48″ each", "heading": "Aluminum TermBars", "text": "Four aluminum TermBars for fastening BlueTex tight to the purlins and girts." } },
+        "item_3": { "type": "item", "settings": { "qty": "Qty 1 · 30 ft", "heading": "3″ White Vapor Barrier Seam Tape", "text": "White seam tape for sealing the joint and maintaining the vapor barrier." } },
+        "item_4": { "type": "item", "settings": { "qty": "Sample Set", "heading": "EasyClip™ Samples", "text": "Samples for testing roofline attachment on red iron style buildings." } }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4"],
+      "settings": {}
+    },
+    "sample_steps": {
+      "type": "bluetex-product-sample-steps",
+      "blocks": {
+        "step_1": { "type": "step", "settings": { "step": "01 · Pick a Section", "heading": "Pick a Section", "text": "Choose one bay or one wall section to test the cover/repair system." } },
+        "step_2": { "type": "step", "settings": { "step": "02 · Install a TermBar Run", "heading": "Install a TermBar Run", "text": "Fasten the included 2mm Pro with the aluminum TermBars and screws." } },
+        "step_3": { "type": "step", "settings": { "step": "03 · Tape the Seam", "heading": "Tape the Seam", "text": "Use the white vapor barrier tape to test a clean finished seam." } },
+        "step_4": { "type": "step", "settings": { "step": "04 · Send Us Photos", "heading": "Send Us Photos", "text": "Send photos and dimensions for a full-building material list." } }
+      },
+      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "settings": {}
+    },
+    "redeem_band": { "type": "bluetex-product-redeem-band", "settings": {} },
+    "companions": {
+      "type": "bluetex-product-companions",
+      "blocks": {
+        "p1": { "type": "companion", "settings": { "heading": "BlueTex™ Pro 2mm 50\" Wide", "text": "The main roll material included in the sample box.", "cta_label": "View Roll" } },
+        "p2": { "type": "companion", "settings": { "heading": "48\" Wide Aluminum Term Bars", "text": "The main mechanical attachment method used in the Cover/Repair System.", "cta_label": "View TermBars" } },
+        "p3": { "type": "companion", "settings": { "heading": "3\" White Vapor Barrier Seam Tape", "text": "The seam tape included for testing the white finished side.", "cta_label": "View Tape" } },
+        "p4": { "type": "companion", "settings": { "heading": "EasyClip™ Purlin Insulation Clip Hangers", "text": "Included as samples for red iron roofline attachment.", "cta_label": "View EasyClips" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": { "heading": "What the Sample Box Points To", "text": "The sample box is a test run for the larger BlueTex Cover/Repair System." }
+    },
+    "details": {
+      "type": "bluetex-product-details",
+      "blocks": {
+        "d1": { "type": "detail", "settings": { "heading": "How the $100 credit works", "text": "<p>The $100 sample box credit applies toward a follow-up BlueTex order of $500 or more.</p>" } },
+        "d2": { "type": "detail", "settings": { "heading": "What to test", "text": "<p>Install the material on one representative section, tape a seam, and check the finished look before ordering for the building.</p>" } },
+        "d3": { "type": "detail", "settings": { "heading": "FAQ", "text": "<p>The sample box is made for metal building insulation cover and repair projects. Send photos after testing for quote help.</p>" } }
+      },
+      "block_order": ["d1", "d2", "d3"],
+      "settings": { "heading": "Details", "text": "Credit terms, testing notes, and sample box questions are available below." }
+    },
+    "quote_cta": { "type": "bluetex-product-quote-cta", "settings": {} }
+  },
+  "order": ["main", "box_contents", "sample_steps", "redeem_band", "companions", "details", "quote_cta"]
+}

@@ -1,0 +1,47 @@
+<section id="BlueTexFinalCta-{{ section.id }}" class="bt-final-cta">
+  <div class="bt-final-cta__inner">
+    <div>
+      <span>{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+    </div>
+    <div class="bt-final-cta__actions">
+      {%- if section.settings.primary_label != blank -%}<a class="bt-final-cta__btn bt-final-cta__btn--orange" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>{%- endif -%}
+      {%- if section.settings.secondary_label != blank -%}<a class="bt-final-cta__btn bt-final-cta__btn--white" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  #BlueTexFinalCta-{{ section.id }} { --bt-navy:#0011a7; --bt-navy-hov:#3f62c5; --bt-orange:#ee7f12; --bt-orange-hov:#3f62c5; font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#eeeeee; padding:40px 20px 56px; }
+  #BlueTexFinalCta-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexFinalCta-{{ section.id }} .bt-final-cta__inner { max-width:1140px; margin:0 auto; background:#002f6c; color:#fff; border-left:6px solid var(--bt-navy); border-radius:2px; padding:34px 38px; display:grid; grid-template-columns:1.4fr auto; gap:28px; align-items:center; }
+  #BlueTexFinalCta-{{ section.id }} span { display:block; color:#ffcf9c; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+  #BlueTexFinalCta-{{ section.id }} h2 { margin:0 0 8px; color:#fff; font-size:26px; line-height:1.12; font-weight:700; letter-spacing:.2px; text-transform:uppercase; }
+  #BlueTexFinalCta-{{ section.id }} p { margin:0; color:#e0e4f0; font-size:15px; line-height:1.55; max-width:680px; }
+  #BlueTexFinalCta-{{ section.id }} .bt-final-cta__actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+  #BlueTexFinalCta-{{ section.id }} .bt-final-cta__btn { display:inline-flex; justify-content:center; align-items:center; padding:16px 28px; border-radius:4px; border:2px solid transparent; font-size:14px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; text-decoration:none; white-space:nowrap; }
+  #BlueTexFinalCta-{{ section.id }} .bt-final-cta__btn--orange { background:#fff; color:var(--bt-navy); border-color:#fff; }
+  #BlueTexFinalCta-{{ section.id }} .bt-final-cta__btn--orange:hover { background:#eeeeee; border-color:#eeeeee; }
+  #BlueTexFinalCta-{{ section.id }} .bt-final-cta__btn--white { background:#fff; color:var(--bt-navy); border-color:#fff; }
+  @media (max-width: 860px) { #BlueTexFinalCta-{{ section.id }} .bt-final-cta__inner { grid-template-columns:1fr; padding:30px 28px; } #BlueTexFinalCta-{{ section.id }} .bt-final-cta__actions { justify-content:flex-start; } }
+  @media (max-width: 560px) { #BlueTexFinalCta-{{ section.id }} { padding:32px 16px; } #BlueTexFinalCta-{{ section.id }} .bt-final-cta__inner { padding:28px 22px; } #BlueTexFinalCta-{{ section.id }} .bt-final-cta__btn { width:100%; } }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex Final CTA",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Get Started" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ready for a Full-Building Material List?" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Send photos and rough dimensions of the building. We put together a material list and quote faster when we can see what you're working with." },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Request a Quote" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Order the $100 Test Kit" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link" }
+  ],
+  "presets": [
+    { "name": "BlueTex Final CTA" }
+  ]
+}
+{% endschema %}

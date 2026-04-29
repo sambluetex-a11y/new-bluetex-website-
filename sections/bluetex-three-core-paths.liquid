@@ -1,0 +1,175 @@
+{% comment %}
+  BTI v12 three core paths
+  Homepage guide for the three primary BlueTex customer paths.
+{% endcomment %}
+
+{%- liquid
+  assign card_1_button_link = section.settings.card_1_button_link | default: '/pages/help-me-choose-the-right-building-insulation'
+  assign card_1_secondary_link = section.settings.card_1_secondary_link | default: '/pages/contact-us'
+  assign card_2_button_link = section.settings.card_2_button_link | default: '/pages/contact-us'
+  assign card_2_secondary_link = section.settings.card_2_secondary_link | default: '/pages/contact-us'
+  assign card_3_button_link = section.settings.card_3_button_link | default: '/collections/metal-building-insulation-products'
+  assign card_3_secondary_link = section.settings.card_3_secondary_link | default: '/blogs/installations/commercial-roll-up-garage-door-installation'
+-%}
+
+<section id="BlueTexThreeCorePaths-{{ section.id }}" class="bt-core-paths">
+  <div class="bt-core-paths__inner">
+    <div class="bt-core-paths__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="bt-core-paths__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.intro != blank -%}
+        <p>{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="bt-core-paths__grid">
+      <article class="bt-core-paths__card bt-core-paths__card--primary">
+        <div class="bt-core-paths__media">
+          {%- if section.settings.card_1_image != blank -%}
+            {{ section.settings.card_1_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 33vw, 100vw', alt: section.settings.card_1_image_alt }}
+          {%- else -%}
+            <div class="bt-core-paths__placeholder">Add TermBar finished interior image</div>
+          {%- endif -%}
+          {%- if section.settings.card_1_badge != blank -%}
+            <span class="bt-core-paths__badge">{{ section.settings.card_1_badge }}</span>
+          {%- endif -%}
+        </div>
+        <div class="bt-core-paths__body">
+          <h3>{{ section.settings.card_1_title }}</h3>
+          <p>{{ section.settings.card_1_body }}</p>
+          <div class="bt-core-paths__actions">
+            <a class="bt-core-paths__btn" href="{{ card_1_button_link }}">{{ section.settings.card_1_button_label }}</a>
+            <a class="bt-core-paths__text-link" href="{{ card_1_secondary_link }}">{{ section.settings.card_1_secondary_label }}</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bt-core-paths__card">
+        <div class="bt-core-paths__media">
+          {%- if section.settings.card_2_image != blank -%}
+            {{ section.settings.card_2_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 33vw, 100vw', alt: section.settings.card_2_image_alt }}
+          {%- else -%}
+            <div class="bt-core-paths__placeholder">Add existing metal building retrofit image</div>
+          {%- endif -%}
+        </div>
+        <div class="bt-core-paths__body">
+          <h3>{{ section.settings.card_2_title }}</h3>
+          <p>{{ section.settings.card_2_body }}</p>
+          <div class="bt-core-paths__actions">
+            <a class="bt-core-paths__btn" href="{{ card_2_button_link }}">{{ section.settings.card_2_button_label }}</a>
+            <a class="bt-core-paths__text-link" href="{{ card_2_secondary_link }}">{{ section.settings.card_2_secondary_label }}</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bt-core-paths__card">
+        <div class="bt-core-paths__media">
+          {%- if section.settings.card_3_image != blank -%}
+            {{ section.settings.card_3_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 33vw, 100vw', alt: section.settings.card_3_image_alt }}
+          {%- else -%}
+            <div class="bt-core-paths__placeholder">Add roll-up door install image</div>
+          {%- endif -%}
+        </div>
+        <div class="bt-core-paths__body">
+          <h3>{{ section.settings.card_3_title }}</h3>
+          <p>{{ section.settings.card_3_body }}</p>
+          <div class="bt-core-paths__actions">
+            <a class="bt-core-paths__btn" href="{{ card_3_button_link }}">{{ section.settings.card_3_button_label }}</a>
+            <a class="bt-core-paths__text-link" href="{{ card_3_secondary_link }}">{{ section.settings.card_3_secondary_label }}</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  #BlueTexThreeCorePaths-{{ section.id }} {
+    --bt-navy:#0011a7; --bt-navy-hov:#3f62c5; --bt-deep:#0b2f6b; --bt-orange:#ee7f12;
+    --bt-ink:#1b1b1b; --bt-muted:#535254; --bt-line:#dbe4f0; --bt-grey:#f5f7fa;
+    font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#fff;
+    padding:24px 0 14px;
+  }
+  #BlueTexThreeCorePaths-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__inner { max-width:1140px; margin:0 auto; padding:0 20px; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__header { max-width:780px; margin:0 0 18px; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__eyebrow { display:inline-flex; background:var(--bt-orange); color:#fff; padding:5px 11px; border-radius:2px; font-size:11px; font-weight:800; letter-spacing:1.4px; line-height:1; text-transform:uppercase; margin-bottom:10px; }
+  #BlueTexThreeCorePaths-{{ section.id }} h2 { margin:0 0 8px; color:var(--bt-navy); font-size:32px; line-height:1.12; font-weight:800; text-transform:uppercase; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__header p { margin:0; color:var(--bt-ink); font-size:16px; line-height:1.55; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; align-items:stretch; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__card { display:flex; flex-direction:column; min-width:0; border:1px solid var(--bt-line); border-top:5px solid var(--bt-deep); border-radius:6px; background:#fff; box-shadow:0 12px 28px rgba(11,47,107,.08); overflow:hidden; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__card--primary { border-top-color:var(--bt-orange); box-shadow:0 16px 34px rgba(11,47,107,.14); }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__media { position:relative; min-height:170px; background:var(--bt-deep); overflow:hidden; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__media img { display:block; width:100%; height:190px; object-fit:cover; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__placeholder { min-height:190px; display:flex; align-items:center; justify-content:center; padding:18px; border:1px dashed rgba(255,255,255,.38); color:#fff; font-size:12px; font-weight:800; letter-spacing:1.2px; line-height:1.35; text-align:center; text-transform:uppercase; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__badge { position:absolute; left:14px; top:14px; z-index:1; display:inline-flex; background:var(--bt-orange); color:#fff; padding:6px 10px; border-radius:2px; font-size:11px; font-weight:800; letter-spacing:1px; line-height:1; text-transform:uppercase; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__body { display:flex; flex:1; flex-direction:column; padding:20px; }
+  #BlueTexThreeCorePaths-{{ section.id }} h3 { margin:0 0 9px; color:var(--bt-deep); font-size:21px; line-height:1.18; font-weight:800; text-transform:uppercase; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__body p { margin:0 0 18px; color:var(--bt-ink); font-size:15px; line-height:1.52; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__actions { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin-top:auto; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__btn { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:12px 16px; border-radius:4px; background:var(--bt-navy); color:#fff; font-size:12px; font-weight:800; letter-spacing:.7px; line-height:1.1; text-align:center; text-decoration:none; text-transform:uppercase; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__btn:hover { background:var(--bt-navy-hov); color:#fff; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__text-link { color:var(--bt-deep); font-size:12px; font-weight:800; letter-spacing:.7px; text-decoration:none; text-transform:uppercase; }
+  #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__text-link:hover { color:var(--bt-orange); }
+  @media (max-width: 990px) {
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__grid { grid-template-columns:1fr; }
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__card { display:grid; grid-template-columns:minmax(220px,.85fr) 1fr; }
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__media img,
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__placeholder { height:100%; min-height:230px; }
+  }
+  @media (max-width: 640px) {
+    #BlueTexThreeCorePaths-{{ section.id }} { padding:20px 0 8px; }
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__inner { padding:0 16px; }
+    #BlueTexThreeCorePaths-{{ section.id }} h2 { font-size:26px; }
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__card { display:flex; }
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__media img,
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__placeholder { min-height:180px; height:180px; }
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__body { padding:18px; }
+    #BlueTexThreeCorePaths-{{ section.id }} .bt-core-paths__btn { width:100%; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex Three Core Paths",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Start here" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What are you trying to fix?" },
+    { "type": "textarea", "id": "intro", "label": "Intro text", "default": "Most BlueTex projects fall into one of these three paths. Pick the one that sounds most like your building." },
+    { "type": "header", "content": "Card 1" },
+    { "type": "image_picker", "id": "card_1_image", "label": "Card 1 image" },
+    { "type": "text", "id": "card_1_image_alt", "label": "Card 1 image alt text", "default": "Finished BlueTex TermBar cover and repair interior" },
+    { "type": "text", "id": "card_1_badge", "label": "Card 1 badge", "default": "Most Popular" },
+    { "type": "text", "id": "card_1_title", "label": "Card 1 title", "default": "Fix old metal building insulation" },
+    { "type": "textarea", "id": "card_1_body", "label": "Card 1 body", "default": "Cover torn, stained, or sagging insulation without tearing it out. The Cover/Repair System uses TermBars to hold a clean BlueTex finish across your existing purlins and girts." },
+    { "type": "text", "id": "card_1_button_label", "label": "Card 1 button label", "default": "See Cover/Repair System" },
+    { "type": "url", "id": "card_1_button_link", "label": "Card 1 button link" },
+    { "type": "text", "id": "card_1_secondary_label", "label": "Card 1 secondary link label", "default": "Send Photos for a Quote" },
+    { "type": "url", "id": "card_1_secondary_link", "label": "Card 1 secondary link" },
+    { "type": "header", "content": "Card 2" },
+    { "type": "image_picker", "id": "card_2_image", "label": "Card 2 image" },
+    { "type": "text", "id": "card_2_image_alt", "label": "Card 2 image alt text", "default": "Existing metal building retrofit project" },
+    { "type": "text", "id": "card_2_title", "label": "Card 2 title", "default": "Retrofit an existing metal building" },
+    { "type": "textarea", "id": "card_2_body", "label": "Card 2 body", "default": "Working on a shop, barn, warehouse, hangar, or facility? Send photos and rough dimensions and we will help figure out the material list." },
+    { "type": "text", "id": "card_2_button_label", "label": "Card 2 button label", "default": "Get Project Help" },
+    { "type": "url", "id": "card_2_button_link", "label": "Card 2 button link" },
+    { "type": "text", "id": "card_2_secondary_label", "label": "Card 2 secondary link label", "default": "What Photos We Need" },
+    { "type": "url", "id": "card_2_secondary_link", "label": "Card 2 secondary link" },
+    { "type": "header", "content": "Card 3" },
+    { "type": "image_picker", "id": "card_3_image", "label": "Card 3 image" },
+    { "type": "text", "id": "card_3_image_alt", "label": "Card 3 image alt text", "default": "BlueTex roll-up door insulation kit installed on a shop door" },
+    { "type": "text", "id": "card_3_title", "label": "Card 3 title", "default": "Insulate a hot roll-up door" },
+    { "type": "textarea", "id": "card_3_body", "label": "Card 3 body", "default": "If your roll-up door is heating up your garage or workshop, this is the simple kit. Add the double-sided tape, stick the BlueTex on, and the foil side reflects 97% of radiant heat." },
+    { "type": "text", "id": "card_3_button_label", "label": "Card 3 button label", "default": "Shop Door Kits" },
+    { "type": "url", "id": "card_3_button_link", "label": "Card 3 button link" },
+    { "type": "text", "id": "card_3_secondary_label", "label": "Card 3 secondary link label", "default": "See Install Guide" },
+    { "type": "url", "id": "card_3_secondary_link", "label": "Card 3 secondary link" }
+  ],
+  "presets": [
+    { "name": "BlueTex Three Core Paths" }
+  ]
+}
+{% endschema %}

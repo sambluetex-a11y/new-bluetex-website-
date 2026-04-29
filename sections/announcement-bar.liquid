@@ -1,0 +1,131 @@
+{% comment %}
+  BTI v14 header hero footer upgrade
+  Editable BlueTex announcement bar.
+{% endcomment %}
+
+{%- if section.settings.enable_announcement_bar -%}
+  {%- liquid
+    assign announcement_link = section.settings.announcement_link | default: '/products/bluetex-cover-repair-system-sample-box'
+  -%}
+  <div
+    class="bt-announcement"
+    style="--bt-announcement-bg: {{ section.settings.announcement_background_color }}; --bt-announcement-text: {{ section.settings.announcement_text_color }}; --bt-announcement-accent: {{ section.settings.announcement_accent_color }};"
+    role="region"
+    aria-label="{{ 'sections.header.announcement' | t }}"
+  >
+    <div class="bt-announcement__inner">
+      {%- if announcement_link != blank -%}
+        <a class="bt-announcement__link" href="{{ announcement_link }}">
+          <span>{{ section.settings.announcement_text | escape }}</span>
+          {%- if section.settings.announcement_link_text != blank -%}
+            <strong>{{ section.settings.announcement_link_text | escape }}</strong>
+          {%- endif -%}
+        </a>
+      {%- else -%}
+        <p>{{ section.settings.announcement_text | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+<style>
+  .bt-announcement {
+    background: var(--bt-announcement-bg);
+    color: var(--bt-announcement-text);
+    font-family: Lato, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    line-height: 1.35;
+  }
+  .bt-announcement__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  .bt-announcement p {
+    margin: 0;
+  }
+  .bt-announcement__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--bt-announcement-text);
+    text-decoration: none;
+  }
+  .bt-announcement__link strong {
+    color: var(--bt-announcement-accent);
+    font-weight: 800;
+  }
+  .bt-announcement__link:hover,
+  .bt-announcement__link:hover strong {
+    color: #fff;
+    text-decoration: none;
+  }
+  @media (max-width: 560px) {
+    .bt-announcement__link {
+      flex-wrap: wrap;
+      gap: 4px 7px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "class": "announcement-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_announcement_bar",
+      "label": "Enable announcement bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "Free shipping on orders $100+ in the contiguous USA"
+    },
+    {
+      "type": "text",
+      "id": "announcement_link_text",
+      "label": "Link text",
+      "default": "Order the $100 Test Kit"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Announcement link"
+    },
+    {
+      "type": "color",
+      "id": "announcement_background_color",
+      "label": "Background color",
+      "default": "#12205c"
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "announcement_accent_color",
+      "label": "Accent color",
+      "default": "#ffcf9c"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}

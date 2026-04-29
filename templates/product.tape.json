@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-tape-main",
+      "blocks": {
+        "b1": { "type": "bullet", "settings": { "text": "Choose tape by width, facing color, and application." } },
+        "b2": { "type": "bullet", "settings": { "text": "3\" white vapor barrier seam tape is the best choice for BlueTex seams." } },
+        "b3": { "type": "bullet", "settings": { "text": "Red tape is for construction and masking uses, not for BlueTex seams." } },
+        "b4": { "type": "bullet", "settings": { "text": "Bulk and contractor packs are useful for larger metal building projects." } },
+        "t1": { "type": "trust", "settings": { "icon": "W", "heading": "White Tape", "text": "Primary seam tape for BlueTex white-facing products." } },
+        "t2": { "type": "trust", "settings": { "icon": "6", "heading": "6\" Repair", "text": "For larger tears and patches." } },
+        "t3": { "type": "trust", "settings": { "icon": "F", "heading": "Foil Tape", "text": "For foil-facing seams and repairs." } },
+        "t4": { "type": "trust", "settings": { "icon": "B", "heading": "Bulk Packs", "text": "Useful for crews and repeat installs." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "fit": {
+      "type": "bluetex-product-fit",
+      "blocks": {
+        "best": { "type": "item", "settings": { "kicker": "Best for", "heading": "Seams and repairs", "text": "Use the right width and facing for BlueTex seams, foil-facing work, or larger patches." } },
+        "not": { "type": "item", "settings": { "kicker": "Not ideal for", "heading": "Wrong facing", "text": "Do not use red vapor barrier tape for BlueTex seams. Use 3\" white tape instead." } },
+        "need": { "type": "item", "settings": { "kicker": "You may need", "heading": "Rolls or parts", "text": "Tape usually works with BlueTex rolls, TermBars, or door kit material." } }
+      },
+      "block_order": ["best", "not", "need"],
+      "settings": { "heading": "Is This Right For Me?", "text": "Pick tape by what you are sealing, repairing, or temporarily holding." }
+    },
+    "chooser": {
+      "type": "bluetex-product-chooser",
+      "blocks": {
+        "c1": { "type": "item", "settings": { "kicker": "3\" White", "heading": "BlueTex seams", "text": "Best for seaming BlueTex white-facing products." } },
+        "c2": { "type": "item", "settings": { "kicker": "6\" White", "heading": "Repairs", "text": "Use for larger tears, patches, and wider repairs." } },
+        "c3": { "type": "item", "settings": { "kicker": "Foil", "heading": "Foil facing", "text": "Use for foil-facing seams and reflective surfaces." } },
+        "c4": { "type": "item", "settings": { "kicker": "Red / Double-sided", "heading": "Special use", "text": "Red is for construction or masking. Double-sided tape helps temporary hold and door kits." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": { "heading": "Choose the Right Tape", "text": "Keep this simple: match tape width and facing to the job.", "columns": 4 }
+    },
+    "companions": {
+      "type": "bluetex-product-companions",
+      "blocks": {
+        "p1": { "type": "companion", "settings": { "heading": "BlueTex™ Pro 2mm 50\" Wide", "text": "Common roll product paired with 3\" white vapor barrier seam tape.", "cta_label": "View Roll" } },
+        "p2": { "type": "companion", "settings": { "heading": "48\" Wide Aluminum Term Bars", "text": "Fastens BlueTex before seams are sealed.", "cta_label": "View TermBars" } },
+        "p3": { "type": "companion", "settings": { "heading": "BlueTex™ Cover/Repair System Sample Box", "text": "Test rolls, TermBars, tape, and clips before a larger project.", "cta_label": "View Sample Box" } },
+        "p4": { "type": "companion", "settings": { "heading": "For BlueTex seams, use 3\" White Tape", "text": "Red tape is not recommended for BlueTex seams.", "cta_label": "View White Tape" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": { "heading": "Don’t Forget These Parts", "text": "Tape is usually part of a larger BlueTex system, not the whole project by itself." }
+    },
+    "details": {
+      "type": "bluetex-product-details",
+      "blocks": {
+        "d1": { "type": "detail", "settings": { "heading": "Application notes", "text": "<p>Apply tape to clean, dry surfaces and press firmly across the full width. Some vapor barrier tapes can take 30+ days to fully cure.</p>" } },
+        "d2": { "type": "detail", "settings": { "heading": "Specs", "text": "<p>Check the selected variant for tape width, roll length, backing style, color, and pack size.</p>" } },
+        "d3": { "type": "detail", "settings": { "heading": "FAQ", "text": "<p>Use 3\" white vapor barrier seam tape for BlueTex seams. Use 6\" white tape for larger tears and repair patches.</p>" } }
+      },
+      "block_order": ["d1", "d2", "d3"],
+      "settings": { "heading": "Details", "text": "Application notes, specs, and tape questions are available below." }
+    }
+  },
+  "order": ["main", "fit", "chooser", "companions", "details"]
+}

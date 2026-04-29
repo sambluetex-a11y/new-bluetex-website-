@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-product-family-hub",
+      "blocks": {
+        "white": {
+          "type": "family_card",
+          "settings": {
+            "badge": "White finish",
+            "title": "White Seam Tape",
+            "text": "Bright white tape for joining seams, sealing edges, and matching the white BlueTex finish.",
+            "link": "/products/white-tape"
+          }
+        },
+        "repair": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Repair",
+            "title": "6\" White Repair Tape",
+            "text": "Wider white tape for larger tears, repairs, and patching work.",
+            "link": "/products/6-white-tape"
+          }
+        },
+        "foil": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Foil side",
+            "title": "Foil Seam Tape",
+            "text": "Foil tape for foil-facing seams and related insulation work.",
+            "link": "/products/foil-tape"
+          }
+        },
+        "double": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Door kits",
+            "title": "Double-Sided Tape",
+            "text": "Used with door kits and selected attachment details.",
+            "link": "/products/double-sided-tape"
+          }
+        }
+      },
+      "block_order": ["white", "repair", "foil", "double"],
+      "settings": {
+        "eyebrow": "Tape / sealing",
+        "heading": "BlueTex Tape Paths",
+        "intro": "Choose the tape family that matches the finish, repair, or door kit job.",
+        "cta_heading": "Not sure which tape belongs with your project?",
+        "cta_label": "Ask BlueTex",
+        "cta_link": "/pages/contact-us"
+      }
+    }
+  },
+  "order": ["main"]
+}

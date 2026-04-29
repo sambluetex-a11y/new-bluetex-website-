@@ -1,0 +1,120 @@
+{% comment %}
+  BTI v14 header hero footer upgrade
+  BlueTex professional footer.
+{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="bt-footer">
+  <div class="bt-footer__inner">
+    <div class="bt-footer__brand">
+      <a class="bt-footer__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+        {%- if section.settings.logo != blank -%}
+          {{ section.settings.logo | image_url: width: 420 | image_tag: loading: 'lazy', widths: '180, 260, 340, 420', alt: shop.name }}
+        {%- elsif settings.logo != blank -%}
+          {{ settings.logo | image_url: width: 420 | image_tag: loading: 'lazy', widths: '180, 260, 340, 420', alt: shop.name }}
+        {%- else -%}
+          <span>{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+      <p>{{ section.settings.description }}</p>
+      <div class="bt-footer__contact">
+        <a href="tel:{{ section.settings.phone | remove: '-' | remove: ' ' }}">{{ section.settings.phone }}</a>
+        <span>{{ section.settings.address_line_1 }}</span>
+        <span>{{ section.settings.address_line_2 }}</span>
+      </div>
+    </div>
+
+    <nav class="bt-footer__columns" aria-label="Footer navigation">
+      <div class="bt-footer__column">
+        <h2>Systems</h2>
+        <a href="/pages/help-me-choose-the-right-building-insulation">Cover/Repair System</a>
+        <a href="/pages/repair-old-torn-ceiling-insulation-in-red-iron-metal-buildings">Roof Cover & Repair</a>
+        <a href="/pages/covering-old-wall-insulation-in-metal-buildings">Wall Cover & Repair</a>
+        <a href="/pages/contact-us">Metal Building Retrofit</a>
+        <a href="/products/bluetex-2mm-pro-roll-up-garage-door-kit">Roll-Up Door Kits</a>
+        <a href="/products/48-wide-steel-term-bars-for-bluetex-cover-system">TermBar System</a>
+      </div>
+      <div class="bt-footer__column">
+        <h2>Products</h2>
+        <a href="/products/bluetex-cover-repair-system-sample-box">BlueTex™ Cover/Repair System Sample Box</a>
+        <a href="/products/bluetex-pro-2mm-50-wide-foil-white-foam-insulation">BlueTex™ Pro 2mm 50" Wide</a>
+        <a href="/products/48-wide-steel-term-bars-for-bluetex-cover-system">48" TermBars</a>
+        <a href="/products/white-tape">3" White Vapor Barrier Seam Tape</a>
+        <a href="/products/bluetex-2mm-pro-roll-up-garage-door-kit">Roll-Up Door Kit</a>
+      </div>
+      <div class="bt-footer__column">
+        <h2>Resources</h2>
+        <a href="/pages/bluetex-video-library">Install Guides</a>
+        <a href="/pages/how-to-measure-your-building-for-bluetex-metal-building-insulation">Measuring Guide</a>
+        <a href="/pages/contact-us">What Photos We Need</a>
+        <a href="/pages/bluetex-video-library">Video Library</a>
+        <a href="/blogs/case-studies">Case Studies</a>
+      </div>
+      <div class="bt-footer__column bt-footer__column--start">
+        <h2>Get Started</h2>
+        <a href="/pages/contact-us">Request a Quote</a>
+        <a href="/pages/contact-us">Send Photos for a Quote</a>
+        <a href="/products/bluetex-cover-repair-system-sample-box">Order the $100 Test Kit</a>
+        <a href="/pages/contact-us">Contact Us</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="bt-footer__bottom">
+    <div class="bt-footer__bottom-inner">
+      <small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</small>
+      {%- if section.settings.show_policy -%}
+        <div class="bt-footer__policies">
+          {%- for policy in shop.policies -%}
+            {%- if policy != blank -%}
+              <a href="{{ policy.url }}">{{ policy.title | escape }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Footer logo"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Cover, repair, and retrofit insulation systems for metal buildings. Practical products, real installs, and quote-based project help."
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "1-800-595-8772"
+    },
+    {
+      "type": "text",
+      "id": "address_line_1",
+      "label": "Address line 1",
+      "default": "9560 Swafford Rd"
+    },
+    {
+      "type": "text",
+      "id": "address_line_2",
+      "label": "Address line 2",
+      "default": "Justin, TX 76247"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy",
+      "label": "Show policy links",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

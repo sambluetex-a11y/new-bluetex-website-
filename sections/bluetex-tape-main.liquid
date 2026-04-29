@@ -1,0 +1,38 @@
+{% render 'bluetex-product-main', section: section, product: product %}
+{% schema %}
+{
+  "name": "BlueTex Tape Main",
+  "settings": [
+    { "type": "text", "id": "media_badge", "label": "Media badge", "default": "Tape" },
+    { "type": "text", "id": "media_placeholder", "label": "Media placeholder", "default": "Tape media" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Seaming · Sealing · Repair" },
+    { "type": "text", "id": "fallback_title", "label": "Fallback title", "default": "BlueTex™ Tape" },
+    { "type": "textarea", "id": "subheadline", "label": "Subheadline", "default": "Reinforced tape for seams, edges, vapor barrier work, and insulation facing repairs." },
+    { "type": "text", "id": "price_note", "label": "Price note", "default": "Bulk and contractor packs available on many tapes" },
+    { "type": "text", "id": "variant_label", "label": "Variant label", "default": "Pack size" },
+    { "type": "text", "id": "quantity_label", "label": "Quantity label", "default": "Quantity" },
+    { "type": "text", "id": "add_to_cart_label", "label": "Add to cart label", "default": "Add Tape to Cart" },
+    { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Show dynamic checkout button", "default": true },
+    { "type": "text", "id": "quote_label", "label": "Quote button label", "default": "Ask About Bulk Tape Orders" },
+    { "type": "url", "id": "quote_link", "label": "Quote button link" }
+  ],
+  "blocks": [
+    { "type": "bullet", "name": "Bullet", "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "3-inch white vapor barrier seam tape is the best choice for seaming BlueTex products." }] },
+    { "type": "trust", "name": "Trust block", "settings": [{ "type": "text", "id": "icon", "label": "Icon text", "default": "T" }, { "type": "text", "id": "heading", "label": "Heading", "default": "Reinforced Tape" }, { "type": "text", "id": "text", "label": "Text", "default": "Built with strong inner reinforcement for durable seams." }] }
+  ],
+  "presets": [
+    {
+      "name": "BlueTex Tape Main",
+      "blocks": [
+        { "type": "bullet", "settings": { "text": "3-inch white vapor barrier seam tape is the best choice for seaming BlueTex products." } },
+        { "type": "bullet", "settings": { "text": "Red vapor barrier tape is useful for construction and masking work, but not recommended for seaming BlueTex products." } },
+        { "type": "bullet", "settings": { "text": "Pressure-activated adhesive needs firm pressure and can take 30+ days to fully cure." } },
+        { "type": "trust", "settings": { "icon": "3", "heading": "3 Inch White", "text": "Best default seam tape for BlueTex white-facing products." } },
+        { "type": "trust", "settings": { "icon": "6", "heading": "6 Inch Repair", "text": "Use wider white tape for larger tears and patches." } },
+        { "type": "trust", "settings": { "icon": "B", "heading": "Bulk Packs", "text": "Bulk and contractor pack options for crews." } },
+        { "type": "trust", "settings": { "icon": "P", "heading": "Press Firmly", "text": "Apply pressure across the full tape width." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

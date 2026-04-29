@@ -1,0 +1,158 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          {%- liquid
+            assign menu_key = link.title | downcase
+            assign menu_intro = 'Helpful links grouped by project task.'
+            assign feature_title = 'Need help choosing?'
+            assign feature_text = 'Send photos and rough dimensions. We can help build a material list.'
+            assign feature_label = 'Request a Quote'
+            assign feature_url = '/pages/contact-us'
+
+            if menu_key contains 'product'
+              assign menu_intro = 'Find the main product groups without digging through every variant.'
+              assign feature_title = 'BlueTex™ Cover/Repair System Sample Box'
+              assign feature_text = 'Test BlueTex, TermBars, tape, and clips before a full-building order.'
+              assign feature_label = 'View Sample Box'
+              assign feature_url = '/products/bluetex-cover-repair-system-sample-box'
+            elsif menu_key contains 'cover' or menu_key contains 'repair'
+              assign menu_intro = 'Start with the retrofit system, then choose the parts that match the building.'
+              assign feature_title = 'Not sure what you need?'
+              assign feature_text = 'Send photos and rough dimensions. We will help build a material list.'
+              assign feature_label = 'Send Photos for a Quote'
+              assign feature_url = '/pages/contact-us'
+            elsif menu_key contains 'install'
+              assign menu_intro = 'Install help grouped by the job, not by every old guide page.'
+              assign feature_title = 'Start with measurements'
+              assign feature_text = 'Good photos and rough dimensions make product choices easier.'
+              assign feature_label = 'How to Measure'
+              assign feature_url = '/pages/how-to-measure-your-building-for-bluetex-metal-building-insulation'
+            elsif menu_key contains 'quote' or menu_key contains 'project'
+              assign menu_intro = 'Get a material list before ordering a full metal building project.'
+              assign feature_title = 'Send a few photos'
+              assign feature_text = 'Interior wide shots, problem areas, and rough dimensions are enough to start.'
+              assign feature_label = 'Request a Quote'
+              assign feature_url = '/pages/contact-us'
+            elsif menu_key contains 'sample'
+              assign menu_intro = 'Choose between a free sample packet and the full Cover/Repair System Sample Box.'
+              assign feature_title = 'BlueTex™ Cover/Repair System Sample Box'
+              assign feature_text = '$100 credit toward a $500+ order after you test the system.'
+              assign feature_label = 'View Sample Box'
+              assign feature_url = '/products/bluetex-cover-repair-system-sample-box'
+            elsif menu_key contains 'support' or menu_key contains 'faq'
+              assign menu_intro = 'Support and education links without overloading the main navigation.'
+              assign feature_title = 'Need product help?'
+              assign feature_text = 'A real person can help point you toward the right product path.'
+              assign feature_label = 'Contact BlueTex'
+              assign feature_url = '/pages/contact-us'
+            endif
+          -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content bluetex-mega color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <div class="bluetex-mega__inner page-width">
+                  <div class="bluetex-mega__top">
+                    <div>
+                      <span class="bluetex-mega__eyebrow">BlueTex Navigation</span>
+                      <h2>{{ link.title | escape }}</h2>
+                      <p>{{ menu_intro }}</p>
+                    </div>
+                    <a class="bluetex-mega__top-link" href="{{ link.url }}">View {{ link.title | escape }}</a>
+                  </div>
+                  <div class="bluetex-mega__layout">
+                    <ul
+                      class="mega-menu__list bluetex-mega__list{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                      role="list"
+                    >
+                      {%- for childlink in link.links limit: 6 -%}
+                        <li class="bluetex-mega__column">
+                          <a
+                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                            href="{{ childlink.url }}"
+                            class="mega-menu__link mega-menu__link--level-2 bluetex-mega__heading link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                            {% if childlink.current %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            {{ childlink.title | escape }}
+                          </a>
+                          {%- if childlink.links != blank -%}
+                            <ul class="list-unstyled bluetex-mega__links" role="list">
+                              {%- for grandchildlink in childlink.links limit: 5 -%}
+                                <li>
+                                  <a
+                                    id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                    href="{{ grandchildlink.url }}"
+                                    class="mega-menu__link bluetex-mega__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                    {% if grandchildlink.current %}
+                                      aria-current="page"
+                                    {% endif %}
+                                  >
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                    <aside class="bluetex-mega__feature">
+                      <span>Recommended path</span>
+                      <h3>{{ feature_title }}</h3>
+                      <p>{{ feature_text }}</p>
+                      <a href="{{ feature_url }}">{{ feature_label }}</a>
+                    </aside>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

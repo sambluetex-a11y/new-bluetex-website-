@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-part-main",
+      "blocks": {
+        "b1": { "type": "bullet", "settings": { "text": "TermBars fasten BlueTex tight to purlins and girts for a clean finished surface." } },
+        "b2": { "type": "bullet", "settings": { "text": "EasyClips are for C/Z purlins and girts in red iron buildings." } },
+        "b3": { "type": "bullet", "settings": { "text": "Fasteners and spacers should be chosen based on the install method." } },
+        "t1": { "type": "trust", "settings": { "icon": "T", "heading": "TermBars", "text": "Pairs with BlueTex Pro and Supreme rolls." } },
+        "t2": { "type": "trust", "settings": { "icon": "E", "heading": "EasyClips", "text": "Useful on C/Z framing." } },
+        "t3": { "type": "trust", "settings": { "icon": "F", "heading": "Fastening", "text": "Keeps the system tight." } },
+        "t4": { "type": "trust", "settings": { "icon": "Q", "heading": "Quote Help", "text": "Ask for help estimating quantities." } }
+      },
+      "block_order": ["b1", "b2", "b3", "t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "fit": {
+      "type": "bluetex-product-fit",
+      "blocks": {
+        "best": { "type": "item", "settings": { "kicker": "Best for", "heading": "Completing the system", "text": "Use these parts when BlueTex material needs mechanical attachment, spacing, or fastening support." } },
+        "not": { "type": "item", "settings": { "kicker": "Not ideal for", "heading": "Guessing quantities", "text": "Part counts depend on building dimensions, spacing, and attachment method." } },
+        "need": { "type": "item", "settings": { "kicker": "You may need", "heading": "Rolls and tape", "text": "Most parts are used with BlueTex rolls and seam tape." } }
+      },
+      "block_order": ["best", "not", "need"],
+      "settings": { "heading": "Is This Right For Me?", "text": "Use system parts to attach, space, or finish the BlueTex install." }
+    },
+    "chooser": {
+      "type": "bluetex-product-chooser",
+      "blocks": {
+        "c1": { "type": "item", "settings": { "kicker": "TermBars", "heading": "About 75 bars", "text": "Roughly 75 bars per 700 sq ft roll of 50\" 2mm Pro." } },
+        "c2": { "type": "item", "settings": { "kicker": "EasyClips", "heading": "About 1 per 10 sq ft", "text": "Plan about one clip per 10 sq ft, or every 24\" on 5 ft spans." } },
+        "c3": { "type": "item", "settings": { "kicker": "Screws / washers", "heading": "Follow guidance", "text": "Use product description guidance and the attachment method." } },
+        "c4": { "type": "item", "settings": { "kicker": "Spacers", "heading": "Assembly-specific", "text": "Use when airspace or thermal break is part of the assembly." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": { "heading": "How Many Do I Need?", "text": "Use these defaults as editable starting points. Project layout always matters.", "columns": 4 }
+    },
+    "companions": {
+      "type": "bluetex-product-companions",
+      "blocks": {
+        "p1": { "type": "companion", "settings": { "heading": "BlueTex™ Pro 2mm 50\" Wide", "text": "Common roll material used with TermBars, clips, and fasteners.", "cta_label": "View Roll" } },
+        "p2": { "type": "companion", "settings": { "heading": "BlueTex™ Supreme 6mm 50\" Wide", "text": "Thicker roll option when the project calls for more body.", "cta_label": "View Supreme" } },
+        "p3": { "type": "companion", "settings": { "heading": "3\" White Vapor Barrier Seam Tape", "text": "Seals seams after the material is fastened.", "cta_label": "View Tape" } },
+        "p4": { "type": "companion", "settings": { "heading": "BlueTex™ Cover/Repair System Sample Box", "text": "Test the full system before ordering parts for a larger project.", "cta_label": "View Sample Box" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": { "heading": "What Usually Goes With This", "text": "System parts are most useful when paired with the matching roll, tape, and attachment method." }
+    },
+    "details": {
+      "type": "bluetex-product-details",
+      "blocks": {
+        "d1": { "type": "detail", "settings": { "heading": "What it does", "text": "<p>TermBars, EasyClips, screws, washers, and spacers each solve a different attachment or assembly problem in a BlueTex metal building install.</p>" } },
+        "d2": { "type": "detail", "settings": { "heading": "Install notes", "text": "<p>Locate the framing, set the part according to the system layout, and keep the BlueTex material tight and straight.</p>" } },
+        "d3": { "type": "detail", "settings": { "heading": "FAQ", "text": "<p>Ask for a material list when part counts are unclear or the project includes multiple walls, rooflines, or attachment methods.</p>" } }
+      },
+      "block_order": ["d1", "d2", "d3"],
+      "settings": { "heading": "Details", "text": "System part details and quantity notes are available below." }
+    }
+  },
+  "order": ["main", "fit", "chooser", "companions", "details"]
+}

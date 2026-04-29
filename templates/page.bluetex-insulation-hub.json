@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "bluetex-product-family-hub",
+      "blocks": {
+        "pro50": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Most used",
+            "title": "2mm Pro 50\"",
+            "text": "The main BlueTex Pro roll path for many retrofit and cover projects.",
+            "link": "/products/bluetex-pro-2mm-50-wide-foil-white-foam-insulation"
+          }
+        },
+        "pro62": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Wide roll",
+            "title": "2mm Pro 62\"",
+            "text": "A wider BlueTex Pro roll for layouts that call for more width.",
+            "link": "/products/bluetex-pro-2mm-super-wide-62-inch"
+          }
+        },
+        "supreme50": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Thicker",
+            "title": "6mm Supreme 50\"",
+            "text": "A thicker foam option in the standard 50 inch width.",
+            "link": "/products/bluetex-6mm-supreme-50-wide"
+          }
+        },
+        "supreme62": {
+          "type": "family_card",
+          "settings": {
+            "badge": "Wide roll",
+            "title": "6mm Supreme 62\"",
+            "text": "A thicker super-wide roll for select projects.",
+            "link": "/products/bluetex%E2%84%A2-supreme-6mm-62-wide-foil-white-foam-insulation-300-sq-ft"
+          }
+        }
+      },
+      "block_order": ["pro50", "pro62", "supreme50", "supreme62"],
+      "settings": {
+        "eyebrow": "BlueTex insulation",
+        "heading": "Choose BlueTex Roll Width and Thickness",
+        "intro": "Compare the main BlueTex insulation roll families by thickness and width.",
+        "cta_heading": "Need help choosing 50\" vs. 62\"?",
+        "cta_label": "Get Product Help",
+        "cta_link": "/pages/help-me-choose-the-right-building-insulation"
+      }
+    }
+  },
+  "order": ["main"]
+}

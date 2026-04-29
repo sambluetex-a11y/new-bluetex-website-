@@ -1,0 +1,31 @@
+{{ 'bluetex-collection.css' | asset_url | stylesheet_tag }}
+
+<section id="BlueTexCollectionQuote-{{ section.id }}" class="btxc btxc__band btxc-quote">
+  <div class="btxc__container">
+    <div class="btxc-quote__panel">
+      <div>
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.text }}</p>
+      </div>
+      <div class="btxc-quote__actions">
+        {%- if section.settings.primary_label != blank -%}<a class="btxc__btn" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>{%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}<a class="btxc__btn btxc__btn--secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BlueTex Quote CTA",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Not sure what to order?" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Send photos and dimensions and we will help build an accurate material list for your metal building." },
+    { "type": "text", "id": "primary_label", "label": "Primary label", "default": "Request a Quote" },
+    { "type": "url", "id": "primary_link", "label": "Primary link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary label", "default": "View Sample Box" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary link" }
+  ],
+  "presets": [{ "name": "BlueTex Quote CTA" }]
+}
+{% endschema %}
