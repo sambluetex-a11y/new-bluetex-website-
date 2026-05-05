@@ -1,24 +1,64 @@
-<section class="bti-section{% if section.settings.use_soft_background %} bti-section--soft{% endif %}"{% if section.settings.anchor_id != blank %} id="{{ section.settings.anchor_id | handleize }}"{% endif %}>
-  <div class="bti-container bti-stack">
-    {%- render 'bti-section-heading',
-      eyebrow: section.settings.eyebrow,
-      heading: section.settings.heading,
-      text: section.settings.text,
-      align: section.settings.heading_align,
-      heading_size: 'medium'
-    -%}
-    <div class="bti-grid bti-grid--two">
+{%- liquid
+  assign section_eyebrow = section.settings.eyebrow
+  assign section_heading = section.settings.heading
+  assign section_text = section.settings.text
+-%}
+
+<section class="btx-apps"{% if section.settings.anchor_id != blank %} id="{{ section.settings.anchor_id | handleize }}"{% endif %}>
+  <div class="btx-apps__inner">
+    {%- if section_eyebrow != blank or section_heading != blank or section_text != blank -%}
+      <header class="btx-apps__head">
+        {%- if section_eyebrow != blank -%}
+          <span class="btx-apps__eyebrow">{{ section_eyebrow | escape }}</span>
+        {%- endif -%}
+        {%- if section_heading != blank -%}
+          <h2 class="btx-apps__heading">{{ section_heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section_text != blank -%}
+          <div class="btx-apps__text">{{ section_text }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    <div class="btx-apps__grid">
       {%- for block in section.blocks -%}
-        {%- render 'bti-media-card',
-          image: block.settings.image,
-          image_alt: block.settings.image_alt,
-          title: block.settings.title,
-          text: block.settings.text,
-          primary_label: block.settings.primary_label,
-          primary_url: block.settings.primary_url,
-          secondary_label: block.settings.secondary_label,
-          secondary_url: block.settings.secondary_url
-        -%}
+        <article class="btx-app-card" {{ block.shopify_attributes }}>
+          <div class="btx-app-card__media">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 1200
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '480, 720, 960, 1200',
+                  sizes: '(min-width: 750px) 50vw, 100vw',
+                  alt: block.settings.image_alt | default: block.settings.title
+              }}
+            {%- else -%}
+              <span class="btx-app-card__placeholder" aria-hidden="true">
+                {{ block.settings.image_alt | default: block.settings.title | default: 'Image' | escape }}
+              </span>
+            {%- endif -%}
+          </div>
+          <div class="btx-app-card__body">
+            {%- if block.settings.title != blank -%}
+              <h3 class="btx-app-card__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="btx-app-card__text">{{ block.settings.text }}</div>
+            {%- endif -%}
+            {%- if block.settings.primary_label != blank or block.settings.secondary_label != blank -%}
+              <div class="btx-app-card__buttons">
+                {%- if block.settings.primary_label != blank and block.settings.primary_url != blank -%}
+                  <a class="btx-btn btx-btn--navy" href="{{ block.settings.primary_url }}">{{ block.settings.primary_label | escape }}</a>
+                {%- endif -%}
+                {%- if block.settings.secondary_label != blank and block.settings.secondary_url != blank -%}
+                  <a class="btx-btn btx-btn--outline" href="{{ block.settings.secondary_url }}">{{ block.settings.secondary_label | escape }}</a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </article>
       {%- endfor -%}
     </div>
   </div>
@@ -26,23 +66,12 @@
 
 {% schema %}
 {
-  "name": "BTI application grid",
+  "name": "BTX application grid",
   "settings": [
-    { "type": "checkbox", "id": "use_soft_background", "label": "Use soft background", "default": false },
     { "type": "text", "id": "anchor_id", "label": "Optional anchor ID" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Popular applications" },
-    { "type": "richtext", "id": "text", "label": "Text" },
-    {
-      "type": "select",
-      "id": "heading_align",
-      "label": "Heading alignment",
-      "default": "left",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" }
-      ]
-    }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Two More Ways We Help" },
+    { "type": "richtext", "id": "text", "label": "Intro text" }
   ],
   "blocks": [
     {
@@ -63,7 +92,7 @@
   ],
   "presets": [
     {
-      "name": "BTI application grid",
+      "name": "BTX application grid",
       "blocks": [
         { "type": "application" },
         { "type": "application" }
