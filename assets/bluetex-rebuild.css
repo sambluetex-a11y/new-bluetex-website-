@@ -423,8 +423,9 @@
 }
 
 .bti-home-hero-cta {
-  background: #ffffff;
-  border-bottom: 0.1rem solid var(--bti-line);
+  background: #0B2F6B;
+  border-top: 0.2rem solid #EE7F12;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.12);
   padding: 1.2rem var(--bti-gutter);
 }
 
@@ -441,8 +442,8 @@
   min-height: 5rem;
   align-items: center;
   justify-content: center;
-  border: 0.1rem solid var(--bti-blue);
-  background: var(--bti-blue);
+  border: 0.15rem solid rgba(255, 255, 255, 0.32);
+  background: transparent;
   color: #ffffff;
   font-size: 1.25rem;
   font-weight: 900;
@@ -451,12 +452,15 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
 
-.bti-home-hero-cta__link:hover {
-  background: var(--bti-action);
-  border-color: var(--bti-action);
+.bti-home-hero-cta__link:hover,
+.bti-home-hero-cta__link:focus-visible {
+  background: #EE7F12;
+  border-color: #EE7F12;
   color: #ffffff;
+  outline: none;
 }
 
 .bti-home-hero-cta--sticky {
