@@ -1,0 +1,14 @@
+{%- liquid
+  assign bti_align = align | default: 'left'
+-%}
+
+{%- if primary_label != blank or secondary_label != blank -%}
+  <div class="bti-cta-row{% if bti_align == 'center' %} bti-cta-row--center{% endif %}">
+    {%- if primary_label != blank and primary_url != blank -%}
+      <a class="bti-button" href="{{ primary_url }}">{{ primary_label | escape }}</a>
+    {%- endif -%}
+    {%- if secondary_label != blank and secondary_url != blank -%}
+      <a class="bti-button bti-button--secondary" href="{{ secondary_url }}">{{ secondary_label | escape }}</a>
+    {%- endif -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,126 @@
+{%- liquid
+  assign hero_heading = section.settings.heading | default: 'Repair Old or Torn Insulation — Without Tearing It Out'
+  assign hero_label_1 = section.settings.sub_label_1 | default: 'Tear-Proof / Puncture-Resistant'
+  assign hero_label_2 = section.settings.sub_label_2 | default: 'Internal Vapor Barrier Replacement System'
+  assign media_alt = section.settings.image_alt | default: hero_heading
+  assign resolved_video_url = section.settings.video_url
+  if section.settings.video_asset_filename != blank
+    assign resolved_video_url = section.settings.video_asset_filename | asset_url
+  endif
+-%}
+
+<section class="bti-home-hero" aria-labelledby="bti-home-hero-heading-{{ section.id }}">
+  <div class="bti-container bti-home-hero__inner">
+    <div class="bti-home-hero__content">
+      {%- if section.settings.kicker != blank -%}
+        <p class="bti-home-hero__kicker">{{ section.settings.kicker | escape }}</p>
+      {%- endif -%}
+      <h1 id="bti-home-hero-heading-{{ section.id }}" class="bti-home-hero__heading">{{ hero_heading | escape }}</h1>
+      <ul class="bti-home-hero__sub-labels" aria-label="System highlights">
+        <li>{{ hero_label_1 | escape }}</li>
+        <li>{{ hero_label_2 | escape }}</li>
+      </ul>
+      {%- if section.settings.text != blank -%}
+        <div class="bti-home-hero__text">{{ section.settings.text }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="bti-home-hero__media">
+      {%- if section.settings.media_type == 'video' and resolved_video_url != blank -%}
+        <video
+          data-bti-hero-video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label="{{ media_alt | escape }}"
+          {% if section.settings.poster != blank %}poster="{{ section.settings.poster | image_url: width: 1400 }}"{% endif %}
+        >
+          <source src="{{ resolved_video_url }}" type="video/mp4">
+        </video>
+      {%- elsif section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1600
+          | image_tag:
+            loading: 'eager',
+            widths: '480, 720, 960, 1200, 1600',
+            sizes: '(min-width: 990px) 52vw, 100vw',
+            alt: media_alt
+        }}
+      {%- elsif section.settings.poster != blank -%}
+        {{
+          section.settings.poster
+          | image_url: width: 1600
+          | image_tag:
+            loading: 'eager',
+            widths: '480, 720, 960, 1200, 1600',
+            sizes: '(min-width: 990px) 52vw, 100vw',
+            alt: media_alt
+        }}
+      {%- endif -%}
+      {%- if section.settings.media_caption != blank -%}
+        <p class="bti-home-hero__caption">{{ section.settings.media_caption | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<nav class="bti-home-hero-cta{% if section.settings.enable_sticky_cta %} bti-home-hero-cta--sticky{% endif %}" aria-label="TermBar system shortcuts">
+  <div class="bti-home-hero-cta__inner">
+    {%- if section.settings.cta_1_label != blank and section.settings.cta_1_url != blank -%}
+      <a class="bti-home-hero-cta__link" href="{{ section.settings.cta_1_url }}">{{ section.settings.cta_1_label | escape }}</a>
+    {%- endif -%}
+    {%- if section.settings.cta_2_label != blank and section.settings.cta_2_url != blank -%}
+      <a class="bti-home-hero-cta__link" href="{{ section.settings.cta_2_url }}">{{ section.settings.cta_2_label | escape }}</a>
+    {%- endif -%}
+    {%- if section.settings.cta_3_label != blank and section.settings.cta_3_url != blank -%}
+      <a class="bti-home-hero-cta__link" href="{{ section.settings.cta_3_url }}">{{ section.settings.cta_3_label | escape }}</a>
+    {%- endif -%}
+    {%- if section.settings.cta_4_label != blank and section.settings.cta_4_url != blank -%}
+      <a class="bti-home-hero-cta__link" href="{{ section.settings.cta_4_url }}">{{ section.settings.cta_4_label | escape }}</a>
+    {%- endif -%}
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "BTI TermBar hero",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "BlueTex TermBar Cover System" },
+    { "type": "text", "id": "heading", "label": "Headline", "default": "Repair Old or Torn Insulation — Without Tearing It Out" },
+    { "type": "text", "id": "sub_label_1", "label": "Sub-label 1", "default": "Tear-Proof / Puncture-Resistant" },
+    { "type": "text", "id": "sub_label_2", "label": "Sub-label 2", "default": "Internal Vapor Barrier Replacement System" },
+    { "type": "richtext", "id": "text", "label": "Supporting text" },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "default": "image",
+      "options": [
+        { "value": "image", "label": "Still image" },
+        { "value": "video", "label": "Muted looping video" }
+      ]
+    },
+    { "type": "image_picker", "id": "image", "label": "Still image" },
+    { "type": "url", "id": "video_url", "label": "MP4 video URL (external)" },
+    { "type": "text", "id": "video_asset_filename", "label": "MP4 asset filename (uploaded to theme assets)", "info": "Overrides the external URL. Example: BlueTexHorizontalAd.mp4" },
+    { "type": "image_picker", "id": "poster", "label": "Video poster fallback" },
+    { "type": "text", "id": "image_alt", "label": "Media alt text" },
+    { "type": "text", "id": "media_caption", "label": "Media caption" },
+    { "type": "checkbox", "id": "enable_sticky_cta", "label": "Make CTA bar sticky on scroll", "default": false },
+    { "type": "text", "id": "cta_1_label", "label": "CTA 1 label", "default": "System Overview" },
+    { "type": "url", "id": "cta_1_url", "label": "CTA 1 link" },
+    { "type": "text", "id": "cta_2_label", "label": "CTA 2 label", "default": "Install Guide" },
+    { "type": "url", "id": "cta_2_url", "label": "CTA 2 link" },
+    { "type": "text", "id": "cta_3_label", "label": "CTA 3 label", "default": "Order Test Kit" },
+    { "type": "url", "id": "cta_3_url", "label": "CTA 3 link" },
+    { "type": "text", "id": "cta_4_label", "label": "CTA 4 label", "default": "Request a Quote" },
+    { "type": "url", "id": "cta_4_url", "label": "CTA 4 link" }
+  ],
+  "presets": [
+    { "name": "BTI TermBar hero" }
+  ]
+}
+{% endschema %}

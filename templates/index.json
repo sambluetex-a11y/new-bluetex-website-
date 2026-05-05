@@ -1,317 +1,67 @@
 {
   "sections": {
     "bluetex_hero": {
-      "type": "bluetex-hero-carousel",
+      "type": "bti-home-termbar-hero",
       "settings": {
-        "enable_autoplay": true,
-        "autoplay_speed": 7,
-        "slide_1_primary_link": "/pages/contact-us",
-        "slide_1_secondary_link": "/products/bluetex-cover-repair-system-sample-box",
-        "slide_2_primary_link": "/pages/contact-us",
-        "slide_2_secondary_link": "/pages/contact-us",
-        "slide_3_primary_link": "/products/bluetex-2mm-pro-roll-up-garage-door-kit",
-        "slide_3_secondary_link": "/blogs/installations/commercial-roll-up-garage-door-installation"
+        "kicker": "BlueTex™ TermBar Cover System",
+        "heading": "Repair Old or Torn Insulation — Without Tearing It Out",
+        "sub_label_1": "Tear-Proof / Puncture-Resistant",
+        "sub_label_2": "Internal Vapor Barrier Replacement System",
+        "media_type": "video",
+        "video_asset_filename": "BlueTexHorizontalAd.mp4",
+        "image_alt": "BlueTex TermBar cover system installed over old metal building insulation — before and after.",
+        "media_caption": "BlueTex goes directly over the old insulation. Mechanically attached at the purlins with aluminum TermBars.",
+        "enable_sticky_cta": true,
+        "cta_1_label": "System Overview",
+        "cta_1_url": "/pages/termbar-cover-system",
+        "cta_2_label": "Install Guide",
+        "cta_2_url": "/pages/covering-old-wall-insulation-in-metal-buildings",
+        "cta_3_label": "Order Test Kit",
+        "cta_3_url": "/products/bluetex-cover-repair-system-sample-box",
+        "cta_4_label": "Request a Quote",
+        "cta_4_url": "/pages/request-a-quote"
       }
     },
-    "bluetex_three_core_paths": {
-      "type": "bluetex-three-core-paths",
-      "settings": {
-        "card_1_button_link": "/pages/help-me-choose-the-right-building-insulation",
-        "card_1_secondary_link": "/pages/contact-us",
-        "card_2_button_link": "/pages/contact-us",
-        "card_2_secondary_link": "/pages/contact-us",
-        "card_3_button_link": "/collections/metal-building-insulation-products",
-        "card_3_secondary_link": "/blogs/installations/commercial-roll-up-garage-door-installation"
-      }
-    },
-    "bluetex_quick_nav": {
-      "type": "bluetex-quick-nav",
+    "bluetex_app_grid": {
+      "type": "bti-application-grid",
       "blocks": {
-        "wall": {
-          "type": "link",
-          "settings": {
-            "label": "Wall Cover & Repair",
-            "link": "/pages/covering-old-wall-insulation-in-metal-buildings"
-          }
-        },
-        "roof": {
-          "type": "link",
-          "settings": {
-            "label": "Roof Cover & Repair",
-            "link": "/pages/repair-old-torn-ceiling-insulation-in-red-iron-metal-buildings"
-          }
-        },
         "retrofit": {
-          "type": "link",
+          "type": "application",
           "settings": {
-            "label": "Metal Building Retrofit",
-            "link": "/pages/contact-us"
+            "image_alt": "Retrofit insulation for an existing metal building interior",
+            "title": "Retrofit Existing Metal Buildings",
+            "text": "<p>The smart insulation choice for metal buildings you don't heat and cool 24/7 — garages, workshops, ag buildings. BlueTex delivers exactly what these buildings need at a fraction of the spray foam cost.</p>",
+            "primary_label": "Install Guide",
+            "primary_url": "/pages/existing-construction-metal-framed-buildings-installation",
+            "secondary_label": "Shop Products",
+            "secondary_url": "/collections/metal-building-insulation-products"
           }
         },
-        "doors": {
-          "type": "link",
+        "rollup": {
+          "type": "application",
           "settings": {
-            "label": "Roll-Up Doors",
-            "link": "/products/bluetex-2mm-pro-roll-up-garage-door-kit"
+            "image_alt": "Insulated roll-up garage door — before and after temperature impact",
+            "title": "Insulate Roll-Up Doors",
+            "text": "<p>A simple DIY upgrade for hot metal roll-up doors. Pre-cut kits sized to your door — straightforward install, real summer heat reduction.</p>",
+            "primary_label": "Install Guide",
+            "primary_url": "/blogs/installations/commercial-roll-up-garage-door-installation",
+            "secondary_label": "Shop Kits",
+            "secondary_url": "/products/bluetex-2mm-pro-roll-up-garage-door-kit"
           }
         }
       },
-      "block_order": [
-        "wall",
-        "roof",
-        "retrofit",
-        "doors"
-      ],
-      "settings": {}
-    },
-    "bluetex_before_after": {
-      "type": "bluetex-before-after",
-      "settings": {}
-    },
-    "bluetex_termbar_system": {
-      "type": "bluetex-termbar-system",
-      "blocks": {
-        "tile_install": {
-          "type": "image_tile",
-          "settings": {
-            "label": "Install",
-            "alt": "Installing TermBars"
-          }
-        },
-        "tile_finished": {
-          "type": "image_tile",
-          "settings": {
-            "label": "Finished Look",
-            "alt": "Finished BlueTex roof and wall look"
-          }
-        },
-        "tile_wall": {
-          "type": "image_tile",
-          "settings": {
-            "label": "Wall Finish",
-            "alt": "Complete BlueTex wall finish"
-          }
-        },
-        "tile_before": {
-          "type": "image_tile",
-          "settings": {
-            "label": "Before",
-            "alt": "Old sagging insulation before BlueTex"
-          }
-        },
-        "card_what": {
-          "type": "card",
-          "settings": {
-            "step": "01 · What It Is",
-            "heading": "What It Is",
-            "text": "TermBars are aluminum bars that fasten the BlueTex material to the building frame.",
-            "accent": false
-          }
-        },
-        "card_works": {
-          "type": "card",
-          "settings": {
-            "step": "02 · Why It Works",
-            "heading": "Why It Works",
-            "text": "It creates a clean panel look and keeps the material tight against the purlins and girts.",
-            "accent": false
-          }
-        },
-        "card_popular": {
-          "type": "card",
-          "settings": {
-            "step": "03 · Why It's Popular",
-            "heading": "Why It's Popular",
-            "text": "Most customers prefer the finished look and strong mechanical attachment.",
-            "accent": true
-          }
-        },
-        "card_options": {
-          "type": "card",
-          "settings": {
-            "step": "04 · Other Options",
-            "heading": "Other Options",
-            "text": "EasyClip and other methods are secondary, used when the building calls for them.",
-            "accent": false
-          }
-        }
-      },
-      "block_order": [
-        "tile_install",
-        "tile_finished",
-        "tile_wall",
-        "tile_before",
-        "card_what",
-        "card_works",
-        "card_popular",
-        "card_options"
-      ],
-      "settings": {}
-    },
-    "bluetex_quote_photos": {
-      "type": "bluetex-quote-photos",
-      "blocks": {
-        "photos": {
-          "type": "step",
-          "settings": {
-            "step": "01",
-            "heading": "Photos",
-            "text": "Show the roofline, walls, doors, and any damaged insulation."
-          }
-        },
-        "dimensions": {
-          "type": "step",
-          "settings": {
-            "step": "02",
-            "heading": "Dimensions",
-            "text": "Send wall height, building length, width, and bay spacing if you have it."
-          }
-        },
-        "list": {
-          "type": "step",
-          "settings": {
-            "step": "03",
-            "heading": "Material List",
-            "text": "We map the BlueTex rolls, TermBars, tape, and fasteners."
-          }
-        }
-      },
-      "block_order": [
-        "photos",
-        "dimensions",
-        "list"
-      ],
-      "settings": {}
-    },
-    "bluetex_sample_box": {
-      "type": "bluetex-sample-box",
-      "blocks": {
-        "pro": {
-          "type": "item",
-          "settings": {
-            "qty": "Qty 1 · 20 ft",
-            "heading": "BlueTex™ 2mm Pro 50″",
-            "text": "A 20-foot length of our 50-inch-wide 2mm Pro material."
-          }
-        },
-        "termbars": {
-          "type": "item",
-          "settings": {
-            "qty": "Qty 4 · 48″ each",
-            "heading": "Aluminum TermBars",
-            "text": "Four 48-inch aluminum TermBars for fastening BlueTex tight to the purlins and girts."
-          }
-        },
-        "tape": {
-          "type": "item",
-          "settings": {
-            "qty": "Qty 1 · 30 ft",
-            "heading": "3″ White Vapor Barrier Seam Tape",
-            "text": "White seam tape for sealing the joints between BlueTex panels."
-          }
-        },
-        "easyclips": {
-          "type": "item",
-          "settings": {
-            "qty": "Qty 6 · Sample Set",
-            "heading": "EasyClip™ Purlin Insulation Clip Hangers",
-            "text": "Sample EasyClips for testing roofline attachment on red iron buildings."
-          }
-        }
-      },
-      "block_order": [
-        "pro",
-        "termbars",
-        "tape",
-        "easyclips"
-      ],
-      "settings": {}
-    },
-    "bluetex_project_proof": {
-      "type": "bluetex-project-proof",
-      "blocks": {
-        "before": {
-          "type": "proof",
-          "settings": {
-            "image_label": "Before Photo",
-            "title": "Before · Sagging Insulation",
-            "text": "Old vinyl-faced insulation pulling away from the purlins."
-          }
-        },
-        "after": {
-          "type": "proof",
-          "settings": {
-            "image_label": "After Photo",
-            "title": "After · Finished Roof & Wall",
-            "text": "Full retrofit with TermBar install, walls and roof."
-          }
-        },
-        "finish": {
-          "type": "proof",
-          "settings": {
-            "image_label": "Wall Finish",
-            "title": "Complete Wall Finish",
-            "text": "Flat, drum-tight, bright white finished interior wall."
-          }
-        }
-      },
-      "block_order": [
-        "before",
-        "after",
-        "finish"
-      ],
-      "settings": {}
-    },
-    "bluetex_faq": {
-      "type": "bluetex-faq",
-      "blocks": {
-        "strong": {
-          "type": "question",
-          "settings": {
-            "question": "Is It Strong?",
-            "answer": "Yes. TermBars mechanically fasten the material to the building frame. The finished wall is tighter and more durable than the original metal building insulation it covers.",
-            "featured": true
-          }
-        },
-        "paint": {
-          "type": "question",
-          "settings": {
-            "question": "Can You Paint It?",
-            "answer": "Yes. BlueTex and the TermBars both hold paint. Most customers leave it bright white for light reflection, but you can roll or spray latex paint for a custom color.",
-            "featured": false
-          }
-        },
-        "tearout": {
-          "type": "question",
-          "settings": {
-            "question": "Do I Have to Tear Out the Old Insulation?",
-            "answer": "Usually no. BlueTex is commonly installed over existing insulation. The TermBar presses the old material in place and the new BlueTex creates the finished interior.",
-            "featured": false
-          }
-        }
-      },
-      "block_order": [
-        "strong",
-        "paint",
-        "tearout"
-      ],
-      "settings": {}
-    },
-    "bluetex_final_cta": {
-      "type": "bluetex-final-cta",
-      "settings": {}
+      "block_order": ["retrofit", "rollup"],
+      "settings": {
+        "use_soft_background": false,
+        "eyebrow": "Two More Ways BlueTex Solves Metal Building Problems",
+        "heading": "Existing Buildings & Roll-Up Doors",
+        "text": "<p>Two high-volume product lines for the most common projects we see. Pick the one that matches your building.</p>",
+        "heading_align": "left"
+      }
     }
   },
   "order": [
     "bluetex_hero",
-    "bluetex_three_core_paths",
-    "bluetex_quick_nav",
-    "bluetex_before_after",
-    "bluetex_termbar_system",
-    "bluetex_quote_photos",
-    "bluetex_sample_box",
-    "bluetex_project_proof",
-    "bluetex_faq",
-    "bluetex_final_cta"
+    "bluetex_app_grid"
   ]
 }

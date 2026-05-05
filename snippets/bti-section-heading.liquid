@@ -1,0 +1,21 @@
+{%- liquid
+  assign bti_align = align | default: 'left'
+  assign bti_heading_level = heading_level | default: 'h2'
+  assign bti_heading_size = heading_size | default: 'large'
+-%}
+
+{%- if eyebrow != blank or heading != blank or text != blank -%}
+  <div class="bti-section-heading{% if bti_align == 'center' %} bti-section-heading--center{% endif %}">
+    {%- if eyebrow != blank -%}
+      <p class="bti-eyebrow">{{ eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if heading != blank -%}
+      <{{ bti_heading_level }} class="bti-heading{% if bti_heading_size == 'medium' %} bti-heading--md{% endif %}">
+        {{ heading | escape }}
+      </{{ bti_heading_level }}>
+    {%- endif -%}
+    {%- if text != blank -%}
+      <div class="bti-subheading">{{ text }}</div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
