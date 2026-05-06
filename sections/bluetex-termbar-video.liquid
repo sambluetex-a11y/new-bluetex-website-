@@ -1,0 +1,60 @@
+<section id="BlueTexTermbarVideo-{{ section.id }}" class="bt-tbvideo">
+  <div class="bt-tbvideo__wrap">
+    <div class="bt-tbvideo__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="bt-tbvideo__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p>{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+    <div class="bt-tbvideo__frame">
+      {%- if section.settings.video_url != blank -%}
+        {%- assign vid_id = section.settings.video_url.id -%}
+        {%- if section.settings.video_url.type == 'youtube' -%}
+          <iframe src="https://www.youtube.com/embed/{{ vid_id }}?rel=0" title="{{ section.settings.heading | escape }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        {%- elsif section.settings.video_url.type == 'vimeo' -%}
+          <iframe src="https://player.vimeo.com/video/{{ vid_id }}" title="{{ section.settings.heading | escape }}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        {%- endif -%}
+      {%- else -%}
+        <div class="bt-tbvideo__placeholder">
+          <span class="bt-tbvideo__placeholder-pill">Video coming soon</span>
+          <span class="bt-tbvideo__placeholder-text">{{ section.settings.placeholder_text }}</span>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  #BlueTexTermbarVideo-{{ section.id }} { --bt-navy:#0011a7; --bt-deep:#002f6c; --bt-orange:#ee7f12; --bt-text:#1b1b1b; --bt-muted:#535254; --bt-soft:#e6e6e7; font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#eeeeee; padding:56px 20px; }
+  #BlueTexTermbarVideo-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__wrap { max-width:1020px; margin:0 auto; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__head { max-width:760px; margin:0 auto 24px; text-align:center; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__eyebrow { display:inline-block; background:var(--bt-orange); color:#fff; font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; padding:5px 12px; border-radius:2px; margin-bottom:12px; }
+  #BlueTexTermbarVideo-{{ section.id }} h2 { margin:0 0 10px; color:var(--bt-navy); font-size:28px; line-height:1.12; font-weight:700; letter-spacing:.2px; text-transform:uppercase; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__head p { margin:0; color:var(--bt-text); font-size:15px; line-height:1.55; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__frame { position:relative; aspect-ratio:16/9; border:1px solid var(--bt-soft); border-radius:6px; overflow:hidden; background:#002f6c; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__frame iframe { width:100%; height:100%; border:0; display:block; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:#fff; padding:24px; text-align:center; background:linear-gradient(135deg,#0011a7 0%,#002f6c 100%); }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__placeholder-pill { background:var(--bt-orange); color:#fff; padding:6px 14px; border-radius:2px; font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; }
+  #BlueTexTermbarVideo-{{ section.id }} .bt-tbvideo__placeholder-text { font-size:14px; line-height:1.55; max-width:520px; color:#e0e4f0; }
+  @media (max-width: 560px) { #BlueTexTermbarVideo-{{ section.id }} { padding:40px 16px; } #BlueTexTermbarVideo-{{ section.id }} h2 { font-size:22px; } }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex TermBar Video",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Watch How It Works" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Vapor Barriers Fail and What Wet Insulation Looks Like" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "A short walk-through of what's happening inside the wall and roof — and why covering it with BlueTex stops the cycle." },
+    { "type": "video_url", "id": "video_url", "label": "Video URL", "accept": ["youtube", "vimeo"] },
+    { "type": "textarea", "id": "placeholder_text", "label": "Placeholder text (shown when no video set)", "default": "We're producing a short explainer video on this topic. Drop a YouTube or Vimeo URL into this section's settings to embed it here." }
+  ],
+  "presets": [
+    { "name": "BlueTex TermBar Video" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+<section id="BlueTexTermbarSpecs-{{ section.id }}" class="bt-tbspecs">
+  <div class="bt-tbspecs__wrap">
+    <div class="bt-tbspecs__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="bt-tbspecs__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p>{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+    <ul class="bt-tbspecs__grid">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>
+          <strong>{{ block.settings.title }}</strong>
+          <span>{{ block.settings.text }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if section.settings.tools_label != blank -%}
+      <div class="bt-tbspecs__tools">
+        <span class="bt-tbspecs__tools-label">{{ section.settings.tools_label }}</span>
+        <span class="bt-tbspecs__tools-value">{{ section.settings.tools_value }}</span>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  #BlueTexTermbarSpecs-{{ section.id }} { --bt-navy:#0011a7; --bt-deep:#002f6c; --bt-orange:#ee7f12; --bt-text:#1b1b1b; --bt-muted:#535254; --bt-soft:#e6e6e7; font-family:Lato,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#fff; padding:56px 20px; border-top:1px solid var(--bt-soft); border-bottom:1px solid var(--bt-soft); }
+  #BlueTexTermbarSpecs-{{ section.id }} * { box-sizing:border-box; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__wrap { max-width:1140px; margin:0 auto; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__head { max-width:760px; margin:0 0 24px; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__eyebrow { display:inline-block; background:var(--bt-orange); color:#fff; font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; padding:5px 12px; border-radius:2px; margin-bottom:12px; }
+  #BlueTexTermbarSpecs-{{ section.id }} h2 { margin:0 0 10px; color:var(--bt-navy); font-size:30px; line-height:1.1; font-weight:700; letter-spacing:.2px; text-transform:uppercase; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__head p { margin:0; color:var(--bt-text); font-size:16px; line-height:1.55; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__grid li { padding:18px 18px; border:1px solid var(--bt-soft); border-radius:4px; background:#fff; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__grid strong { display:block; color:var(--bt-navy); font-size:13px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:6px; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__grid span { display:block; color:var(--bt-muted); font-size:14px; line-height:1.5; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__tools { margin-top:20px; padding:16px 20px; border-left:6px solid var(--bt-navy); background:#eeeeee; border-radius:2px; display:flex; gap:14px; flex-wrap:wrap; align-items:baseline; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__tools-label { color:var(--bt-deep); font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; }
+  #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__tools-value { color:var(--bt-text); font-size:15px; line-height:1.5; }
+  @media (max-width: 860px) { #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__grid { grid-template-columns:1fr 1fr; } #BlueTexTermbarSpecs-{{ section.id }} h2 { font-size:24px; } }
+  @media (max-width: 560px) { #BlueTexTermbarSpecs-{{ section.id }} { padding:40px 16px; } #BlueTexTermbarSpecs-{{ section.id }} .bt-tbspecs__grid { grid-template-columns:1fr; } }
+</style>
+
+{% schema %}
+{
+  "name": "BlueTex TermBar Specs",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What You're Working With" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built for Real Buildings, Real Crews, and Real Conditions" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "BlueTex is engineered to handle what builder-grade insulation can't — and the install is straightforward enough for a small crew with basic tools." },
+    { "type": "text", "id": "tools_label", "label": "Tools label", "default": "Tools needed" },
+    { "type": "text", "id": "tools_value", "label": "Tools value", "default": "Lift · screw gun · utility knife" }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Spec",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 9,
+  "presets": [
+    {
+      "name": "BlueTex TermBar Specs",
+      "blocks": [
+        { "type": "spec", "settings": { "title": "Tear-Proof", "text": "Reinforced film stands up to handling on a lift and stays intact under TermBar fasteners." } },
+        { "type": "spec", "settings": { "title": "Puncture-Resistant", "text": "Holds up to ladders, tools, and incidental contact in working buildings." } },
+        { "type": "spec", "settings": { "title": "No Fumes, No Mess", "text": "No spray foam, no off-gassing, no fiberglass cleanup. Building stays usable during install." } },
+        { "type": "spec", "settings": { "title": "Any Time of Year", "text": "Install in summer or winter — performance is not weather-dependent." } },
+        { "type": "spec", "settings": { "title": "10× More Durable", "text": "Outlasts builder-grade vinyl liner by an order of magnitude under real-world conditions." } },
+        { "type": "spec", "settings": { "title": "Clean Finished Interior", "text": "Finished white face wipes clean. No exposed fiberglass and no contractor required." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

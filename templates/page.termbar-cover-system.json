@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "hero": {
+      "type": "bluetex-hero",
+      "blocks": {
+        "p1": { "type": "proof", "settings": { "text": "No demo · no mess" } },
+        "p2": { "type": "proof", "settings": { "text": "No contractor required" } },
+        "p3": { "type": "proof", "settings": { "text": "10× more durable" } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": {
+        "eyebrow": "TermBar Cover System",
+        "heading": "Cover Your Old Insulation. No Demo. No Mess. No Contractor Required.",
+        "text": "BlueTex installs directly over torn, sagging, stained insulation. Sheets are mechanically locked to the building at every purlin with aluminum TermBars — a clean, finished interior that lasts 10× longer than the original liner.",
+        "primary_label": "Order a $100 Test Kit",
+        "primary_link": "/products/bluetex-cover-repair-system-sample-box",
+        "secondary_label": "Complete Install Guide",
+        "secondary_link": "/pages/new-construction-how-to-install",
+        "image_alt": "Finished BlueTex install with aluminum TermBars over old metal building insulation",
+        "image_label": "BlueTex 2mm Pro · TermBar install"
+      }
+    },
+    "problem": {
+      "type": "bluetex-termbar-problem",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Vapor Barrier Fails", "text": "The original white vinyl liner tears at fasteners, pulls away at seams, and stops sealing — usually within 5 to 10 years of install." } },
+        "s2": { "type": "step", "settings": { "title": "Moisture Hits the Fiberglass", "text": "Warm interior air carries moisture through the failed barrier and into the fiberglass blanket, which soaks it up like a sponge." } },
+        "s3": { "type": "step", "settings": { "title": "Condensation on Cold Metal", "text": "Moisture condenses against the cold roof and wall panels, drips back into the insulation, and leaves the sagging, stained mess you see today." } }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {
+        "eyebrow": "The Problem",
+        "heading": "Why Old Insulation Goes Wet, Sagging, and Stained",
+        "lead": "Builder-grade vinyl vapor barriers fail within a few years. Once they tear or pull away from the purlins, warm interior moisture moves freely through the fiberglass and condenses on the cold metal roof and walls. The fiberglass soaks it up, sags under the weight, and leaves behind the brown stains and torn liner you see today."
+      }
+    },
+    "solution": {
+      "type": "bluetex-termbar-solution",
+      "blocks": {
+        "p1": { "type": "point", "settings": { "title": "Goes Over the Old Stuff", "text": "Install directly over torn or sagging insulation. No tearing out fiberglass, no dust, no cleanup." } },
+        "p2": { "type": "point", "settings": { "title": "Mechanically Locked at Purlins", "text": "Aluminum TermBars screw through BlueTex into every purlin, sealing the building edge-to-edge with no adhesives or staples." } },
+        "p3": { "type": "point", "settings": { "title": "New Vapor Barrier and Finish In One", "text": "BlueTex is the new finished interior surface — a continuous vapor barrier and a clean, washable white face." } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": {
+        "eyebrow": "The Solution",
+        "heading": "Cover It With BlueTex and TermBars",
+        "lead": "BlueTex installs directly over the existing insulation — no demo, no fiberglass cleanup. Sheets are mechanically locked to the building at every purlin with aluminum TermBars, sealing the building behind a single continuous, washable surface.",
+        "image_alt": "Finished BlueTex install with aluminum TermBars",
+        "image_label": "BlueTex 2mm Pro · TermBar install"
+      }
+    },
+    "specs": {
+      "type": "bluetex-termbar-specs",
+      "blocks": {
+        "s1": { "type": "spec", "settings": { "title": "Tear-Proof", "text": "Reinforced film stands up to handling on a lift and stays intact under TermBar fasteners." } },
+        "s2": { "type": "spec", "settings": { "title": "Puncture-Resistant", "text": "Holds up to ladders, tools, and incidental contact in working buildings." } },
+        "s3": { "type": "spec", "settings": { "title": "No Fumes, No Mess", "text": "No spray foam, no off-gassing, no fiberglass cleanup. Building stays usable during install." } },
+        "s4": { "type": "spec", "settings": { "title": "Any Time of Year", "text": "Install in summer or winter — performance is not weather-dependent." } },
+        "s5": { "type": "spec", "settings": { "title": "10× More Durable", "text": "Outlasts builder-grade vinyl liner by an order of magnitude under real-world conditions." } },
+        "s6": { "type": "spec", "settings": { "title": "Clean Finished Interior", "text": "Finished white face wipes clean. No exposed fiberglass and no contractor required." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6"],
+      "settings": {
+        "eyebrow": "What You're Working With",
+        "heading": "Built for Real Buildings, Real Crews, and Real Conditions",
+        "text": "BlueTex is engineered to handle what builder-grade insulation can't — and the install is straightforward enough for a small crew with basic tools.",
+        "tools_label": "Tools needed",
+        "tools_value": "Lift · screw gun · utility knife"
+      }
+    },
+    "video": {
+      "type": "bluetex-termbar-video",
+      "settings": {
+        "eyebrow": "Watch How It Works",
+        "heading": "Why Vapor Barriers Fail and What Wet Insulation Looks Like",
+        "text": "A short walk-through of what's happening inside the wall and roof — and why covering it with BlueTex stops the cycle.",
+        "placeholder_text": "We're producing a short explainer video on this topic. Drop a YouTube or Vimeo URL into this section's settings to embed it here."
+      }
+    },
+    "gallery": {
+      "type": "bluetex-termbar-gallery",
+      "blocks": {
+        "g1": { "type": "pair", "settings": { "caption": "Add a building name or location" } },
+        "g2": { "type": "pair", "settings": { "caption": "Add a building name or location" } },
+        "g3": { "type": "pair", "settings": { "caption": "Add a building name or location" } }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "eyebrow": "Real Buildings",
+        "heading": "Before and After in the Field",
+        "text": "A few examples of what BlueTex looks like going over old insulation in the buildings we work with every week."
+      }
+    },
+    "cta_bar": {
+      "type": "bluetex-termbar-cta-bar",
+      "settings": {
+        "eyebrow": "Next Step",
+        "heading": "Get the Plan, Try It on Your Building, or Send Us Photos",
+        "text": "Three ways to move forward — read the full install guide, order the $100 test kit to try BlueTex on your building, or send photos and dimensions for a quote.",
+        "cta1_label": "Complete Install Guide",
+        "cta1_link": "/pages/new-construction-how-to-install",
+        "cta2_label": "Order a $100 Test Kit",
+        "cta2_link": "/products/bluetex-cover-repair-system-sample-box",
+        "cta3_label": "Request a Quote",
+        "cta3_link": "/pages/request-a-quote"
+      }
+    }
+  },
+  "order": ["hero", "problem", "solution", "specs", "video", "gallery", "cta_bar"]
+}
